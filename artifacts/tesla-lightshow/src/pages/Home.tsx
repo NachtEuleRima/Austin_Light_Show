@@ -6,7 +6,6 @@ import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/ap
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import cotaCircuitBg from "../assets/cota-circuit-bg.png";
-import cotaTowerRealImg from "../assets/cota-tower-cutout.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -91,22 +90,6 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Real COTA tower cutout — centered behind titles */}
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 h-full pointer-events-none"
-          style={{ width: '50%', zIndex: 1 }}
-        >
-          <img
-            src={cotaTowerRealImg}
-            alt="COTA Tower"
-            className="w-full h-full object-contain object-top"
-            style={{
-              filter: 'drop-shadow(0 0 24px rgba(0,200,255,0.35)) saturate(1.2) brightness(1.05)',
-              maskImage: 'linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
-            }}
-          />
-        </div>
 
         {/* Neon grid perspective floor */}
         <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
