@@ -250,7 +250,7 @@ export default function Home() {
               <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-cyan">02 // The Fleet</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
-              Supported <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Hardware</span>
+              Supported <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Robot</span>
             </h2>
           </div>
 
