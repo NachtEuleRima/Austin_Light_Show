@@ -42,3 +42,9 @@ id = "w9xBM9G_b1qBpTGwndtOE"
 uri = "file://artifacts/tesla-lightshow/src/assets/cota-hero.png"
 type = "image"
 title = "COTA tower arching red pipes over Tesla cars"
+
+[[generated]]
+id = "cEmpfBPHUnDQmR59yedqC"
+uri = "file://artifacts/tesla-lightshow/src/assets/cota-circuit-bg.png"
+type = "image"
+title = "COTA circuit night Tesla cars background"

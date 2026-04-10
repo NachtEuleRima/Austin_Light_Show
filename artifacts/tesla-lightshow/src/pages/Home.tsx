@@ -5,7 +5,8 @@ import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
-import cotaRealImg from "../assets/cota-hero.png";
+import cotaCircuitBg from "../assets/cota-circuit-bg.png";
+import cotaTowerRealImg from "../assets/cota-tower-real.jpg";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -70,25 +71,38 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
 
-        {/* Real COTA photo — full bleed background */}
+        {/* Circuit background — full bleed */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src={cotaRealImg}
-            alt="COTA Tower and Circuit at night"
+            src={cotaCircuitBg}
+            alt="COTA Circuit at night"
             className="w-full h-full object-cover object-center"
-            style={{ filter: 'brightness(0.55) saturate(1.3) contrast(1.05)' }}
+            style={{ filter: 'brightness(0.5) saturate(1.3) contrast(1.05)' }}
           />
-          {/* Neon tint overlay to unify with the template palette */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to bottom, rgba(0,10,20,0.55) 0%, rgba(0,5,15,0.2) 40%, rgba(0,0,0,0.7) 100%)'
+            background: 'linear-gradient(to bottom, rgba(0,8,18,0.6) 0%, rgba(0,4,12,0.15) 40%, rgba(0,0,0,0.65) 100%)'
           }} />
-          {/* Subtle cyan edge glow */}
+          {/* Neon glow overlays */}
           <div className="absolute inset-0 mix-blend-screen" style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,255,255,0.10) 0%, transparent 70%)'
+            background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,255,255,0.08) 0%, transparent 70%)'
           }} />
           <div className="absolute inset-0 mix-blend-screen" style={{
-            background: 'radial-gradient(ellipse 60% 50% at 30% 80%, rgba(180,0,255,0.08) 0%, transparent 60%)'
+            background: 'radial-gradient(ellipse 60% 50% at 20% 80%, rgba(180,0,255,0.07) 0%, transparent 60%)'
           }} />
+        </div>
+
+        {/* Real COTA tower photo — right side, full height, blended in */}
+        <div className="absolute top-0 right-0 h-full pointer-events-none" style={{ width: '42%', zIndex: 1 }}>
+          <img
+            src={cotaTowerRealImg}
+            alt="COTA Tower"
+            className="w-full h-full object-cover object-left-bottom mix-blend-screen"
+            style={{
+              filter: 'brightness(1.15) saturate(1.2) contrast(1.05) drop-shadow(0 0 30px rgba(0,200,255,0.4))',
+              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%)',
+            }}
+          />
         </div>
 
         {/* Neon grid perspective floor */}
