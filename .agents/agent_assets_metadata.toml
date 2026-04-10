@@ -24,3 +24,9 @@ id = "tn43LFkEuKQHvaff3fRlS"
 uri = "file://artifacts/tesla-lightshow/src/assets/texas-flag.png"
 type = "image"
 title = "texas flag night"
+
+[[generated]]
+id = "ySJKIfKsdZgc112ikty2a"
+uri = "file://artifacts/tesla-lightshow/src/assets/hero-scene.png"
+type = "image"
+title = "cota hero scene"

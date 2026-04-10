@@ -5,10 +5,7 @@ import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
-import cotaTowerImg from "../assets/cota-tower.png";
-import teslaLineupImg from "../assets/tesla-lineup.png";
-import americanFlagImg from "../assets/american-flag.png";
-import texasFlagImg from "../assets/texas-flag.png";
+import heroSceneImg from "../assets/hero-scene.png";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -67,81 +64,130 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground scanline font-sans selection:bg-primary selection:text-primary-foreground">
-      {/* 1. HERO SECTION */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-        <div className="absolute top-[10%] left-[20%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
-        <div className="absolute bottom-[10%] right-[10%] w-[700px] h-[700px] bg-secondary/15 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
-        
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [transform:perspective(1000px)_rotateX(60deg)_translateY(100px)_scale(2)] opacity-30 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
-        </div>
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
+      {/* 1. HERO SECTION — Poster Style */}
+      <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#050810]">
 
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-10vh]">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-float shadow-[0_0_15px_rgba(0,255,255,0.2)]">
-            <Zap className="w-4 h-4 text-glow-cyan" />
-            <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold text-glow-cyan">COTA x TESLA // MAR 18</span>
-          </div>
-          
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-none mb-6">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-600 text-glow-cyan drop-shadow-sm">ELECTRIC</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-fuchsia-500 to-accent text-glow-magenta mt-2">SYMPHONY</span>
-          </h1>
-          
-          <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light tracking-wide mb-12 drop-shadow-md">
-            Witness the synchronized spectacle. Hundreds of vehicles, light, sound, and the iconic S-curves of Austin.
-          </p>
-
-          <Button 
-            size="lg" 
-            className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-10 text-lg font-bold tracking-widest uppercase box-glow-cyan transition-all hover:scale-105 active:scale-95"
-            onClick={() => document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" })}
-            data-testid="button-scroll-rsvp"
-          >
-            Secure Your Spot <ChevronRight className="ml-2 w-5 h-5" />
-          </Button>
-        </div>
-
-        {/* Flags top-right corner */}
-        <div className="absolute top-6 right-6 z-30 flex gap-3 items-center">
+        {/* Full hero background image */}
+        <div className="absolute inset-0 z-0">
           <img
-            src={texasFlagImg}
-            alt="Texas Flag"
-            className="w-16 h-12 object-cover rounded shadow-[0_0_12px_rgba(0,255,255,0.4)] border border-white/10"
-          />
-          <img
-            src={americanFlagImg}
-            alt="American Flag"
-            className="w-16 h-12 object-cover rounded shadow-[0_0_12px_rgba(255,0,0,0.5)] border border-white/10"
-          />
-        </div>
-
-        {/* Tesla lineup — full-width background layer behind everything */}
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '38vh', zIndex: 1 }}>
-          <img
-            src={teslaLineupImg}
-            alt="Tesla Lightshow Lineup"
+            src={heroSceneImg}
+            alt="Tesla Lightshow at COTA"
             className="w-full h-full object-cover object-center"
-            style={{
-              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 100%)',
-              filter: 'saturate(1.6) brightness(0.9)',
-            }}
+            style={{ filter: 'brightness(0.75) saturate(1.2)' }}
           />
+          {/* Dark gradient overlay top and bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/80 via-transparent to-[#050810]/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050810]/40 via-transparent to-[#050810]/40" />
         </div>
 
-        {/* COTA Tower — right side, anchored to bottom, blends over lineup */}
-        <div className="absolute bottom-0 right-[8%] pointer-events-none" style={{ width: '180px', height: '55vh', zIndex: 2 }}>
-          <img
-            src={cotaTowerImg}
-            alt="COTA Tower"
-            className="w-full h-full object-contain object-bottom mix-blend-screen"
-            style={{ filter: 'drop-shadow(0 0 18px rgba(0,255,255,0.7)) saturate(1.3) brightness(1.1)' }}
-          />
+        {/* COTA Track outline SVG overlay */}
+        <div className="absolute inset-0 z-1 pointer-events-none flex items-center justify-center opacity-[0.07]">
+          <svg viewBox="0 0 600 500" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <path
+              d="M 80 400 L 60 300 L 70 200 L 100 140 L 160 100 L 240 80 L 300 70 L 380 90 L 440 140 L 480 200 L 500 260 L 490 330 L 460 380 L 400 420 L 340 440 L 280 450 L 200 440 L 140 420 Z"
+              fill="none"
+              stroke="white"
+              strokeWidth="3"
+            />
+            <path
+              d="M 100 390 L 85 310 L 90 220 L 115 155 L 170 115 L 245 95 L 305 88 L 375 105 L 430 150 L 465 205 L 480 265 L 472 325 L 445 370 L 390 405 L 332 422 L 270 428 L 205 420 L 148 400 Z"
+              fill="none"
+              stroke="white"
+              strokeWidth="1.5"
+              strokeDasharray="8 4"
+            />
+          </svg>
         </div>
 
-        {/* Bottom fade overlay */}
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent pointer-events-none" style={{ zIndex: 3 }} />
+        {/* Checkered flag corners */}
+        <div className="absolute top-0 left-0 z-10 pointer-events-none">
+          <div className="w-20 h-20" style={{
+            backgroundImage: 'repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%)',
+            backgroundSize: '10px 10px',
+            opacity: 0.9
+          }} />
+        </div>
+        <div className="absolute top-0 right-0 z-10 pointer-events-none">
+          <div className="w-20 h-20" style={{
+            backgroundImage: 'repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%)',
+            backgroundSize: '10px 10px',
+            opacity: 0.9
+          }} />
+        </div>
+        <div className="absolute bottom-0 left-0 z-10 pointer-events-none">
+          <div className="w-20 h-20" style={{
+            backgroundImage: 'repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%)',
+            backgroundSize: '10px 10px',
+            opacity: 0.9
+          }} />
+        </div>
+        <div className="absolute bottom-0 right-0 z-10 pointer-events-none">
+          <div className="w-20 h-20" style={{
+            backgroundImage: 'repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%)',
+            backgroundSize: '10px 10px',
+            opacity: 0.9
+          }} />
+        </div>
+
+        {/* Left side stripe label */}
+        <div className="absolute left-0 top-0 bottom-0 z-10 w-8 flex flex-col items-center justify-center pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, #c0392b, #c0392b)' }}>
+          <span className="text-white font-black text-xs tracking-[0.4em] uppercase" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>COTA</span>
+        </div>
+        {/* Right side stripe label */}
+        <div className="absolute right-0 top-0 bottom-0 z-10 w-8 flex flex-col items-center justify-center pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, #c0392b, #c0392b)' }}>
+          <span className="text-white font-black text-xs tracking-[0.4em] uppercase" style={{ writingMode: 'vertical-rl' }}>2026</span>
+        </div>
+
+        {/* Main content */}
+        <div className="relative z-20 flex flex-col items-center justify-between flex-1 px-12 pt-10 pb-0">
+
+          {/* Top: Title */}
+          <div className="text-center w-full mt-4">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]">
+              TESLA LIGHTSHOW
+            </h1>
+            <div className="text-2xl md:text-4xl font-black uppercase tracking-wider mt-1"
+              style={{ color: '#f0b429', textShadow: '0 0 20px rgba(240,180,40,0.5)' }}>
+              AT CIRCUIT OF THE AMERICAS
+            </div>
+          </div>
+
+          {/* Middle: Spacer (image fills this area) */}
+          <div className="flex-1" />
+
+          {/* Bottom: Event info bar */}
+          <div className="w-full z-20 pb-0">
+            <div className="bg-black/70 backdrop-blur-sm border-t border-white/10 px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-6 flex-wrap justify-center sm:justify-start">
+                <div className="flex items-center gap-2 text-white">
+                  <Calendar className="w-5 h-5 text-red-400" />
+                  <span className="font-bold text-lg tracking-widest uppercase">March 18, 2026</span>
+                </div>
+                <div className="w-px h-6 bg-white/20 hidden sm:block" />
+                <div className="flex items-center gap-2 text-white">
+                  <MapPin className="w-5 h-5 text-red-400" />
+                  <span className="font-bold text-lg tracking-widest uppercase">Austin, TX</span>
+                </div>
+                <div className="w-px h-6 bg-white/20 hidden sm:block" />
+                <div className="flex items-center gap-2 text-white">
+                  <Clock className="w-5 h-5 text-red-400" />
+                  <span className="font-bold text-lg tracking-widest uppercase">Gates Open 7 PM</span>
+                </div>
+              </div>
+              <Button
+                size="lg"
+                className="bg-red-600 hover:bg-red-700 text-white font-black tracking-widest uppercase px-8 h-12 text-base shrink-0 transition-all hover:scale-105"
+                onClick={() => document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" })}
+                data-testid="button-scroll-rsvp"
+              >
+                RSVP Now <ChevronRight className="ml-1 w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 2. THE SPECTACLE SECTION */}
