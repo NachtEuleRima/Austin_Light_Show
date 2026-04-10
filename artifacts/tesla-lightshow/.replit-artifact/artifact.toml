@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Tesla Lightshow at COTA"
+version = "1.0.0"
+id = "artifacts/tesla-lightshow"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20269
+
+[services.development]
+run = "pnpm --filter @workspace/tesla-lightshow run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tesla-lightshow", "run", "build" ]
+publicDir = "artifacts/tesla-lightshow/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20269"
+BASE_PATH = "/"

@@ -4,6 +4,20 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Artifacts
+
+### Tesla Lightshow at COTA (`artifacts/tesla-lightshow`)
+- Single-page RSVP website for the Tesla Lightshow at COTA event on March 18th
+- React + Vite frontend with dramatic neon/electric visual design
+- RSVP form collects: name, email, guest count, optional message
+- Animated SVG Tesla cars and COTA tower illustration
+- Connected to backend RSVP API
+
+### API Server (`artifacts/api-server`)
+- Express 5 backend
+- RSVP endpoints: POST /api/rsvps, GET /api/rsvps
+- PostgreSQL database via Drizzle ORM
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces
