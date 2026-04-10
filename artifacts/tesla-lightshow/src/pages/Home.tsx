@@ -107,9 +107,10 @@ export default function Home() {
             <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold">COTA x TESLA // MAR 18</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">ELECTRIC</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-fuchsia-500 to-accent text-glow-magenta mt-2">SYMPHONY</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">Worldwide Fantasy</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-fuchsia-500 to-accent text-glow-magenta mt-2">Lightshow</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-fuchsia-300 mt-3 tracking-[0.15em]">Mothership Edition</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light tracking-wide mb-12 drop-shadow-md">
