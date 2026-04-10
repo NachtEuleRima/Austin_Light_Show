@@ -6,7 +6,7 @@ import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/ap
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import cotaCircuitBg from "../assets/cota-circuit-bg.png";
-import cotaTowerRealImg from "../assets/cota-tower-real.jpg";
+import cotaTowerRealImg from "../assets/cota-tower-cutout.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -91,28 +91,19 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Real COTA tower photo — centered behind titles */}
+        {/* Real COTA tower cutout — centered behind titles */}
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 h-full pointer-events-none"
-          style={{ width: '55%', zIndex: 1 }}
+          style={{ width: '50%', zIndex: 1 }}
         >
           <img
             src={cotaTowerRealImg}
             alt="COTA Tower"
-            className="w-full h-full object-contain object-top mix-blend-screen"
+            className="w-full h-full object-contain object-top"
             style={{
-              filter: 'brightness(1.1) saturate(1.15) contrast(1.05)',
-              maskImage: [
-                'linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)',
-                'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)',
-              ].join(', '),
-              WebkitMaskImage: [
-                'linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)',
-                'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)',
-              ].join(', '),
-              maskComposite: 'intersect',
-              WebkitMaskComposite: 'destination-in',
-              opacity: 0.85,
+              filter: 'drop-shadow(0 0 24px rgba(0,200,255,0.35)) saturate(1.2) brightness(1.05)',
+              maskImage: 'linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
             }}
           />
         </div>
