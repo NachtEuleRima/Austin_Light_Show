@@ -91,16 +91,28 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Real COTA tower photo — right side, full height, blended in */}
-        <div className="absolute top-0 right-0 h-full pointer-events-none" style={{ width: '42%', zIndex: 1 }}>
+        {/* Real COTA tower photo — centered behind titles */}
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 h-full pointer-events-none"
+          style={{ width: '55%', zIndex: 1 }}
+        >
           <img
             src={cotaTowerRealImg}
             alt="COTA Tower"
-            className="w-full h-full object-cover object-left-bottom mix-blend-screen"
+            className="w-full h-full object-contain object-top mix-blend-screen"
             style={{
-              filter: 'brightness(1.15) saturate(1.2) contrast(1.05) drop-shadow(0 0 30px rgba(0,200,255,0.4))',
-              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%)',
+              filter: 'brightness(1.1) saturate(1.15) contrast(1.05)',
+              maskImage: [
+                'linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)',
+                'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)',
+              ].join(', '),
+              WebkitMaskImage: [
+                'linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)',
+                'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)',
+              ].join(', '),
+              maskComposite: 'intersect',
+              WebkitMaskComposite: 'destination-in',
+              opacity: 0.85,
             }}
           />
         </div>
