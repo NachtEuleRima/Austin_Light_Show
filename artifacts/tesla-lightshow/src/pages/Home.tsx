@@ -5,6 +5,10 @@ import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
+import cotaTowerImg from "../assets/cota-tower.png";
+import teslaLineupImg from "../assets/tesla-lineup.png";
+import americanFlagImg from "../assets/american-flag.png";
+import texasFlagImg from "../assets/texas-flag.png";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -23,56 +27,6 @@ const rsvpSchema = z.object({
 
 type RsvpFormValues = z.infer<typeof rsvpSchema>;
 
-const CotaTower = () => (
-  <svg viewBox="0 0 200 600" className="w-full h-full drop-shadow-[0_0_15px_rgba(255,0,255,0.8)]" preserveAspectRatio="xMidYMax meet">
-    <defs>
-      <linearGradient id="towerGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#ff00ff" />
-        <stop offset="50%" stopColor="#00ffff" />
-        <stop offset="100%" stopColor="#0a0a0a" />
-      </linearGradient>
-      <filter id="neonGlow">
-        <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-        <feMerge>
-          <feMergeNode in="coloredBlur" />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
-      </filter>
-    </defs>
-    
-    <path d="M 80 600 L 120 600 L 130 150 L 70 150 Z" fill="url(#towerGlow)" opacity="0.2" />
-    <path d="M 90 600 L 110 600 L 115 150 L 85 150 Z" fill="#111" stroke="#ff00ff" strokeWidth="2" filter="url(#neonGlow)" />
-    <path d="M 88 550 L 112 500 M 112 550 L 88 500 M 87 450 L 113 400 M 113 450 L 87 400 M 86 350 L 114 300 M 114 350 L 86 300 M 85 250 L 115 200 M 115 250 L 85 200" stroke="#00ffff" strokeWidth="1.5" opacity="0.6" />
-    <path d="M 50 150 L 150 150 L 140 120 L 60 120 Z" fill="#111" stroke="#ff00ff" strokeWidth="3" filter="url(#neonGlow)" />
-    <path d="M 95 120 L 105 120 L 100 20 Z" fill="#00ffff" filter="url(#neonGlow)" />
-    <circle cx="100" cy="15" r="5" fill="#fff" filter="url(#neonGlow)" />
-    <rect x="65" y="130" width="70" height="10" fill="#0a0a0a" stroke="#00ffff" strokeWidth="1" />
-  </svg>
-);
-
-const TeslaCar = ({ color = "#00ffff", delay = "0s", speed = "10s", style }: any) => (
-  <div className="absolute bottom-0 w-32 h-12" style={{ animation: `drive ${speed} linear ${delay} infinite`, ...style }}>
-    <svg viewBox="0 0 100 40" className="w-full h-full drop-shadow-[0_0_8px_currentColor]" style={{ color }}>
-      <defs>
-        <filter id={`carGlow-${color.replace('#', '')}`}>
-          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-          <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-      <path d="M 10 30 L 15 15 L 40 10 L 75 15 L 90 25 L 95 30 Z" fill="#111" stroke={color} strokeWidth="1.5" />
-      <path d="M 20 16 L 40 12 L 65 16 L 60 20 L 25 20 Z" fill="#0a0a0a" stroke={color} strokeWidth="0.5" opacity="0.8" />
-      <path d="M 85 22 L 95 24 L 92 27 L 85 25 Z" fill="#fff" filter={`url(#carGlow-${color.replace('#', '')})`} />
-      <path d="M 10 24 L 12 22 L 15 25 L 12 27 Z" fill="#ff0000" filter={`url(#carGlow-${color.replace('#', '')})`} />
-      <circle cx="25" cy="30" r="6" fill="#0a0a0a" stroke={color} strokeWidth="1" />
-      <circle cx="75" cy="30" r="6" fill="#0a0a0a" stroke={color} strokeWidth="1" />
-      <circle cx="25" cy="30" r="2" fill={color} />
-      <circle cx="75" cy="30" r="2" fill={color} />
-    </svg>
-  </div>
-);
 
 export default function Home() {
   const { toast } = useToast();
@@ -148,20 +102,46 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="absolute bottom-0 w-full h-[40vh] pointer-events-none z-10 flex justify-center items-end">
-          <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-background to-transparent z-20" />
-          <div className="w-64 h-full opacity-90 mb-[-2rem] relative z-0">
-            <CotaTower />
-          </div>
-          
-          <div className="absolute bottom-10 left-0 w-full h-32 overflow-hidden z-10 opacity-80">
-            <TeslaCar color="#00ffff" speed="7s" delay="0s" style={{ bottom: '10px' }} />
-            <TeslaCar color="#ff00ff" speed="11s" delay="-3s" style={{ bottom: '35px', transform: 'scale(0.85)' }} />
-            <TeslaCar color="#8a2be2" speed="9s" delay="-6s" style={{ bottom: '20px', transform: 'scale(0.95)' }} />
-            <TeslaCar color="#00ffff" speed="14s" delay="-1s" style={{ bottom: '45px', transform: 'scale(0.7)' }} />
-            <TeslaCar color="#ff00ff" speed="8s" delay="-8s" style={{ bottom: '5px', transform: 'scale(1.1)' }} />
-          </div>
+        {/* Flags top-right corner */}
+        <div className="absolute top-6 right-6 z-30 flex gap-3 items-center">
+          <img
+            src={texasFlagImg}
+            alt="Texas Flag"
+            className="w-16 h-12 object-cover rounded shadow-[0_0_12px_rgba(0,255,255,0.4)] border border-white/10"
+          />
+          <img
+            src={americanFlagImg}
+            alt="American Flag"
+            className="w-16 h-12 object-cover rounded shadow-[0_0_12px_rgba(255,0,0,0.5)] border border-white/10"
+          />
         </div>
+
+        {/* Tesla lineup — full-width background layer behind everything */}
+        <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '38vh', zIndex: 1 }}>
+          <img
+            src={teslaLineupImg}
+            alt="Tesla Lightshow Lineup"
+            className="w-full h-full object-cover object-center"
+            style={{
+              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 100%)',
+              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 100%)',
+              filter: 'saturate(1.6) brightness(0.9)',
+            }}
+          />
+        </div>
+
+        {/* COTA Tower — right side, anchored to bottom, blends over lineup */}
+        <div className="absolute bottom-0 right-[8%] pointer-events-none" style={{ width: '180px', height: '55vh', zIndex: 2 }}>
+          <img
+            src={cotaTowerImg}
+            alt="COTA Tower"
+            className="w-full h-full object-contain object-bottom mix-blend-screen"
+            style={{ filter: 'drop-shadow(0 0 18px rgba(0,255,255,0.7)) saturate(1.3) brightness(1.1)' }}
+          />
+        </div>
+
+        {/* Bottom fade overlay */}
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent pointer-events-none" style={{ zIndex: 3 }} />
       </section>
 
       {/* 2. THE SPECTACLE SECTION */}

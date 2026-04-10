@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "kaw8a4lWesqC_KKMbmgHA"
+uri = "file://artifacts/tesla-lightshow/src/assets/cota-tower.png"
+type = "image"
+title = "cota tower night"
+
+[[generated]]
+id = "o92A_IcqEDB-Z3WfNaIEl"
+uri = "file://artifacts/tesla-lightshow/src/assets/tesla-lineup.png"
+type = "image"
+title = "tesla lightshow lineup"
+
+[[generated]]
+id = "UDBJx6cmUq4tJOFm8QYh0"
+uri = "file://artifacts/tesla-lightshow/src/assets/american-flag.png"
+type = "image"
+title = "american flag night"
+
+[[generated]]
+id = "tn43LFkEuKQHvaff3fRlS"
+uri = "file://artifacts/tesla-lightshow/src/assets/texas-flag.png"
+type = "image"
+title = "texas flag night"
