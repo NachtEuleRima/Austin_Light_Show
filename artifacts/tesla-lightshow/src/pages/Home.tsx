@@ -5,8 +5,7 @@ import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
-import cotaTowerImg from "../assets/cota-tower.png";
-import teslaLineupImg from "../assets/tesla-lineup.png";
+import cotaRealImg from "../assets/cota-real.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -70,26 +69,51 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground scanline font-sans selection:bg-primary selection:text-primary-foreground">
       {/* 1. HERO SECTION */}
       <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-        <div className="absolute top-[10%] left-[20%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
-        <div className="absolute bottom-[10%] right-[10%] w-[700px] h-[700px] bg-secondary/15 rounded-full blur-[150px] pointer-events-none mix-blend-screen" />
 
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [transform:perspective(1000px)_rotateX(60deg)_translateY(100px)_scale(2)] opacity-30 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+        {/* Real COTA photo — full bleed background */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src={cotaRealImg}
+            alt="COTA Tower and Circuit at night"
+            className="w-full h-full object-cover object-center"
+            style={{ filter: 'brightness(0.55) saturate(1.3) contrast(1.05)' }}
+          />
+          {/* Neon tint overlay to unify with the template palette */}
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(to bottom, rgba(0,10,20,0.55) 0%, rgba(0,5,15,0.2) 40%, rgba(0,0,0,0.7) 100%)'
+          }} />
+          {/* Subtle cyan edge glow */}
+          <div className="absolute inset-0 mix-blend-screen" style={{
+            background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,255,255,0.10) 0%, transparent 70%)'
+          }} />
+          <div className="absolute inset-0 mix-blend-screen" style={{
+            background: 'radial-gradient(ellipse 60% 50% at 30% 80%, rgba(180,0,255,0.08) 0%, transparent 60%)'
+          }} />
         </div>
 
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-10vh]">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-float shadow-[0_0_15px_rgba(0,255,255,0.2)]">
-            <Zap className="w-4 h-4 text-glow-cyan" />
-            <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold text-glow-cyan">COTA x TESLA // MAR 18</span>
+        {/* Neon grid perspective floor */}
+        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] [transform:perspective(1000px)_rotateX(65deg)_translateY(120px)_scale(2.2)] opacity-40" />
+        </div>
+
+        {/* Ambient glow blobs */}
+        <div className="absolute top-[10%] left-[15%] w-[500px] h-[500px] bg-primary/15 rounded-full blur-[130px] pointer-events-none mix-blend-screen z-[2]" />
+        <div className="absolute bottom-[5%] right-[10%] w-[600px] h-[600px] bg-secondary/12 rounded-full blur-[160px] pointer-events-none mix-blend-screen z-[2]" />
+
+        {/* Main content */}
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-8vh]">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-float shadow-[0_0_15px_rgba(0,255,255,0.2)] backdrop-blur-sm">
+            <Zap className="w-4 h-4" />
+            <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold">COTA x TESLA // MAR 18</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-none mb-6">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-600 text-glow-cyan drop-shadow-sm">ELECTRIC</span>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">ELECTRIC</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-fuchsia-500 to-accent text-glow-magenta mt-2">SYMPHONY</span>
           </h1>
 
-          <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light tracking-wide mb-12 drop-shadow-md">
-            Witness the synchronized spectacle. Hundreds of vehicles, light, sound, and the iconic S-curves of Austin.
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light tracking-wide mb-12 drop-shadow-md">
+            Witness the synchronized spectacle. Hundreds of Tesla vehicles, the iconic red-pipe tower, and the S-curves of COTA — all lit up for one night.
           </p>
 
           <Button
@@ -102,46 +126,22 @@ export default function Home() {
           </Button>
         </div>
 
-        {/* Flags top-right corner */}
+        {/* Flags top-right */}
         <div className="absolute top-6 right-6 z-30 flex gap-3 items-center">
           <img
             src={texasFlagImg}
             alt="Texas Flag"
-            className="w-16 h-12 object-cover rounded shadow-[0_0_12px_rgba(0,255,255,0.4)] border border-white/10"
+            className="w-16 h-12 object-cover rounded shadow-[0_0_14px_rgba(0,255,255,0.4)] border border-white/10"
           />
           <img
             src={americanFlagImg}
             alt="American Flag"
-            className="w-16 h-12 object-cover rounded shadow-[0_0_12px_rgba(255,0,0,0.5)] border border-white/10"
+            className="w-16 h-12 object-cover rounded shadow-[0_0_14px_rgba(255,80,80,0.5)] border border-white/10"
           />
         </div>
 
-        {/* Tesla lineup — full-width background layer behind everything */}
-        <div className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: '38vh', zIndex: 1 }}>
-          <img
-            src={teslaLineupImg}
-            alt="Tesla Lightshow Lineup"
-            className="w-full h-full object-cover object-center"
-            style={{
-              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 100%)',
-              filter: 'saturate(1.6) brightness(0.9)',
-            }}
-          />
-        </div>
-
-        {/* COTA Tower — right side, anchored to bottom */}
-        <div className="absolute bottom-0 right-[8%] pointer-events-none" style={{ width: '180px', height: '55vh', zIndex: 2 }}>
-          <img
-            src={cotaTowerImg}
-            alt="COTA Tower"
-            className="w-full h-full object-contain object-bottom mix-blend-screen"
-            style={{ filter: 'drop-shadow(0 0 18px rgba(0,255,255,0.7)) saturate(1.3) brightness(1.1)' }}
-          />
-        </div>
-
-        {/* Bottom fade overlay */}
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent pointer-events-none" style={{ zIndex: 3 }} />
+        {/* Bottom fade to page background */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-[5]" />
       </section>
 
       {/* 2. THE SPECTACLE SECTION */}

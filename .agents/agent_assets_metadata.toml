@@ -30,3 +30,9 @@ id = "ySJKIfKsdZgc112ikty2a"
 uri = "file://artifacts/tesla-lightshow/src/assets/hero-scene.png"
 type = "image"
 title = "cota hero scene"
+
+[[generated]]
+id = "6WkKNBFSuByll8sD5OFSB"
+uri = "file://artifacts/tesla-lightshow/src/assets/cota-real.png"
+type = "image"
+title = "cota tower circuit night"
