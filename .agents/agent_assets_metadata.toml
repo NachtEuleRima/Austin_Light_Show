@@ -48,3 +48,9 @@ id = "cEmpfBPHUnDQmR59yedqC"
 uri = "file://artifacts/tesla-lightshow/src/assets/cota-circuit-bg.png"
 type = "image"
 title = "COTA circuit night Tesla cars background"
+
+[[generated]]
+id = "sX3Df6YHK_A4zB0thkWu4"
+uri = "file://artifacts/tesla-lightshow/src/assets/giga-texas-bg.png"
+type = "image"
+title = "Giga Texas factory night background"

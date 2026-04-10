@@ -5,7 +5,7 @@ import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
-import cotaCircuitBg from "../assets/cota-circuit-bg.png";
+import cotaCircuitBg from "../assets/giga-texas-bg.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
