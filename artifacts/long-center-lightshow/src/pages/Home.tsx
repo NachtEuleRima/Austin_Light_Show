@@ -565,12 +565,16 @@ export default function Home() {
         `}</style>
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10">
-            <span
-              className="inline-block text-2xl md:text-3xl font-black font-mono tracking-[0.25em] uppercase text-primary"
-              style={{ animation: "neonFlickerCyan 3s infinite" }}
-            >
-              ⚡ TECH SUPPORT ⚡
-            </span>
+            <div className="inline-flex items-center gap-3">
+              <span style={{ color: "#ea8e2a", animation: "neonFlickerCyan 3s infinite" }}>⚡</span>
+              <span
+                className="text-2xl md:text-3xl font-black font-mono tracking-[0.25em] uppercase text-primary"
+                style={{ animation: "neonFlickerCyan 3s infinite" }}
+              >
+                TECH SUPPORT
+              </span>
+              <span style={{ color: "#ea8e2a", animation: "neonFlickerCyan 3s infinite" }}>⚡</span>
+            </div>
             <p className="text-white/40 mt-3 text-sm">
               Have a question? Reach out to the right person below.
             </p>
@@ -592,30 +596,33 @@ export default function Home() {
                     window.open(`https://x.com/${username}`, "_blank", "noopener,noreferrer");
                   }
                 }}
-                className="group flex flex-col gap-5 p-7 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-primary/40 hover:shadow-[0_0_24px_rgba(0,255,255,0.1)] transition-all duration-300"
+                className="group flex flex-col gap-4 p-7 rounded-3xl border border-white/5 hover:border-primary/50 hover:shadow-[0_0_24px_rgba(0,255,255,0.12)] transition-all duration-300"
+                style={{ background: "#0d1117" }}
               >
-                {/* Avatar */}
-                <div className="w-20 h-20 rounded-full bg-white/5 border-2 border-white/10 group-hover:border-primary/50 transition-colors overflow-hidden relative flex items-center justify-center flex-shrink-0">
-                  <img
-                    src={`https://unavatar.io/twitter/${username}`}
-                    alt={username}
-                    className="w-full h-full object-cover absolute inset-0"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                      (e.currentTarget.nextSibling as HTMLElement).style.display = "block";
-                    }}
-                  />
-                  <svg viewBox="0 0 24 24" className="hidden w-8 h-8 fill-white/30 group-hover:fill-primary transition-colors" aria-hidden="true">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
+                {/* Avatar — centered */}
+                <div className="flex justify-center">
+                  <div className="w-20 h-20 rounded-full border-2 border-white/10 group-hover:border-primary/50 transition-colors overflow-hidden relative flex items-center justify-center bg-white/5">
+                    <img
+                      src={`https://unavatar.io/twitter/${username}`}
+                      alt={username}
+                      className="w-full h-full object-cover absolute inset-0"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                        (e.currentTarget.nextSibling as HTMLElement).style.display = "block";
+                      }}
+                    />
+                    <svg viewBox="0 0 24 24" className="hidden w-8 h-8 fill-white/30" aria-hidden="true">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </div>
                 </div>
-                {/* Info */}
+                {/* Info — left-aligned */}
                 <div className="flex flex-col gap-1">
                   <p className="font-bold text-white text-xl leading-tight">{display}</p>
                   <p className="text-primary font-mono text-sm">@{username}</p>
-                  <p className="text-white/30 text-sm mt-1">{role}</p>
+                  <p className="text-white/40 text-sm mt-1">{role}</p>
                 </div>
-                <span className="text-sm text-white/20 group-hover:text-primary font-mono transition-colors mt-auto">
+                <span className="text-sm text-white/20 group-hover:text-primary font-mono transition-colors">
                   Message on X →
                 </span>
               </a>
