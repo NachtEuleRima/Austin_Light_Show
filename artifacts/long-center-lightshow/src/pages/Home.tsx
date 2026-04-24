@@ -184,23 +184,13 @@ export default function Home() {
             </div>
             
             <div className="relative h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,255,255,0.07)_0%,transparent_70%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(138,43,226,0.2)_0%,transparent_70%)]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] animate-[spin_20s_linear_infinite] opacity-30">
+                <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent absolute top-1/2 -translate-y-1/2" />
+                <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
+              </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative flex items-center justify-center">
-                  {/* Outer pulse rings */}
-                  <div className="absolute w-72 h-72 rounded-full border border-primary/20 animate-ping" style={{animationDuration:'3s'}} />
-                  <div className="absolute w-56 h-56 rounded-full border border-secondary/20 animate-ping" style={{animationDuration:'2.2s',animationDelay:'0.5s'}} />
-                  {/* Tesla T logo SVG */}
-                  <svg viewBox="0 0 342 512" className="w-40 h-40 drop-shadow-[0_0_30px_rgba(0,255,255,0.9)]" style={{animation:'teslaFlash 1.8s ease-in-out infinite'}}>
-                    <style>{`
-                      @keyframes teslaFlash {
-                        0%,100% { filter: drop-shadow(0 0 20px #00FFFF) drop-shadow(0 0 60px #00FFFF); fill: #00FFFF; }
-                        50% { filter: drop-shadow(0 0 40px #FF00FF) drop-shadow(0 0 80px #FF00FF); fill: #FF00FF; }
-                      }
-                    `}</style>
-                    <path fill="#00FFFF" d="M0 0l42 106h84L85 512l171-320h-86l43-86H0zm171 0h171l-43 106h-84L171 0z"/>
-                  </svg>
-                </div>
+                <Car className="w-48 h-48 text-primary opacity-80 filter drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                 <p className="font-mono text-sm text-primary tracking-widest uppercase">System Sync // 100%</p>
