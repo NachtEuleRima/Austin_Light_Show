@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/long-center-lightshow/"
+title = "Tesla Lightshow at Long Center"
+version = "1.0.0"
+id = "artifacts/long-center-lightshow"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/long-center-lightshow/" ]
+localPort = 19341
+
+[services.development]
+run = "pnpm --filter @workspace/long-center-lightshow run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/long-center-lightshow", "run", "build" ]
+publicDir = "artifacts/long-center-lightshow/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19341"
+BASE_PATH = "/long-center-lightshow/"

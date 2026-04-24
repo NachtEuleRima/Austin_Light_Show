@@ -54,3 +54,9 @@ id = "sX3Df6YHK_A4zB0thkWu4"
 uri = "file://artifacts/tesla-lightshow/src/assets/giga-texas-bg.png"
 type = "image"
 title = "Giga Texas with Optimus robot background"
+
+[[generated]]
+id = "V9K3GpRu7AwsdPzF1vScr"
+uri = "file://artifacts/long-center-lightshow/src/assets/long-center-bg.png"
+type = "image"
+title = "Long Center Austin night background"
