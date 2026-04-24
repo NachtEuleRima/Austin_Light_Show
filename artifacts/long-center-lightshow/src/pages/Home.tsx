@@ -18,6 +18,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 10);
+  if (digits.length <= 3) return digits.length ? `(${digits}` : "";
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 const ROBOTS = [
   { value: "s3xy",       label: "S · 3 · X · Y",       sub: "The Classic Formation" },
   { value: "cybertruck", label: "Cybertruck 📐",  sub: "Pure Angles. Pure Steel." },
@@ -510,7 +517,14 @@ export default function Home() {
                           <FormItem>
                             <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Uplink <span className="text-white/30 normal-case tracking-normal">(optional)</span></FormLabel>
                             <FormControl>
-                              <Input type="tel" placeholder="+1 (512) 000-0000" {...field} className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="input-phone" />
+                              <Input
+                                type="tel"
+                                placeholder="(512) 000-0000"
+                                {...field}
+                                onChange={(e) => field.onChange(formatPhone(e.target.value))}
+                                className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg"
+                                data-testid="input-phone"
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
