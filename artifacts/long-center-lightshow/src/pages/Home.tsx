@@ -647,7 +647,7 @@ export default function Home() {
       {/* Scroll to top — pinned top-right */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed top-4 right-4 z-50 w-8 h-8 rounded-full border border-primary/50 bg-black/60 backdrop-blur-md flex items-center justify-center text-primary hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_10px_rgba(0,255,255,0.4)] transition-all duration-300"
+        className="fixed top-4 right-4 z-50 w-8 h-8 rounded-full border border-primary/70 bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary shadow-[0_0_8px_rgba(0,255,255,0.3)] hover:bg-primary/35 hover:border-primary hover:shadow-[0_0_16px_rgba(0,255,255,0.6)] transition-all duration-300"
         aria-label="Scroll to top"
       >
         <ChevronUp className="w-4 h-4" />
@@ -656,7 +656,7 @@ export default function Home() {
       {/* Scroll to bottom — pinned bottom-right */}
       <button
         onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
-        className="fixed bottom-4 right-4 z-50 w-8 h-8 rounded-full border border-primary/50 bg-black/60 backdrop-blur-md flex items-center justify-center text-primary hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_10px_rgba(0,255,255,0.4)] transition-all duration-300"
+        className="fixed bottom-4 right-4 z-50 w-8 h-8 rounded-full border border-primary/70 bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary shadow-[0_0_8px_rgba(0,255,255,0.3)] hover:bg-primary/35 hover:border-primary hover:shadow-[0_0_16px_rgba(0,255,255,0.6)] transition-all duration-300"
         aria-label="Scroll to bottom"
       >
         <ChevronDown className="w-4 h-4" />
