@@ -615,13 +615,13 @@ export default function Home() {
                     </svg>
                   </div>
                 </div>
-                {/* Info — left-aligned */}
-                <div className="flex flex-col gap-1">
+                {/* Info — centered */}
+                <div className="flex flex-col gap-1 text-center">
                   <p className="font-bold text-white text-xl leading-tight">{display}</p>
                   <p className="text-primary font-mono text-sm">@{username}</p>
                   <p className="text-white/40 text-sm mt-1">{role}</p>
                 </div>
-                <span className="text-sm text-white/20 group-hover:text-primary font-mono transition-colors">
+                <span className="text-sm text-white/20 group-hover:text-primary font-mono transition-colors text-center">
                   Message on X →
                 </span>
               </a>
