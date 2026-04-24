@@ -185,15 +185,12 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Tesla robots synchronized in a worldwide fantasy lightshow lighting up Austin's Long Center for one unforgettable night — headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony, transforming the Long Center into a living, breathing canvas of light.
-              </p>
-              <p className="text-white/50 text-sm md:text-base font-light tracking-widest">
-                choreographed by our legendary lightshow master&nbsp;
+                Tesla robots synchronized in a worldwide fantasy lightshow lighting up Austin's Long Center for one unforgettable night, choreographed by our legendary lightshow master&nbsp;
                 <a
                   href="https://xlightshows.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold tracking-wide transition-all duration-300 hover:opacity-80"
+                  className="font-bold transition-all duration-300 hover:opacity-80"
                   style={{
                     background: "linear-gradient(90deg, #00e5f5, #ff00ff, #ea8e2a)",
                     WebkitBackgroundClip: "text",
@@ -203,6 +200,7 @@ export default function Home() {
                 >
                   Simon Pollock
                 </a>
+                &nbsp;✨ headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony, transforming the Long Center into a living, breathing canvas of light.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
