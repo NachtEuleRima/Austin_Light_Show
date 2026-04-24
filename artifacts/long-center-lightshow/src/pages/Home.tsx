@@ -190,7 +190,9 @@ export default function Home() {
                 <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <Car className="w-48 h-48 text-primary opacity-80 filter drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group-hover:scale-110 transition-transform duration-700" />
+                <svg viewBox="0 0 342 512" className="w-48 h-48 opacity-80 fill-primary filter drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group-hover:scale-110 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0l42 106h84L85 512l171-320h-86l43-86H0zm171 0h171l-43 106h-84L171 0z"/>
+                </svg>
               </div>
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                 <p className="font-mono text-sm text-primary tracking-widest uppercase">System Sync // 100%</p>
