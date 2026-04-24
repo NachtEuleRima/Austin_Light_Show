@@ -137,6 +137,25 @@ export default function Home() {
             <span className="block text-lg md:text-3xl lg:text-4xl text-white mt-3 tracking-[0.15em]">Mothership Edition</span>
           </h1>
 
+          <p className="text-white/50 text-sm md:text-base font-light tracking-widest mt-4">
+            by our legendary lightshow master&nbsp;
+            <a
+              href="https://xlightshows.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold tracking-wide transition-all duration-300 hover:opacity-80"
+              style={{
+                background: "linear-gradient(90deg, #00e5f5, #ff00ff, #ea8e2a)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                textShadow: "none",
+                filter: "drop-shadow(0 0 8px rgba(0,229,245,0.6))",
+              }}
+            >
+              Simon Pollock
+            </a>
+          </p>
+
         </div>
 
         {/* Button — pinned to bottom of hero */}
