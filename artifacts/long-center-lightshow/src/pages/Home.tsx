@@ -20,7 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 const ROBOTS = [
   { value: "s3xy",       label: "S · 3 · X · Y",       sub: "The Classic Formation" },
   { value: "cybertruck", label: "Cybertruck 📐",  sub: "Pure Angles. Pure Steel." },
-  { value: "juniper",    label: "Model Y Juniper",      sub: "Solo Spotlight" },
+  { value: "juniper",    label: "Y Juniper",      sub: "Solo Spotlight" },
 ] as const;
 
 const rsvpSchema = z.object({
