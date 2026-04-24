@@ -132,7 +132,7 @@ export default function Home() {
             onClick={() => document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" })}
             data-testid="button-scroll-rsvp"
           >
-            RSVP <ChevronRight className="ml-2 w-5 h-5" />
+            Secure Your Spot <ChevronRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
 
