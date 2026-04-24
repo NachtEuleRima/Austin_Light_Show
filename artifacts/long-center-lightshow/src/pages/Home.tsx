@@ -326,12 +326,12 @@ export default function Home() {
                 </svg>
                 <span className="text-xs font-mono text-accent/60 uppercase border border-accent/20 px-2 py-1 rounded-sm">Act III</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3">Model Y Juniper</h3>
+              <h3 className="text-2xl font-bold mb-3">Juniper</h3>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 The refreshed Juniper takes a solo spotlight — sleeker face, ambient cabin glow, and an all-new light signature that turns the night air electric violet.
               </p>
               <div className="mt-6 flex gap-2 flex-wrap">
-                {["Model Y Juniper", "Solo Spotlight", "Ambient Glow"].map(m => (
+                {["Juniper", "Solo Spotlight", "Ambient Glow"].map(m => (
                   <span key={m} className="text-[10px] font-mono uppercase tracking-wider bg-accent/10 border border-accent/20 text-accent px-2 py-1 rounded-sm">{m}</span>
                 ))}
               </div>
