@@ -493,7 +493,7 @@ export default function Home() {
                           <span className="flex items-center gap-2">
                             <Zap className="w-5 h-5 animate-pulse" /> Transmitting...
                           </span>
-                        ) : "Confirm Access"}
+                        ) : "RSVP"}
                       </Button>
                     </form>
                   </Form>
