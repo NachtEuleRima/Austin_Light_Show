@@ -470,7 +470,7 @@ export default function Home() {
                                         </>
                                       ) : r.value === "cybertruck" ? (
                                         <>
-                                          <span style={{ color: "#C0C8D8" }}>Cyber</span><span style={{ color: "#7EC8E3" }}>truck</span><span style={{ color: "#A0D8EF" }}> 📐</span>
+                                          <span style={{color:"#C0C8D8"}}>C</span><span style={{color:"#7EC8E3"}}>y</span><span style={{color:"#A8D4E8"}}>b</span><span style={{color:"#90C4D8"}}>e</span><span style={{color:"#D0DCE8"}}>r</span><span style={{color:"#7EC8E3"}}>t</span><span style={{color:"#B8D0E0"}}>r</span><span style={{color:"#A0D8EF"}}>u</span><span style={{color:"#C8D8E8"}}>c</span><span style={{color:"#6CB8D4"}}>k</span><span style={{color:"#A0D8EF"}}> 📐</span>
                                         </>
 
                                       ) : r.value === "juniper" ? (
