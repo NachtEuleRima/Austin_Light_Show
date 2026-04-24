@@ -220,7 +220,7 @@ export default function Home() {
                 <Calendar className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-xl font-bold mb-2">The Date</h3>
-              <p className="text-muted-foreground text-sm font-light">April 24th, 2025<br/>One Night Only</p>
+              <p className="text-muted-foreground text-sm font-light">April 24th, 2026<br/>One Night Only</p>
             </div>
             
             <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent hover:border-accent/30 transition-colors group">
@@ -514,7 +514,7 @@ export default function Home() {
             <div className="w-1 h-4 bg-accent" />
           </div>
           <p className="text-white/40 font-mono text-sm tracking-[0.3em] uppercase">
-            SYSTEM_READY // AUSTIN_TX // LONG_CENTER_LIGHTSHOW_2025
+            SYSTEM_READY // AUSTIN_TX // LONG_CENTER_LIGHTSHOW_2026
           </p>
           <p className="text-white/20 text-xs mt-2 font-light">
             Not affiliated with Tesla, Inc. or Long Center for the Performing Arts.
