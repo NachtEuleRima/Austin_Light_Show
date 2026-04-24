@@ -457,7 +457,23 @@ export default function Home() {
                                   }`}
                                 >
                                   <div>
-                                    <p className={`font-bold text-sm tracking-wide ${field.value === r.value ? "text-primary" : "text-white"}`}>{r.label}</p>
+                                    <p className="font-bold text-sm tracking-wide">
+                                      {r.value === "s3xy" ? (
+                                        <>
+                                          <span style={{ color: "#89CFF0" }}>S</span>
+                                          <span className="text-white/40"> · </span>
+                                          <span style={{ color: "#FFFFFF" }}>3</span>
+                                          <span className="text-white/40"> · </span>
+                                          <span style={{ color: "#EF4444" }}>X</span>
+                                          <span className="text-white/40"> · </span>
+                                          <span style={{ color: "#60A5FA" }}>Y</span>
+                                        </>
+                                      ) : r.value === "cybertruck" ? (
+                                        <span style={{ color: "#B0B7C3" }}>Cybertruck 📐</span>
+                                      ) : r.value === "juniper" ? (
+                                        <span style={{ color: "#B0B7C3" }}>Juniper</span>
+                                      ) : r.label}
+                                    </p>
                                     <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider mt-0.5">{r.sub}</p>
                                   </div>
                                   <div className={`w-4 h-4 rounded-full border-2 shrink-0 transition-all ${field.value === r.value ? "border-primary bg-primary" : "border-white/20"}`} />
