@@ -365,41 +365,80 @@ export default function Home() {
 
       {/* 5. RSVP SECTION */}
       <section id="rsvp" className="py-32 relative z-20 bg-black/80">
-        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          
-          <div>
+        <style>{`
+          @keyframes neonFlickerCyan {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+              opacity: 1;
+              text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 80px #00FFFF, 0 0 120px #00FFFF;
+            }
+            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
+          }
+          @keyframes neonFlickerGold {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+              opacity: 1;
+              text-shadow: 0 0 4px #fff, 0 0 10px #ea8e2a, 0 0 30px #ea8e2a, 0 0 60px #ea8e2a;
+            }
+            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
+          }
+        `}</style>
+        <div className="max-w-5xl mx-auto px-6">
+          {/* Full-width header */}
+          <div className="mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-accent bg-accent/5 text-accent mb-6">
               <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-magenta">03 // Initialization</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight mb-6 leading-none">
-              Join The <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Frequency</span>
+            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight mb-4 leading-none">
+              Join The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Frequency</span>
             </h2>
-            <p className="text-muted-foreground mb-10 text-lg font-light">
+            <p className="text-muted-foreground text-lg font-light max-w-xl">
               Register your robot to join the largest synchronized worldwide lightshow in history.
             </p>
-            
-            <div className="space-y-8">
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center shrink-0 bg-primary/10 shadow-[0_0_15px_rgba(0,255,255,0.2)]">
-                  <span className="font-mono text-primary font-bold">01</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-1">Tune In</h4>
-                  <p className="text-muted-foreground text-sm">Fill out the form to lock in your frequency and claim your spot at the Long Center.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-full border border-secondary/50 flex items-center justify-center shrink-0 bg-secondary/10 shadow-[0_0_15px_rgba(255,0,255,0.2)]">
-                  <span className="font-mono text-secondary font-bold">02</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-1">Lock Your Signal</h4>
-                  <p className="text-muted-foreground text-sm">Your confirmation and venue details will be transmitted directly to your inbox.</p>
-                </div>
-              </div>
-            </div>
           </div>
+
+          {/* 2-col: Tech Support left, Form right */}
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+
+            {/* Left — Tech Support */}
+            <div className="flex flex-col gap-8">
+              <div>
+                <div className="inline-flex items-center gap-3 mb-3">
+                  <span className="text-3xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
+                  <span className="text-xl font-black font-mono tracking-[0.2em] uppercase text-primary" style={{ animation: "neonFlickerCyan 3s infinite" }}>TECH SUPPORT</span>
+                  <span className="text-3xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
+                </div>
+                <p className="text-white/40 text-sm">Have a question? Reach out below.</p>
+              </div>
+              {[{ username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website & technical inquiries" }].map(({ username, display, role }) => (
+                <a
+                  key={username}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                    if (isMobile) { window.location.href = `twitter://user?screen_name=${username}`; }
+                    else { window.open(`https://x.com/${username}`, "_blank", "noopener,noreferrer"); }
+                  }}
+                  className="group flex flex-col gap-4 p-7 rounded-3xl border border-white/5 hover:border-primary/50 hover:shadow-[0_0_24px_rgba(0,255,255,0.12)] transition-all duration-300 w-72"
+                  style={{ background: "#0d1117" }}
+                >
+                  <div className="flex justify-center">
+                    <div className="w-20 h-20 rounded-full border-2 border-white/10 group-hover:border-primary/50 transition-colors overflow-hidden relative flex items-center justify-center bg-white/5">
+                      <img src={`https://unavatar.io/twitter/${username}`} alt={username} className="w-full h-full object-cover absolute inset-0"
+                        onError={(e) => { e.currentTarget.style.display = "none"; (e.currentTarget.nextSibling as HTMLElement).style.display = "block"; }} />
+                      <svg viewBox="0 0 24 24" className="hidden w-8 h-8 fill-white/30" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-1 text-center">
+                    <p className="font-bold text-white text-xl leading-tight">{display}</p>
+                    <p className="text-primary font-mono text-sm">@{username}</p>
+                    <p className="text-white/40 text-sm mt-1">{role}</p>
+                  </div>
+                  <span className="text-sm text-white/20 group-hover:text-primary font-mono transition-colors text-center">Message on X →</span>
+                </a>
+              ))}
+            </div>
 
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/10 to-accent/30 blur-3xl -z-10 rounded-[3rem]" />
@@ -550,100 +589,6 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
-
-      {/* TECH SUPPORT SECTION */}
-      <section className="py-16 border-t border-white/10 relative z-20 bg-background">
-        <style>{`
-          @keyframes neonFlickerCyan {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-              opacity: 1;
-              text-shadow:
-                0 0 4px #fff,
-                0 0 10px #fff,
-                0 0 20px #00FFFF,
-                0 0 40px #00FFFF,
-                0 0 80px #00FFFF,
-                0 0 120px #00FFFF;
-            }
-            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
-          }
-          @keyframes neonFlickerGold {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-              opacity: 1;
-              text-shadow:
-                0 0 4px #fff,
-                0 0 10px #ea8e2a,
-                0 0 30px #ea8e2a,
-                0 0 60px #ea8e2a;
-            }
-            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
-          }
-        `}</style>
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-3">
-              <span className="text-3xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
-              <span
-                className="text-2xl md:text-3xl font-black font-mono tracking-[0.25em] uppercase text-primary"
-                style={{ animation: "neonFlickerCyan 3s infinite" }}
-              >
-                TECH SUPPORT
-              </span>
-              <span className="text-3xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
-            </div>
-            <p className="text-white/40 mt-3 text-sm">
-              Have a question? Reach out to the right person below.
-            </p>
-          </div>
-          <div className="flex justify-center max-w-2xl mx-auto">
-            {[
-              { username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website & technical inquiries" },
-            ].map(({ username, display, role }) => (
-              <a
-                key={username}
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                  if (isMobile) {
-                    window.location.href = `twitter://user?screen_name=${username}`;
-                  } else {
-                    window.open(`https://x.com/${username}`, "_blank", "noopener,noreferrer");
-                  }
-                }}
-                className="group flex flex-col gap-4 p-7 rounded-3xl border border-white/5 hover:border-primary/50 hover:shadow-[0_0_24px_rgba(0,255,255,0.12)] transition-all duration-300 w-72"
-                style={{ background: "#0d1117" }}
-              >
-                {/* Avatar — centered */}
-                <div className="flex justify-center">
-                  <div className="w-20 h-20 rounded-full border-2 border-white/10 group-hover:border-primary/50 transition-colors overflow-hidden relative flex items-center justify-center bg-white/5">
-                    <img
-                      src={`https://unavatar.io/twitter/${username}`}
-                      alt={username}
-                      className="w-full h-full object-cover absolute inset-0"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                        (e.currentTarget.nextSibling as HTMLElement).style.display = "block";
-                      }}
-                    />
-                    <svg viewBox="0 0 24 24" className="hidden w-8 h-8 fill-white/30" aria-hidden="true">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  </div>
-                </div>
-                {/* Info — centered */}
-                <div className="flex flex-col gap-1 text-center">
-                  <p className="font-bold text-white text-xl leading-tight">{display}</p>
-                  <p className="text-primary font-mono text-sm">@{username}</p>
-                  <p className="text-white/40 text-sm mt-1">{role}</p>
-                </div>
-                <span className="text-sm text-white/20 group-hover:text-primary font-mono transition-colors text-center">
-                  Message on X →
-                </span>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
