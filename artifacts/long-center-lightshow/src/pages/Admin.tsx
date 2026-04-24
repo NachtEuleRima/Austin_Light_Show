@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useListRsvps } from "@workspace/api-client-react";
 import { Lock, Eye, EyeOff, ShieldAlert, Download } from "lucide-react";
 
-const ADMIN_PASSWORD = "lightshow2026";
+const ADMIN_PASSWORD = "cyberowlcanaccess";
 
 const ROBOT_LABELS: Record<string, string> = {
   s3xy: "S·3·X·Y",
