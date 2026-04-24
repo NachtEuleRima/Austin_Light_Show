@@ -579,10 +579,9 @@ export default function Home() {
               Have a question? Reach out to the right person below.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="flex justify-center max-w-2xl mx-auto">
             {[
               { username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website & technical inquiries" },
-              { username: "koby_pierce",  display: "Koby Pierce",      role: "NAS gift inquiries" },
             ].map(({ username, display, role }) => (
               <a
                 key={username}
