@@ -398,31 +398,9 @@ export default function Home() {
           {/* 2-col: Tech Support left, Form right */}
           <div className="grid md:grid-cols-2 gap-16 items-start">
 
-            {/* Left — Steps + Tech Support */}
+            {/* Left — Tech Support */}
             <div className="flex flex-col gap-8">
-
-              <div className="space-y-8">
-                <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center shrink-0 bg-primary/10 shadow-[0_0_15px_rgba(0,255,255,0.2)]">
-                    <span className="font-mono text-primary font-bold">01</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl mb-1">Tune In</h4>
-                    <p className="text-muted-foreground text-sm">Fill out the form to lock in your frequency and claim your spot at the Long Center.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-full border border-secondary/50 flex items-center justify-center shrink-0 bg-secondary/10 shadow-[0_0_15px_rgba(255,0,255,0.2)]">
-                    <span className="font-mono text-secondary font-bold">02</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl mb-1">Lock Your Signal</h4>
-                    <p className="text-muted-foreground text-sm">Your confirmation and venue details will be transmitted directly to your inbox.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border-t border-white/10 pt-8">
+              <div>
                 <div className="inline-flex items-center gap-3 mb-3">
                   <span className="text-3xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
                   <span className="text-xl font-black font-mono tracking-[0.2em] uppercase text-primary" style={{ animation: "neonFlickerCyan 3s infinite" }}>TECH SUPPORT</span>
