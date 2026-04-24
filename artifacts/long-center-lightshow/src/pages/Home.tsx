@@ -392,7 +392,7 @@ export default function Home() {
             20%, 24%, 55% { opacity: 0.4; text-shadow: none; }
           }
         `}</style>
-        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-y-8 md:gap-16">
 
           {/* 03 content — mobile order 1, desktop col 1 row 1 */}
           <div className="order-1 md:order-none md:col-start-1">
