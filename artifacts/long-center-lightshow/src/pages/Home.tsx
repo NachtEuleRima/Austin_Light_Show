@@ -419,7 +419,7 @@ export default function Home() {
 
             {/* Tech Support — pinned to bottom of left column */}
             <div className="mt-auto pt-10">
-              <div className="border-t border-white/10 pt-8">
+              <div className="border-t border-white/10 pt-8 flex flex-col items-center text-center">
                 <div className="inline-flex items-center gap-3 mb-2">
                   <span className="text-2xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
                   <span className="text-base font-black font-mono tracking-[0.2em] uppercase text-primary" style={{ animation: "neonFlickerCyan 3s infinite" }}>TECH SUPPORT</span>
