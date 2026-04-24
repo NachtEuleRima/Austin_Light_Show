@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
-import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
+import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import longCenterBg from "../assets/long-center-bg.png";
 import cybercabImg from "../assets/cybercab.png";
 import americanFlagImg from "../assets/american-flag.png";
@@ -147,17 +147,21 @@ export default function Home() {
             onClick={() => document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" })}
             data-testid="button-scroll-rsvp"
           >
-            Secure Your Spot <ChevronRight className="ml-2 w-5 h-5" />
+            <ChevronLeft className="mr-2 w-5 h-5" /> Secure Your Spot
           </Button>
         </div>
 
-        {/* Flags top-right */}
-        <div className="absolute top-6 right-16 z-30 flex gap-3 items-center">
+        {/* Texas flag — top-left */}
+        <div className="absolute top-6 left-6 z-30">
           <img
             src={texasFlagImg}
             alt="Texas Flag"
             className="w-16 h-12 object-cover rounded shadow-[0_0_14px_rgba(0,255,255,0.4)] border border-white/10"
           />
+        </div>
+
+        {/* American flag — top-right */}
+        <div className="absolute top-6 right-6 z-30">
           <img
             src={americanFlagImg}
             alt="American Flag"
