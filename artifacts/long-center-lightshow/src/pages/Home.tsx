@@ -390,7 +390,7 @@ export default function Home() {
         `}</style>
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
 
-          <div className="flex flex-col justify-center h-full gap-14">
+          <div className="flex flex-col justify-center h-full gap-8">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-accent bg-accent/5 text-accent mb-6">
                 <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-magenta">03 // Initialization</span>
