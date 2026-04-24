@@ -427,19 +427,21 @@ export default function Home() {
             {/* Tech Support — bottom of left column */}
             <div>
               <div className="border-t border-white/10 pt-8 flex flex-col items-center text-center">
-                <span style={{
-                  display: "inline-block",
-                  fontSize: "clamp(1.25rem, 4vw, 1.75rem)",
-                  fontWeight: 900,
-                  fontFamily: "monospace",
-                  letterSpacing: "0.25em",
-                  textTransform: "uppercase",
-                  color: "#00e5f5",
-                  animation: "neonFlicker 3s infinite",
-                  marginBottom: 8,
-                }}>
-                  ⚡ TECH SUPPORT ⚡
-                </span>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                  <span style={{ fontSize: "1.5rem", color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
+                  <span style={{
+                    fontSize: "clamp(1.25rem, 4vw, 1.75rem)",
+                    fontWeight: 900,
+                    fontFamily: "monospace",
+                    letterSpacing: "0.25em",
+                    textTransform: "uppercase",
+                    color: "#00e5f5",
+                    animation: "neonFlicker 3s infinite",
+                  }}>
+                    TECH SUPPORT
+                  </span>
+                  <span style={{ fontSize: "1.5rem", color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
+                </div>
                 <p className="text-white/40 text-sm mb-5">Have a question? Reach out below.</p>
                 {[{ username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website and event inquiries" }].map(({ username, display, role }) => (
                   <a
