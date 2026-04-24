@@ -493,7 +493,7 @@ export default function Home() {
                                         </>
 
                                       ) : r.value === "juniper" ? (
-                                        <span style={{background:"linear-gradient(90deg, #00FFFF, #FF00FF)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>Juniper</span>
+                                        <span style={{background:"linear-gradient(90deg, #39FF14, #00E5B0, #7FFF00)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>Juniper</span>
                                       ) : r.label}
                                     </p>
                                     <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider mt-0.5">{r.sub}</p>
