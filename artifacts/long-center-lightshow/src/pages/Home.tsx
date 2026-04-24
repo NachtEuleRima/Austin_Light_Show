@@ -595,7 +595,7 @@ export default function Home() {
                     window.open(`https://x.com/${username}`, "_blank", "noopener,noreferrer");
                   }
                 }}
-                className="group flex flex-col gap-4 p-7 rounded-3xl border border-white/5 hover:border-primary/50 hover:shadow-[0_0_24px_rgba(0,255,255,0.12)] transition-all duration-300"
+                className="group flex flex-col gap-4 p-7 rounded-3xl border border-white/5 hover:border-primary/50 hover:shadow-[0_0_24px_rgba(0,255,255,0.12)] transition-all duration-300 w-72"
                 style={{ background: "#0d1117" }}
               >
                 {/* Avatar — centered */}
