@@ -567,23 +567,23 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Floating scroll buttons */}
-      <div className="fixed right-4 bottom-8 z-50 flex flex-col gap-2">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className={`w-10 h-10 rounded-full border border-primary/40 bg-black/70 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-primary/20 hover:border-primary transition-all duration-300 ${scrollY > 200 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}
-          aria-label="Scroll to top"
-        >
-          <ChevronUp className="w-5 h-5" />
-        </button>
-        <button
-          onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
-          className={`w-10 h-10 rounded-full border border-primary/40 bg-black/70 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-primary/20 hover:border-primary transition-all duration-300 ${scrollY < document.body.scrollHeight - window.innerHeight - 200 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}
-          aria-label="Scroll to bottom"
-        >
-          <ChevronDown className="w-5 h-5" />
-        </button>
-      </div>
+      {/* Scroll to top — pinned top-center */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-11 h-11 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 ${scrollY > 200 ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        aria-label="Scroll to top"
+      >
+        <ChevronUp className="w-5 h-5" />
+      </button>
+
+      {/* Scroll to bottom — pinned bottom-center */}
+      <button
+        onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
+        className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-11 h-11 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 ${scrollY < document.body.scrollHeight - window.innerHeight - 200 ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        aria-label="Scroll to bottom"
+      >
+        <ChevronDown className="w-5 h-5" />
+      </button>
     </div>
   );
 }
