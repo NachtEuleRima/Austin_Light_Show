@@ -3,6 +3,8 @@ import { eq, count } from "drizzle-orm";
 import { db, rsvpsTable } from "@workspace/db";
 import { CreateRsvpBody } from "@workspace/api-zod";
 
+const ADMIN_PASSWORD = "cyberowlcanaccess";
+
 const router: IRouter = Router();
 
 router.get("/rsvps", async (req, res): Promise<void> => {
@@ -44,6 +46,16 @@ router.post("/rsvps", async (req, res): Promise<void> => {
 
   req.log.info({ rsvpId: rsvp.id }, "RSVP created");
   res.status(201).json(rsvp);
+});
+
+router.delete("/rsvps/all", async (req, res): Promise<void> => {
+  if (req.headers["x-admin-password"] !== ADMIN_PASSWORD) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+  await db.delete(rsvpsTable);
+  req.log.info("All RSVPs cleared by admin");
+  res.json({ success: true });
 });
 
 export default router;

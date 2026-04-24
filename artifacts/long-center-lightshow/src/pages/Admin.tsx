@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useListRsvps } from "@workspace/api-client-react";
-import { Lock, Eye, EyeOff, ShieldAlert, Download } from "lucide-react";
+import { Lock, Eye, EyeOff, ShieldAlert, Download, Trash2 } from "lucide-react";
 
 const ADMIN_PASSWORD = "cyberowlcanaccess";
 
@@ -60,6 +60,23 @@ export default function Admin() {
     a.download = "long-center-rsvps.csv";
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  const [clearing, setClearing] = useState(false);
+
+  async function clearAllRsvps() {
+    if (!confirm("Delete ALL RSVPs? This cannot be undone.")) return;
+    setClearing(true);
+    try {
+      const base = import.meta.env.BASE_URL ?? "/";
+      await fetch(`${base}api/rsvps/all`, {
+        method: "DELETE",
+        headers: { "x-admin-password": ADMIN_PASSWORD },
+      });
+      await refetch();
+    } finally {
+      setClearing(false);
+    }
   }
 
   const filtered = data?.rsvps?.filter((r) => {
@@ -142,6 +159,13 @@ export default function Admin() {
               className="px-4 py-2 text-xs font-mono border border-primary/30 rounded-lg text-primary hover:bg-primary/10 transition-all tracking-widest uppercase flex items-center gap-2"
             >
               <Download className="w-3 h-3" /> CSV
+            </button>
+            <button
+              onClick={clearAllRsvps}
+              disabled={clearing}
+              className="px-4 py-2 text-xs font-mono border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 hover:border-red-500/60 transition-all tracking-widest uppercase flex items-center gap-2 disabled:opacity-50"
+            >
+              <Trash2 className="w-3 h-3" /> {clearing ? "Clearing…" : "Clear All"}
             </button>
             <button
               onClick={handleLogout}
