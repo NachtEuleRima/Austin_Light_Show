@@ -123,7 +123,7 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light tracking-wide mb-12 drop-shadow-md">
-            Witness the synchronized spectacle. Hundreds of Tesla vehicles light up the Long Center — Austin's iconic waterfront venue — for one unforgettable night.
+            Tesla robots synchronized in a worldwide fantasy lightshow — lighting up Austin's iconic Long Center for one unforgettable night.
           </p>
 
           <Button
@@ -166,7 +166,7 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Hundreds of Tesla vehicles synchronized to a custom master track. Headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony with the music, transforming the Long Center into a living, breathing canvas of light.
+                Tesla robots synchronized to a custom sequence — headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony. Part of the Worldwide Fantasy Lightshow, transforming the Long Center into a living, breathing canvas of light.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
