@@ -365,7 +365,7 @@ export default function Home() {
 
       {/* 5. RSVP SECTION */}
       <section id="rsvp" className="py-32 relative z-20 bg-black/80">
-        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
 
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-accent bg-accent/5 text-accent mb-6">
