@@ -474,10 +474,7 @@ export default function Home() {
                                         </>
 
                                       ) : r.value === "juniper" ? (
-                                        <span className="flex flex-col gap-[4px]">
-                                          <span style={{background:"linear-gradient(90deg, #00FFFF, #FF00FF)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>Juniper</span>
-                                          <span style={{display:"block",height:"2px",background:"linear-gradient(90deg, transparent, #00FFFF 20%, #FF00FF 50%, #00FFFF 80%, transparent)",boxShadow:"0 0 6px #00FFFF, 0 0 10px #FF00FF",borderRadius:"2px"}} />
-                                        </span>
+                                        <span style={{background:"linear-gradient(90deg, #00FFFF, #FF00FF)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>Juniper</span>
                                       ) : r.label}
                                     </p>
                                     <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider mt-0.5">{r.sub}</p>
