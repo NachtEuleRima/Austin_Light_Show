@@ -247,10 +247,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-primary bg-primary/5 text-primary mb-6">
-              <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-cyan">02 // The Shows</span>
+              <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-cyan">02 // The Fleet</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
-              Three <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Acts</span>
+              Supported <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Robots</span>
             </h2>
           </div>
 
