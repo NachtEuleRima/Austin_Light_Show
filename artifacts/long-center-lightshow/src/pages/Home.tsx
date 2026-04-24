@@ -173,7 +173,7 @@ export default function Home() {
                 <div className="p-6 border border-white/5 bg-white/[0.01] rounded-xl hover:bg-white/[0.03] transition-all">
                   <Volume2 className="w-8 h-8 text-primary mb-4" />
                   <h4 className="text-lg font-bold mb-2">Immersive Audio</h4>
-                  <p className="text-sm text-muted-foreground">Custom mixed track broadcasted across the circuit's PA system and directly into vehicles.</p>
+                  <p className="text-sm text-muted-foreground">Custom mixed track broadcasted across the venue's PA system and directly into vehicles.</p>
                 </div>
                 <div className="p-6 border border-white/5 bg-white/[0.01] rounded-xl hover:bg-white/[0.03] transition-all">
                   <Zap className="w-8 h-8 text-secondary mb-4" />
@@ -350,7 +350,7 @@ export default function Home() {
               <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-magenta">03 // Initialization</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight mb-6 leading-none">
-              Join The <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Circuit</span>
+              Join The <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Grid</span>
             </h2>
             <p className="text-muted-foreground mb-10 text-lg font-light">
               Space on the grid is limited. Register your vehicle or RSVP as a spectator to witness the largest synchronized lightshow in Texas history.
