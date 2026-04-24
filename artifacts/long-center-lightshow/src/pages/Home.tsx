@@ -83,23 +83,19 @@ export default function Home() {
             src={longCenterBg}
             alt="Tesla lightshow at Long Center Austin"
             className="w-full h-full object-cover object-bottom"
-            style={{ filter: 'brightness(0.45) saturate(1.8) contrast(1.15)' }}
+            style={{ filter: 'brightness(0.6) saturate(1.1)' }}
           />
           {/* Dark gradient top + bottom vignette */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to bottom, rgba(0,4,14,0.75) 0%, rgba(0,4,12,0.1) 35%, rgba(0,0,0,0.72) 100%)'
+            background: 'linear-gradient(to bottom, rgba(0,4,14,0.7) 0%, rgba(0,4,12,0.05) 40%, rgba(0,0,0,0.65) 100%)'
           }} />
-          {/* Cyan neon glow — bottom where the cars are */}
+          {/* Subtle cyan glow near the cars */}
           <div className="absolute inset-0 mix-blend-screen" style={{
-            background: 'radial-gradient(ellipse 90% 50% at 30% 95%, rgba(0,255,255,0.18) 0%, transparent 65%)'
+            background: 'radial-gradient(ellipse 80% 40% at 25% 100%, rgba(0,255,255,0.10) 0%, transparent 60%)'
           }} />
-          {/* Magenta glow — right side / skyline */}
+          {/* Subtle magenta on the skyline side */}
           <div className="absolute inset-0 mix-blend-screen" style={{
-            background: 'radial-gradient(ellipse 70% 60% at 80% 70%, rgba(255,0,200,0.14) 0%, transparent 60%)'
-          }} />
-          {/* Subtle blue tint across the whole frame */}
-          <div className="absolute inset-0 mix-blend-color" style={{
-            background: 'rgba(0,20,60,0.35)'
+            background: 'radial-gradient(ellipse 60% 50% at 80% 65%, rgba(255,0,180,0.08) 0%, transparent 55%)'
           }} />
         </div>
 
