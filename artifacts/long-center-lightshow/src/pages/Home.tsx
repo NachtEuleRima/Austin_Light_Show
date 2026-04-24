@@ -190,21 +190,25 @@ export default function Home() {
                 <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <svg viewBox="0 0 200 90" className="w-72 h-36 opacity-80 filter drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group-hover:scale-110 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
-                  {/* Car body */}
-                  <path fill="currentColor" className="text-primary" d="M18,62 L18,50 Q22,36 42,27 Q58,18 82,17 Q118,16 136,17 Q158,18 170,28 Q180,36 183,50 L183,62 Q175,64 155,65 Q130,66 100,66 Q70,66 45,65 Q25,64 18,62 Z"/>
-                  {/* Windshield + roofline */}
-                  <path fill="rgba(0,255,255,0.3)" d="M44,27 Q60,14 82,13 Q118,12 136,13 Q155,15 164,27 Z"/>
-                  {/* Left wheel */}
-                  <circle cx="47" cy="66" r="14" fill="#0a0a0a" stroke="currentColor" strokeWidth="3" className="text-primary"/>
-                  <circle cx="47" cy="66" r="6" fill="currentColor" className="text-primary" opacity="0.5"/>
-                  {/* Right wheel */}
-                  <circle cx="153" cy="66" r="14" fill="#0a0a0a" stroke="currentColor" strokeWidth="3" className="text-primary"/>
-                  <circle cx="153" cy="66" r="6" fill="currentColor" className="text-primary" opacity="0.5"/>
-                  {/* Headlight */}
-                  <rect x="178" y="46" width="8" height="4" rx="2" fill="#00FFFF" opacity="0.9"/>
-                  {/* Taillight */}
-                  <rect x="14" y="46" width="8" height="4" rx="2" fill="#FF00FF" opacity="0.9"/>
+                <svg viewBox="0 0 220 100" className="w-80 h-40 opacity-90 filter drop-shadow-[0_0_24px_rgba(0,255,255,0.6)] group-hover:scale-110 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
+                  {/* Cybercab body — very low pod-like coupe */}
+                  <path fill="#00FFFF" opacity="0.85" d="M22,68 L22,55 Q26,42 48,32 Q68,20 100,19 Q132,19 158,28 Q178,36 192,50 L196,60 L196,68 Q178,70 155,71 Q128,72 100,72 Q72,72 45,71 Q28,70 22,68 Z"/>
+                  {/* Canopy / glass bubble roof */}
+                  <path fill="rgba(0,255,255,0.2)" stroke="#00FFFF" strokeWidth="1" d="M50,32 Q70,16 100,15 Q130,15 156,28 Z"/>
+                  {/* Butterfly door line (visible crease on side) */}
+                  <path fill="none" stroke="rgba(0,0,0,0.4)" strokeWidth="1.5" d="M90,19 Q95,35 93,68"/>
+                  {/* Stretched front light bar */}
+                  <rect x="190" y="52" width="10" height="3" rx="1.5" fill="#00FFFF" opacity="1" filter="url(#glow)"/>
+                  {/* Stretched rear light bar */}
+                  <rect x="16" y="52" width="10" height="3" rx="1.5" fill="#FF00FF" opacity="1"/>
+                  {/* Front wheel */}
+                  <circle cx="160" cy="72" r="15" fill="#050505" stroke="#00FFFF" strokeWidth="2.5"/>
+                  <circle cx="160" cy="72" r="6" fill="#00FFFF" opacity="0.4"/>
+                  {/* Rear wheel */}
+                  <circle cx="52" cy="72" r="15" fill="#050505" stroke="#00FFFF" strokeWidth="2.5"/>
+                  <circle cx="52" cy="72" r="6" fill="#00FFFF" opacity="0.4"/>
+                  {/* Camera nub (no mirrors) */}
+                  <rect x="183" y="44" width="5" height="3" rx="1" fill="#00FFFF" opacity="0.6"/>
                 </svg>
               </div>
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
