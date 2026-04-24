@@ -472,7 +472,7 @@ export default function Home() {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Phone <span className="text-white/30 normal-case tracking-normal">(optional)</span></FormLabel>
+                            <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Uplink <span className="text-white/30 normal-case tracking-normal">(optional)</span></FormLabel>
                             <FormControl>
                               <Input type="tel" placeholder="+1 (512) 000-0000" {...field} className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="input-phone" />
                             </FormControl>
