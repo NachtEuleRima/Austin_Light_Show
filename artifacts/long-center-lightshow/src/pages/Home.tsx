@@ -451,7 +451,7 @@ export default function Home() {
                       <p className="text-primary font-mono text-xs">@{username}</p>
                       <p className="text-white/40 text-xs mt-0.5">{role}</p>
                     </div>
-                    <span className="text-xs text-white/20 group-hover:text-primary font-mono transition-colors ml-auto shrink-0">→ X</span>
+                    <span className="text-sm text-primary/60 group-hover:text-primary font-mono font-bold tracking-wider transition-colors ml-auto shrink-0">→ X</span>
                   </a>
                 ))}
               </div>
