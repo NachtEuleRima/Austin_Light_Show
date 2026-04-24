@@ -18,6 +18,7 @@ export interface CreateRsvpBody {
    * @maximum 10
    */
   guests: number;
+  robot?: "s3xy" | "cybertruck" | "juniper";
   /** @maxLength 500 */
   message?: string;
 }

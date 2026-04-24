@@ -7,6 +7,7 @@ export const rsvpsTable = pgTable("rsvps", {
   name: text("name").notNull(),
   email: text("email").notNull().unique(),
   guests: integer("guests").notNull().default(1),
+  robot: text("robot"),
   message: text("message"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });

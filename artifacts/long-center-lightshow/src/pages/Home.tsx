@@ -17,10 +17,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
+const ROBOTS = [
+  { value: "s3xy",       label: "S · 3 · X · Y",       sub: "The Classic Formation" },
+  { value: "cybertruck", label: "Cybertruck Triangle",  sub: "Pure Angles. Pure Steel." },
+  { value: "juniper",    label: "Model Y Juniper",      sub: "Solo Spotlight" },
+] as const;
+
 const rsvpSchema = z.object({
   name: z.string().min(1, "Name is required").max(100),
   email: z.string().email("Invalid email address"),
   guests: z.coerce.number().min(1).max(10),
+  robot: z.enum(["s3xy", "cybertruck", "juniper"]).optional(),
   message: z.string().max(500).optional(),
 });
 
@@ -449,6 +456,37 @@ export default function Home() {
                                 ))}
                               </SelectContent>
                             </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="robot"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Your Robot (Select One)</FormLabel>
+                            <div className="grid grid-cols-1 gap-2 mt-1">
+                              {ROBOTS.map((r) => (
+                                <button
+                                  key={r.value}
+                                  type="button"
+                                  onClick={() => field.onChange(r.value)}
+                                  className={`flex items-center justify-between px-4 py-3 rounded-xl border text-left transition-all ${
+                                    field.value === r.value
+                                      ? "border-primary bg-primary/10 shadow-[0_0_12px_rgba(0,255,255,0.25)]"
+                                      : "border-white/10 bg-black/40 hover:border-white/30 hover:bg-white/5"
+                                  }`}
+                                >
+                                  <div>
+                                    <p className={`font-bold text-sm tracking-wide ${field.value === r.value ? "text-primary" : "text-white"}`}>{r.label}</p>
+                                    <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider mt-0.5">{r.sub}</p>
+                                  </div>
+                                  <div className={`w-4 h-4 rounded-full border-2 shrink-0 transition-all ${field.value === r.value ? "border-primary bg-primary" : "border-white/20"}`} />
+                                </button>
+                              ))}
+                            </div>
                             <FormMessage />
                           </FormItem>
                         )}
