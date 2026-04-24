@@ -474,10 +474,8 @@ export default function Home() {
                                         </>
 
                                       ) : r.value === "juniper" ? (
-                                        <span className="flex flex-col gap-[3px]">
-                                          <span className="flex items-center gap-[1px] leading-none">
-                                            <span style={{color:"#00FFFF"}}>J</span><span style={{color:"#22E5FF"}}>u</span><span style={{color:"#FF00FF"}}>n</span><span style={{color:"#00FFFF"}}>i</span><span style={{color:"#FF44FF"}}>p</span><span style={{color:"#00E5FF"}}>e</span><span style={{color:"#FF00FF"}}>r</span>
-                                          </span>
+                                        <span className="flex flex-col gap-[4px]">
+                                          <span style={{background:"linear-gradient(90deg, #00FFFF, #FF00FF)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>Juniper</span>
                                           <span style={{display:"block",height:"2px",background:"linear-gradient(90deg, transparent, #00FFFF 20%, #FF00FF 50%, #00FFFF 80%, transparent)",boxShadow:"0 0 6px #00FFFF, 0 0 10px #FF00FF",borderRadius:"2px"}} />
                                         </span>
                                       ) : r.label}
