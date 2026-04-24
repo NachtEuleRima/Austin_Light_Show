@@ -558,22 +558,39 @@ export default function Home() {
           @keyframes neonFlickerCyan {
             0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
               opacity: 1;
-              text-shadow: 0 0 8px #00FFFF, 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+              text-shadow:
+                0 0 4px #fff,
+                0 0 10px #fff,
+                0 0 20px #00FFFF,
+                0 0 40px #00FFFF,
+                0 0 80px #00FFFF,
+                0 0 120px #00FFFF;
             }
-            20%, 24%, 55% { opacity: 0.4; text-shadow: none; }
+            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
+          }
+          @keyframes neonFlickerGold {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+              opacity: 1;
+              text-shadow:
+                0 0 4px #fff,
+                0 0 10px #ea8e2a,
+                0 0 30px #ea8e2a,
+                0 0 60px #ea8e2a;
+            }
+            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
           }
         `}</style>
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-3">
-              <span style={{ color: "#ea8e2a", animation: "neonFlickerCyan 3s infinite" }}>⚡</span>
+              <span className="text-3xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
               <span
                 className="text-2xl md:text-3xl font-black font-mono tracking-[0.25em] uppercase text-primary"
                 style={{ animation: "neonFlickerCyan 3s infinite" }}
               >
                 TECH SUPPORT
               </span>
-              <span style={{ color: "#ea8e2a", animation: "neonFlickerCyan 3s infinite" }}>⚡</span>
+              <span className="text-3xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
             </div>
             <p className="text-white/40 mt-3 text-sm">
               Have a question? Reach out to the right person below.
