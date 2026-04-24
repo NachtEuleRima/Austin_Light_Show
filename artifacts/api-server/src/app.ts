@@ -29,6 +29,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (_req, res) => {
+  res.redirect(301, "/long-center-lightshow/");
+});
+
 app.use("/api", router);
 
 export default app;
