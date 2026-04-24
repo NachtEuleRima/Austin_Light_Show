@@ -83,11 +83,11 @@ export default function Home() {
             src={longCenterBg}
             alt="Tesla lightshow at Long Center Austin"
             className="w-full h-full object-cover object-center"
-            style={{ filter: 'brightness(0.5) saturate(1.3) contrast(1.05)' }}
+            style={{ filter: 'brightness(0.78) saturate(1.4) contrast(1.05)' }}
           />
           {/* Dark gradient top + bottom vignette */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to bottom, rgba(0,4,14,0.7) 0%, rgba(0,4,12,0.05) 40%, rgba(0,0,0,0.65) 100%)'
+            background: 'linear-gradient(to bottom, rgba(0,4,14,0.55) 0%, rgba(0,4,12,0.0) 35%, rgba(0,0,0,0.45) 100%)'
           }} />
           {/* Subtle cyan glow near the cars */}
           <div className="absolute inset-0 mix-blend-screen" style={{
