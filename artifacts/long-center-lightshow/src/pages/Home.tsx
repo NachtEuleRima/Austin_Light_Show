@@ -137,24 +137,6 @@ export default function Home() {
             <span className="block text-lg md:text-3xl lg:text-4xl text-white mt-3 tracking-[0.15em]">Mothership Edition</span>
           </h1>
 
-          <p className="text-white/50 text-sm md:text-base font-light tracking-widest mt-4">
-            by our legendary lightshow master&nbsp;
-            <a
-              href="https://xlightshows.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold tracking-wide transition-all duration-300 hover:opacity-80"
-              style={{
-                background: "linear-gradient(90deg, #00e5f5, #ff00ff, #ea8e2a)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                filter: "drop-shadow(0 0 8px rgba(0,229,245,0.6))",
-              }}
-            >
-              Simon Pollock
-            </a>
-          </p>
-
         </div>
 
         {/* Button — pinned to bottom of hero */}
@@ -202,6 +184,23 @@ export default function Home() {
               <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-tight">
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
+              <p className="text-white/50 text-sm md:text-base font-light tracking-widest">
+                by our legendary lightshow master&nbsp;
+                <a
+                  href="https://xlightshows.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold tracking-wide transition-all duration-300 hover:opacity-80"
+                  style={{
+                    background: "linear-gradient(90deg, #00e5f5, #ff00ff, #ea8e2a)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    filter: "drop-shadow(0 0 8px rgba(0,229,245,0.6))",
+                  }}
+                >
+                  Simon Pollock
+                </a>
+              </p>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
                 Tesla robots synchronized in a worldwide fantasy lightshow lighting up Austin's Long Center for one unforgettable night — headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony, transforming the Long Center into a living, breathing canvas of light.
               </p>
