@@ -104,7 +104,7 @@ export default function Home() {
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-8vh]">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-float shadow-[0_0_15px_rgba(0,255,255,0.2)] backdrop-blur-sm">
             <Zap className="w-4 h-4" />
-            <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold">LONG CENTER x TESLA // APR 24</span>
+            <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold">AUSTIN x TESLA // APR 24</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
