@@ -138,7 +138,7 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light tracking-wide mb-12 drop-shadow-md">
-            Tesla robots synchronized in a worldwide fantasy lightshow lighting up Austin's Long Center for one unforgettable night.
+            Tesla robots synchronized in a worldwide fantasy lightshow<br />lighting up Austin's Long Center for one unforgettable night.
           </p>
 
           <Button
