@@ -469,7 +469,7 @@ export default function Home() {
                                           <span style={{ color: "#60A5FA" }}>Y</span>
                                         </>
                                       ) : r.value === "cybertruck" ? (
-                                        <span style={{ color: "#B0B7C3" }}>Cybertruck 📐</span>
+                                        <span style={{ color: "#A8C8D8", textShadow: "0 0 8px #7EC8E3, 0 0 16px #5BA8C4, 0 0 2px #D0E8F0" }}>Cybertruck 📐</span>
                                       ) : r.value === "juniper" ? (
                                         <span style={{ color: "#B0B7C3" }}>Juniper</span>
                                       ) : r.label}
