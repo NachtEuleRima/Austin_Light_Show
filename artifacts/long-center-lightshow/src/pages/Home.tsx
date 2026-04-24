@@ -353,7 +353,7 @@ export default function Home() {
               Join The <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Frequency</span>
             </h2>
             <p className="text-muted-foreground mb-10 text-lg font-light">
-              RSVP your robot to join the largest synchronized lightshow in Tesla history.
+              Register your robot to join the largest synchronized worldwide lightshow in history.
             </p>
             
             <div className="space-y-8">
