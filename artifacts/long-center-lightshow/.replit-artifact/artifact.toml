@@ -1,5 +1,5 @@
 kind = "web"
-previewPath = "/long-center-lightshow/"
+previewPath = "/"
 title = "Tesla Lightshow at Long Center"
 version = "1.0.0"
 id = "artifacts/long-center-lightshow"
@@ -11,7 +11,7 @@ version = "1.0.0"
 
 [[services]]
 name = "web"
-paths = [ "/long-center-lightshow/" ]
+paths = [ "/" ]
 localPort = 19341
 
 [services.development]
@@ -28,4 +28,4 @@ to = "/index.html"
 
 [services.env]
 PORT = "19341"
-BASE_PATH = "/long-center-lightshow/"
+BASE_PATH = "/"
