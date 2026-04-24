@@ -124,8 +124,8 @@ export default function Home() {
         <div className="absolute top-[10%] left-[15%] w-[500px] h-[500px] bg-primary/15 rounded-full blur-[130px] pointer-events-none mix-blend-screen z-[2]" />
         <div className="absolute bottom-[5%] right-[10%] w-[600px] h-[600px] bg-secondary/12 rounded-full blur-[160px] pointer-events-none mix-blend-screen z-[2]" />
 
-        {/* Main content */}
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-8vh]">
+        {/* Main content — upper area */}
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-28vh]">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-float shadow-[0_0_15px_rgba(0,255,255,0.2)] backdrop-blur-sm">
             <Zap className="w-4 h-4" />
             <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold">AUSTIN x TESLA // APR 24</span>
@@ -137,10 +137,13 @@ export default function Home() {
             <span className="block text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-fuchsia-300 mt-3 tracking-[0.15em]">Mothership Edition</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light tracking-wide mb-12 drop-shadow-md">
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light tracking-wide drop-shadow-md">
             Tesla robots synchronized in a worldwide fantasy lightshow<br />lighting up Austin's Long Center for one unforgettable night.
           </p>
+        </div>
 
+        {/* Button — pinned to bottom of hero */}
+        <div className="absolute bottom-16 left-0 right-0 z-20 flex justify-center">
           <Button
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-10 text-lg font-bold tracking-widest uppercase box-glow-cyan transition-all hover:scale-105 active:scale-95"
