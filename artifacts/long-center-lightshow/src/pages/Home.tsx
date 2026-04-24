@@ -380,6 +380,13 @@ export default function Home() {
             }
             20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
           }
+          @keyframes neonFlicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+              opacity: 1;
+              text-shadow: 0 0 8px #ea8e2a, 0 0 20px #ea8e2a, 0 0 40px #ea8e2a;
+            }
+            20%, 24%, 55% { opacity: 0.4; text-shadow: none; }
+          }
         `}</style>
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
 
@@ -420,11 +427,19 @@ export default function Home() {
             {/* Tech Support — bottom of left column */}
             <div>
               <div className="border-t border-white/10 pt-8 flex flex-col items-center text-center">
-                <div className="inline-flex items-center gap-3 mb-2">
-                  <span className="text-2xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
-                  <span className="text-base font-black font-mono tracking-[0.2em] uppercase text-primary" style={{ animation: "neonFlickerCyan 3s infinite" }}>TECH SUPPORT</span>
-                  <span className="text-2xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
-                </div>
+                <span style={{
+                  display: "inline-block",
+                  fontSize: "clamp(1.25rem, 4vw, 1.75rem)",
+                  fontWeight: 900,
+                  fontFamily: "monospace",
+                  letterSpacing: "0.25em",
+                  textTransform: "uppercase",
+                  color: "#00e5f5",
+                  animation: "neonFlicker 3s infinite",
+                  marginBottom: 8,
+                }}>
+                  ⚡ TECH SUPPORT ⚡
+                </span>
                 <p className="text-white/40 text-sm mb-5">Have a question? Reach out below.</p>
                 {[{ username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website and event inquiries" }].map(({ username, display, role }) => (
                   <a
