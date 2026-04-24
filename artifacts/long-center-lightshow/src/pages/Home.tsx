@@ -567,19 +567,19 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Scroll to top — pinned top-center */}
+      {/* Scroll to top — pinned top-right */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-11 h-11 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 ${scrollY > 200 ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`fixed top-4 right-4 z-50 w-11 h-11 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 ${scrollY > 200 ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         aria-label="Scroll to top"
       >
         <ChevronUp className="w-5 h-5" />
       </button>
 
-      {/* Scroll to bottom — pinned bottom-center */}
+      {/* Scroll to bottom — pinned bottom-right */}
       <button
         onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
-        className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-11 h-11 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 ${scrollY < document.body.scrollHeight - window.innerHeight - 200 ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`fixed bottom-4 right-4 z-50 w-11 h-11 rounded-full border border-white/20 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 ${scrollY < document.body.scrollHeight - window.innerHeight - 200 ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         aria-label="Scroll to bottom"
       >
         <ChevronDown className="w-5 h-5" />
