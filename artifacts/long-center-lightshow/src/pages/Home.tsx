@@ -383,7 +383,7 @@ export default function Home() {
         `}</style>
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
 
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col justify-between h-full py-10">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-accent bg-accent/5 text-accent mb-6">
                 <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-magenta">03 // Initialization</span>
@@ -417,8 +417,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Tech Support — pinned to bottom of left column */}
-            <div className="mt-auto pt-10">
+            {/* Tech Support — bottom of left column */}
+            <div>
               <div className="border-t border-white/10 pt-8 flex flex-col items-center text-center">
                 <div className="inline-flex items-center gap-3 mb-2">
                   <span className="text-2xl" style={{ color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
