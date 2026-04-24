@@ -143,7 +143,7 @@ export default function Home() {
         <div className="absolute bottom-16 left-0 right-0 z-20 flex justify-center">
           <Button
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-10 text-lg font-bold tracking-widest uppercase box-glow-cyan transition-all hover:scale-105 active:scale-95"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-5 text-lg font-bold tracking-widest uppercase box-glow-cyan transition-all hover:scale-105 active:scale-95"
             onClick={() => document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" })}
             data-testid="button-scroll-rsvp"
           >
