@@ -27,7 +27,8 @@ const rsvpSchema = z.object({
   name: z.string().min(1, "Name is required").max(100),
   email: z.string().email("Invalid email address"),
   guests: z.coerce.number().min(1).max(10),
-  robot: z.enum(["s3xy", "cybertruck", "juniper"]).optional(),
+  phone: z.string().optional(),
+  robot: z.enum(["s3xy", "cybertruck", "juniper"], { required_error: "Please select your robot" }),
   message: z.string().max(500).optional(),
 });
 
@@ -430,6 +431,20 @@ export default function Home() {
                             <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Comms Link (Email)</FormLabel>
                             <FormControl>
                               <Input type="email" placeholder="pilot@tesla.com" {...field} className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="input-email" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Phone <span className="text-white/30 normal-case tracking-normal">(optional)</span></FormLabel>
+                            <FormControl>
+                              <Input type="tel" placeholder="+1 (512) 000-0000" {...field} className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="input-phone" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>

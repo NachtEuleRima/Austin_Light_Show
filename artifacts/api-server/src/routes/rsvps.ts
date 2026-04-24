@@ -36,7 +36,8 @@ router.post("/rsvps", async (req, res): Promise<void> => {
       name: parsed.data.name,
       email: parsed.data.email,
       guests: parsed.data.guests,
-      robot: parsed.data.robot ?? null,
+      phone: parsed.data.phone ?? null,
+      robot: parsed.data.robot,
       message: parsed.data.message ?? null,
     })
     .returning();

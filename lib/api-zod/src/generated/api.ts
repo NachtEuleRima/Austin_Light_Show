@@ -29,7 +29,8 @@ export const CreateRsvpBody = zod.object({
   name: zod.string().min(1).max(createRsvpBodyNameMax),
   email: zod.string().email(),
   guests: zod.number().min(1).max(createRsvpBodyGuestsMax),
-  robot: zod.enum(["s3xy", "cybertruck", "juniper"]).optional(),
+  phone: zod.string().optional(),
+  robot: zod.enum(["s3xy", "cybertruck", "juniper"]),
   message: zod.string().max(createRsvpBodyMessageMax).optional(),
 });
 
