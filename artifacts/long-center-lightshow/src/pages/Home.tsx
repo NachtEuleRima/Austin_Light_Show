@@ -126,9 +126,9 @@ export default function Home() {
 
         {/* Main content — upper area */}
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-28vh]">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-primary/70 bg-primary/15 text-primary mb-8 animate-float shadow-[0_0_24px_rgba(0,255,255,0.45)] backdrop-blur-md">
-            <Zap className="w-5 h-5 text-primary drop-shadow-[0_0_6px_rgba(0,255,255,0.9)]" />
-            <span className="text-sm font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // APR 24</span>
+          <div className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 rounded-full border border-primary/70 bg-primary/15 text-primary mb-8 animate-float shadow-[0_0_24px_rgba(0,255,255,0.45)] backdrop-blur-md">
+            <Zap className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-[0_0_6px_rgba(0,255,255,0.9)]" />
+            <span className="text-xs md:text-sm font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // APR 24</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
@@ -198,7 +198,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="relative h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group">
+            <div className="relative h-[220px] md:h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(138,43,226,0.2)_0%,transparent_70%)]" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] animate-[spin_20s_linear_infinite] opacity-30">
                 <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent absolute top-1/2 -translate-y-1/2" />
@@ -390,8 +390,8 @@ export default function Home() {
         `}</style>
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
 
-          <div className="flex flex-col justify-between h-full">
-            <div>
+          {/* 03 content — mobile order 1, desktop col 1 row 1 */}
+          <div className="order-1 md:col-start-1">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-accent bg-accent/5 text-accent mb-6">
                 <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-magenta">03 // Initialization</span>
               </div>
@@ -422,10 +422,10 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
 
-            {/* Tech Support — bottom of left column */}
-            <div>
+          {/* Tech Support — mobile order 3 (after form), desktop col 1 row 2 */}
+          <div className="order-3 md:order-none md:col-start-1">
               <div className="border-t border-white/10 pt-8 flex flex-col items-center text-center">
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
                   <span style={{ fontSize: "1.5rem", color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
@@ -472,10 +472,10 @@ export default function Home() {
                   </a>
                 ))}
               </div>
-            </div>
           </div>
 
-          <div className="relative">
+          {/* Form — mobile order 2 (between 03 content and tech support), desktop col 2 spanning both rows */}
+          <div className="order-2 md:order-none md:col-start-2 md:row-start-1 md:row-span-2 relative">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/10 to-accent/30 blur-3xl -z-10 rounded-[3rem]" />
             
             <Card className="border-white/10 bg-black/60 backdrop-blur-2xl shadow-2xl relative overflow-hidden rounded-3xl">
