@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
-import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
+import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import longCenterBg from "../assets/long-center-bg.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
@@ -41,6 +41,13 @@ export default function Home() {
   const { data: rsvpsData } = useListRsvps();
   
   const [isSuccess, setIsSuccess] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const form = useForm<RsvpFormValues>({
     resolver: zodResolver(rsvpSchema),
@@ -559,6 +566,24 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {/* Floating scroll buttons */}
+      <div className="fixed right-4 bottom-8 z-50 flex flex-col gap-2">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className={`w-10 h-10 rounded-full border border-primary/40 bg-black/70 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-primary/20 hover:border-primary transition-all duration-300 ${scrollY > 200 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
+          className={`w-10 h-10 rounded-full border border-primary/40 bg-black/70 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-primary/20 hover:border-primary transition-all duration-300 ${scrollY < document.body.scrollHeight - window.innerHeight - 200 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}
+          aria-label="Scroll to bottom"
+        >
+          <ChevronDown className="w-5 h-5" />
+        </button>
+      </div>
     </div>
   );
 }
