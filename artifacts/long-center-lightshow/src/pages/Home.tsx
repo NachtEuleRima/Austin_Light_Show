@@ -247,29 +247,89 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-primary bg-primary/5 text-primary mb-6">
-              <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-cyan">02 // The Fleet</span>
+              <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-cyan">02 // The Shows</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
-              Supported <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Robot</span>
+              Three <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Acts</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { model: "Model S", tag: "Flagship", icon: <ShieldAlert className="w-6 h-6 text-primary" />, desc: "Featuring falcon wing door choreography and matrix LED sequence." },
-              { model: "Model 3 / Y", tag: "Core", icon: <Radio className="w-6 h-6 text-secondary" />, desc: "The backbone of the grid. High-density formation and synchronized trunk actuation." },
-              { model: "Cybertruck", tag: "Apex", icon: <Zap className="w-6 h-6 text-accent" />, desc: "Leading the vanguard with lightbar bursts and dominating presence." },
-            ].map((car, idx) => (
-              <div key={idx} className="group relative p-8 border border-white/10 rounded-2xl bg-black/40 hover:bg-white/5 transition-all overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:via-primary transition-all" />
-                <div className="flex justify-between items-start mb-6">
-                  {car.icon}
-                  <span className="text-xs font-mono text-muted-foreground uppercase border border-white/10 px-2 py-1 rounded-sm">{car.tag}</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-3">{car.model}</h3>
-                <p className="text-muted-foreground text-sm font-light leading-relaxed">{car.desc}</p>
+
+            {/* Show 1 — S 3 X Y */}
+            <div className="group relative p-8 border border-white/10 rounded-2xl bg-black/40 hover:bg-white/5 transition-all overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent group-hover:opacity-100 opacity-50 transition-all" />
+              <div className="flex justify-between items-start mb-6">
+                <span className="text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">S·3·X·Y</span>
+                <span className="text-xs font-mono text-primary/60 uppercase border border-primary/20 px-2 py-1 rounded-sm">Act I</span>
               </div>
-            ))}
+              <h3 className="text-2xl font-bold mb-3">The Classic Formation</h3>
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">
+                Model S, 3, X &amp; Y roll in synchronized harmony — headlights, taillights, falcon wings, and trunk pops dancing to the beat. Yes, the lineup spells it out. 😏
+              </p>
+              <div className="mt-6 flex gap-2 flex-wrap">
+                {["Model S", "Model 3", "Model X", "Model Y"].map(m => (
+                  <span key={m} className="text-[10px] font-mono uppercase tracking-wider bg-primary/10 border border-primary/20 text-primary px-2 py-1 rounded-sm">{m}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Show 2 — Cybertruck */}
+            <div className="group relative p-8 border border-white/10 rounded-2xl bg-black/40 hover:bg-white/5 transition-all overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent group-hover:opacity-100 opacity-50 transition-all" />
+              <div className="flex justify-between items-start mb-6">
+                {/* Triangle motif */}
+                <svg viewBox="0 0 60 52" className="w-12 h-10" fill="none">
+                  <polygon points="30,4 56,48 4,48" stroke="url(#tgrad)" strokeWidth="2.5" fill="rgba(255,0,255,0.08)" />
+                  <polygon points="30,16 46,44 14,44" stroke="url(#tgrad)" strokeWidth="1.5" fill="rgba(255,0,255,0.04)" strokeDasharray="4 2" />
+                  <defs>
+                    <linearGradient id="tgrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#ff00ff" />
+                      <stop offset="100%" stopColor="#00ffff" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span className="text-xs font-mono text-secondary/60 uppercase border border-secondary/20 px-2 py-1 rounded-sm">Act II</span>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Cybertruck Triangle</h3>
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">
+                Pure angles. Pure steel. Cybertrucks form a massive triangle formation — lightbars blazing in geometric sync, proving that the future is very pointy.
+              </p>
+              <div className="mt-6 flex gap-2 flex-wrap">
+                {["Cybertruck", "Triangle Formation", "Lightbar Sync"].map(m => (
+                  <span key={m} className="text-[10px] font-mono uppercase tracking-wider bg-secondary/10 border border-secondary/20 text-secondary px-2 py-1 rounded-sm">{m}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Show 3 — Y Juniper */}
+            <div className="group relative p-8 border border-white/10 rounded-2xl bg-black/40 hover:bg-white/5 transition-all overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent group-hover:opacity-100 opacity-50 transition-all" />
+              <div className="flex justify-between items-start mb-6">
+                {/* Leaf/juniper icon */}
+                <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
+                  <path d="M24 44 C24 44 6 30 6 18 C6 10 14 4 24 4 C34 4 42 10 42 18 C42 30 24 44 24 44Z" stroke="url(#jgrad)" strokeWidth="2" fill="rgba(160,32,240,0.1)" />
+                  <line x1="24" y1="44" x2="24" y2="20" stroke="url(#jgrad)" strokeWidth="1.5" />
+                  <defs>
+                    <linearGradient id="jgrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#00ffff" />
+                      <stop offset="100%" stopColor="#a020f0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span className="text-xs font-mono text-accent/60 uppercase border border-accent/20 px-2 py-1 rounded-sm">Act III</span>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Model Y Juniper</h3>
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">
+                The refreshed Juniper takes a solo spotlight — sleeker face, ambient cabin glow, and an all-new light signature that turns the night air electric violet.
+              </p>
+              <div className="mt-6 flex gap-2 flex-wrap">
+                {["Model Y Juniper", "Solo Spotlight", "Ambient Glow"].map(m => (
+                  <span key={m} className="text-[10px] font-mono uppercase tracking-wider bg-accent/10 border border-accent/20 text-accent px-2 py-1 rounded-sm">{m}</span>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
