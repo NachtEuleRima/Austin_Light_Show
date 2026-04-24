@@ -126,9 +126,9 @@ export default function Home() {
 
         {/* Main content — upper area */}
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-28vh]">
-          <div className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 rounded-full border border-primary/70 bg-primary/15 text-primary mb-8 animate-float shadow-[0_0_24px_rgba(0,255,255,0.45)] backdrop-blur-md">
-            <Zap className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-[0_0_6px_rgba(0,255,255,0.9)]" />
-            <span className="text-xs md:text-sm font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // APR 24</span>
+          <div className="inline-flex items-center gap-3 max-md:gap-2 px-6 py-3 max-md:px-4 max-md:py-2 rounded-full border border-primary/70 bg-primary/15 text-primary mb-8 animate-float shadow-[0_0_24px_rgba(0,255,255,0.45)] backdrop-blur-md">
+            <Zap className="w-5 h-5 max-md:w-4 max-md:h-4 text-primary drop-shadow-[0_0_6px_rgba(0,255,255,0.9)]" />
+            <span className="text-sm max-md:text-xs font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // APR 24</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
@@ -391,7 +391,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
 
           {/* 03 content — mobile order 1, desktop col 1 row 1 */}
-          <div className="order-1 md:col-start-1">
+          <div className="order-1 md:order-none md:col-start-1">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border-l-2 border-accent bg-accent/5 text-accent mb-6">
                 <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-magenta">03 // Initialization</span>
               </div>
