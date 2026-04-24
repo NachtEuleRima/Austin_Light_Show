@@ -203,8 +203,7 @@ export default function Home() {
                   alt="Tesla Cybercab"
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                   style={{
-                    filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.7) brightness(1.05)",
-                    mixBlendMode: "lighten",
+                    filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.8) brightness(0.95) contrast(1.1)",
                   }}
                 />
               </div>
