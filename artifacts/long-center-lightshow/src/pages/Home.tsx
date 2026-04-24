@@ -350,10 +350,10 @@ export default function Home() {
               <span className="text-xs font-mono tracking-widest uppercase font-bold text-glow-magenta">03 // Initialization</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight mb-6 leading-none">
-              Join The <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Grid</span>
+              Join The <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Frequency</span>
             </h2>
             <p className="text-muted-foreground mb-10 text-lg font-light">
-              Space on the grid is limited. Register your vehicle or RSVP as a spectator to witness the largest synchronized lightshow in Texas history.
+              Capacity is limited. Register your vehicle or RSVP as a spectator to witness the largest synchronized lightshow in Texas history.
             </p>
             
             <div className="space-y-8">
@@ -362,8 +362,8 @@ export default function Home() {
                   <span className="font-mono text-primary font-bold">01</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1">Log Credentials</h4>
-                  <p className="text-muted-foreground text-sm">Fill out the secure form to transmit your data to the master server.</p>
+                  <h4 className="font-bold text-xl mb-1">Tune In</h4>
+                  <p className="text-muted-foreground text-sm">Fill out the form to lock in your frequency and claim your spot at the Long Center.</p>
                 </div>
               </div>
               
@@ -372,8 +372,8 @@ export default function Home() {
                   <span className="font-mono text-secondary font-bold">02</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1">Receive Protocol</h4>
-                  <p className="text-muted-foreground text-sm">Your unique access QR and grid coordinates will be sent via email.</p>
+                  <h4 className="font-bold text-xl mb-1">Lock Your Signal</h4>
+                  <p className="text-muted-foreground text-sm">Your confirmation and venue details will be transmitted directly to your inbox.</p>
                 </div>
               </div>
             </div>
