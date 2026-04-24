@@ -19,7 +19,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const ROBOTS = [
   { value: "s3xy",       label: "S · 3 · X · Y",       sub: "The Classic Formation" },
-  { value: "cybertruck", label: "Cybertruck ▲",  sub: "Pure Angles. Pure Steel." },
+  { value: "cybertruck", label: "Cybertruck 📐",  sub: "Pure Angles. Pure Steel." },
   { value: "juniper",    label: "Model Y Juniper",      sub: "Solo Spotlight" },
 ] as const;
 
@@ -299,9 +299,9 @@ export default function Home() {
                 </svg>
                 <span className="text-xs font-mono text-secondary/60 uppercase border border-secondary/20 px-2 py-1 rounded-sm">Act II</span>
               </div>
-              <h3 className="text-2xl font-bold mb-3">Cybertruck ▲</h3>
+              <h3 className="text-2xl font-bold mb-3">Cybertruck 📐</h3>
               <p className="text-muted-foreground text-sm font-light leading-relaxed">
-                Pure angles. Pure steel. Cybertrucks form a massive ▲ formation — lightbars blazing in geometric sync, proving that the future is very pointy.
+                Pure angles. Pure steel. Cybertrucks form a massive 📐 formation — lightbars blazing in geometric sync, proving that the future is very pointy.
               </p>
               <div className="mt-6 flex gap-2 flex-wrap">
                 {["Cybertruck", "Triangle Formation", "Lightbar Sync"].map(m => (
