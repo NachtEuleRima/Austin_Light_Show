@@ -5,7 +5,7 @@ import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
-import longCenterBg from "../assets/long-center-bg.png";
+import longCenterBg from "@assets/IMG_3617_1776996118350.jpeg";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -81,19 +81,25 @@ export default function Home() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src={longCenterBg}
-            alt="Long Center for the Performing Arts at night"
-            className="w-full h-full object-cover object-center"
-            style={{ filter: 'brightness(0.5) saturate(1.3) contrast(1.05)' }}
+            alt="Tesla lightshow at Long Center Austin"
+            className="w-full h-full object-cover object-bottom"
+            style={{ filter: 'brightness(0.45) saturate(1.8) contrast(1.15)' }}
           />
+          {/* Dark gradient top + bottom vignette */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to bottom, rgba(0,8,18,0.6) 0%, rgba(0,4,12,0.15) 40%, rgba(0,0,0,0.65) 100%)'
+            background: 'linear-gradient(to bottom, rgba(0,4,14,0.75) 0%, rgba(0,4,12,0.1) 35%, rgba(0,0,0,0.72) 100%)'
           }} />
-          {/* Neon glow overlays */}
+          {/* Cyan neon glow — bottom where the cars are */}
           <div className="absolute inset-0 mix-blend-screen" style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,255,255,0.08) 0%, transparent 70%)'
+            background: 'radial-gradient(ellipse 90% 50% at 30% 95%, rgba(0,255,255,0.18) 0%, transparent 65%)'
           }} />
+          {/* Magenta glow — right side / skyline */}
           <div className="absolute inset-0 mix-blend-screen" style={{
-            background: 'radial-gradient(ellipse 60% 50% at 20% 80%, rgba(180,0,255,0.07) 0%, transparent 60%)'
+            background: 'radial-gradient(ellipse 70% 60% at 80% 70%, rgba(255,0,200,0.14) 0%, transparent 60%)'
+          }} />
+          {/* Subtle blue tint across the whole frame */}
+          <div className="absolute inset-0 mix-blend-color" style={{
+            background: 'rgba(0,20,60,0.35)'
           }} />
         </div>
 
