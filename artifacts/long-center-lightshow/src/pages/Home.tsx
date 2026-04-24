@@ -220,7 +220,7 @@ export default function Home() {
                 <Calendar className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-xl font-bold mb-2">The Date</h3>
-              <p className="text-muted-foreground text-sm font-light">April 24th, 2026<br/>One Night Only</p>
+              <p className="text-muted-foreground text-sm font-light">April 24th, 2026<br/>8:30 PM · One Night Only</p>
             </div>
             
             <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent hover:border-accent/30 transition-colors group">
