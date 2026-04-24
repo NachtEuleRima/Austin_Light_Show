@@ -137,9 +137,6 @@ export default function Home() {
             <span className="block text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-fuchsia-300 mt-3 tracking-[0.15em]">Mothership Edition</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light tracking-wide drop-shadow-md">
-            Tesla robots synchronized in a worldwide fantasy lightshow<br />lighting up Austin's Long Center for one unforgettable night.
-          </p>
         </div>
 
         {/* Button — pinned to bottom of hero */}
@@ -184,7 +181,7 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Tesla robots synchronized to a custom sequence — headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony. Part of the Worldwide Fantasy Lightshow, transforming the Long Center into a living, breathing canvas of light.
+                Tesla robots synchronized in a worldwide fantasy lightshow lighting up Austin's Long Center for one unforgettable night — headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony, transforming the Long Center into a living, breathing canvas of light.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
