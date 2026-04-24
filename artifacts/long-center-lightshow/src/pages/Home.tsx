@@ -240,7 +240,7 @@ export default function Home() {
               <p className="text-4xl font-mono text-white text-glow-cyan relative z-10 font-bold" data-testid="text-rsvp-count">
                 {rsvpsData ? rsvpsData.total : "..."}
               </p>
-              <p className="text-xs text-primary uppercase tracking-widest mt-2 relative z-10 font-bold">Confirmed Teslers</p>
+              <p className="text-xs text-primary uppercase tracking-widest mt-2 relative z-10 font-bold">Confirmed Supervisors</p>
             </div>
           </div>
         </div>
