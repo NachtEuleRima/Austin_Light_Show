@@ -467,26 +467,20 @@ export default function Home() {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Your Robot (Select One)</FormLabel>
-                            <div className="grid grid-cols-1 gap-2 mt-1">
-                              {ROBOTS.map((r) => (
-                                <button
-                                  key={r.value}
-                                  type="button"
-                                  onClick={() => field.onChange(r.value)}
-                                  className={`flex items-center justify-between px-4 py-3 rounded-xl border text-left transition-all ${
-                                    field.value === r.value
-                                      ? "border-primary bg-primary/10 shadow-[0_0_12px_rgba(0,255,255,0.25)]"
-                                      : "border-white/10 bg-black/40 hover:border-white/30 hover:bg-white/5"
-                                  }`}
-                                >
-                                  <div>
-                                    <p className={`font-bold text-sm tracking-wide ${field.value === r.value ? "text-primary" : "text-white"}`}>{r.label}</p>
-                                    <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider mt-0.5">{r.sub}</p>
-                                  </div>
-                                  <div className={`w-4 h-4 rounded-full border-2 shrink-0 transition-all ${field.value === r.value ? "border-primary bg-primary" : "border-white/20"}`} />
-                                </button>
-                              ))}
-                            </div>
+                            <Select onValueChange={field.onChange} value={field.value}>
+                              <FormControl>
+                                <SelectTrigger className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="select-robot">
+                                  <SelectValue placeholder="Pick your robot…" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent className="bg-[#111] border-white/10 text-white rounded-xl">
+                                {ROBOTS.map((r) => (
+                                  <SelectItem key={r.value} value={r.value} className="focus:bg-white/10 focus:text-white cursor-pointer py-3">
+                                    {r.label} — {r.sub}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
                             <FormMessage />
                           </FormItem>
                         )}
