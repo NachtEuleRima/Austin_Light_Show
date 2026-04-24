@@ -197,25 +197,28 @@ export default function Home() {
                 <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <svg viewBox="0 0 220 100" className="w-80 h-40 opacity-90 filter drop-shadow-[0_0_24px_rgba(0,255,255,0.6)] group-hover:scale-110 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
-                  {/* Cybercab body — very low pod-like coupe */}
-                  <path fill="#00FFFF" opacity="0.85" d="M22,68 L22,55 Q26,42 48,32 Q68,20 100,19 Q132,19 158,28 Q178,36 192,50 L196,60 L196,68 Q178,70 155,71 Q128,72 100,72 Q72,72 45,71 Q28,70 22,68 Z"/>
-                  {/* Canopy / glass bubble roof */}
-                  <path fill="rgba(0,255,255,0.2)" stroke="#00FFFF" strokeWidth="1" d="M50,32 Q70,16 100,15 Q130,15 156,28 Z"/>
-                  {/* Butterfly door line (visible crease on side) */}
-                  <path fill="none" stroke="rgba(0,0,0,0.4)" strokeWidth="1.5" d="M90,19 Q95,35 93,68"/>
-                  {/* Stretched front light bar */}
-                  <rect x="190" y="52" width="10" height="3" rx="1.5" fill="#00FFFF" opacity="1" filter="url(#glow)"/>
-                  {/* Stretched rear light bar */}
-                  <rect x="16" y="52" width="10" height="3" rx="1.5" fill="#FF00FF" opacity="1"/>
-                  {/* Front wheel */}
-                  <circle cx="160" cy="72" r="15" fill="#050505" stroke="#00FFFF" strokeWidth="2.5"/>
-                  <circle cx="160" cy="72" r="6" fill="#00FFFF" opacity="0.4"/>
-                  {/* Rear wheel */}
-                  <circle cx="52" cy="72" r="15" fill="#050505" stroke="#00FFFF" strokeWidth="2.5"/>
-                  <circle cx="52" cy="72" r="6" fill="#00FFFF" opacity="0.4"/>
-                  {/* Camera nub (no mirrors) */}
-                  <rect x="183" y="44" width="5" height="3" rx="1" fill="#00FFFF" opacity="0.6"/>
+                <svg viewBox="0 0 240 105" className="w-80 h-40 opacity-90 filter drop-shadow-[0_0_24px_rgba(0,255,255,0.6)] group-hover:scale-110 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
+                  {/* Main body — low wedge coupe, wide haunches */}
+                  <path fill="#00FFFF" opacity="0.85"
+                    d="M12,72 L16,58 Q22,44 50,34 Q72,24 105,22 Q138,21 165,30 Q188,38 210,52 L220,60 L222,72 Q200,75 175,76 Q140,77 120,77 Q90,77 60,76 Q32,75 12,72 Z"/>
+                  {/* Fastback roofline / glass canopy */}
+                  <path fill="rgba(0,255,255,0.18)" stroke="#00FFFF" strokeWidth="0.8"
+                    d="M52,34 Q78,18 108,17 Q138,16 162,28 Q150,34 120,36 Q90,37 52,34 Z"/>
+                  {/* Butterfly door — open wing silhouette */}
+                  <path fill="rgba(0,255,255,0.12)" stroke="#00FFFF" strokeWidth="0.8"
+                    d="M105,22 Q115,8 130,2 Q138,14 130,28 Q118,34 105,36 Z"/>
+                  {/* Thin sharp headlight */}
+                  <rect x="214" y="58" width="10" height="2.5" rx="1.2" fill="#00FFFF" opacity="1"/>
+                  {/* Thin tail light */}
+                  <rect x="10" y="58" width="8" height="2.5" rx="1.2" fill="#FF00FF" opacity="1"/>
+                  {/* Front wheel — large smooth disc */}
+                  <circle cx="172" cy="77" r="18" fill="#080808" stroke="#00FFFF" strokeWidth="2"/>
+                  <circle cx="172" cy="77" r="13" fill="#111" stroke="#00FFFF" strokeWidth="0.5" opacity="0.4"/>
+                  <circle cx="172" cy="77" r="4" fill="#00FFFF" opacity="0.5"/>
+                  {/* Rear wheel — large smooth disc */}
+                  <circle cx="58" cy="77" r="18" fill="#080808" stroke="#00FFFF" strokeWidth="2"/>
+                  <circle cx="58" cy="77" r="13" fill="#111" stroke="#00FFFF" strokeWidth="0.5" opacity="0.4"/>
+                  <circle cx="58" cy="77" r="4" fill="#00FFFF" opacity="0.5"/>
                 </svg>
               </div>
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
