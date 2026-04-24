@@ -228,7 +228,7 @@ export default function Home() {
                 <Clock className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-xl font-bold mb-2">The Schedule</h3>
-              <p className="text-muted-foreground text-sm font-light">Meet: 8:00 PM<br/>Show Start: 8:30 PM</p>
+              <p className="text-muted-foreground text-sm font-light">Assemble: 8:00 PM<br/>Show Start: 8:30 PM</p>
             </div>
             
             <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-primary/10 to-transparent hover:border-primary/50 transition-colors group relative overflow-hidden">
