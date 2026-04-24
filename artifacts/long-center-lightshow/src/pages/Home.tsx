@@ -26,7 +26,7 @@ const ROBOTS = [
 const rsvpSchema = z.object({
   name: z.string().min(1, "Name is required").max(100),
   email: z.string().email("Invalid email address"),
-  phone: z.string().optional(),
+  phone: z.string().regex(/^[\d\s\+\-\(\)]{7,20}$/, "Please enter a valid phone number").optional().or(z.literal("")),
   robot: z.enum(["s3xy", "cybertruck", "juniper"], { required_error: "Please select your robot" }),
   message: z.string().max(500).optional(),
 });
@@ -438,20 +438,6 @@ export default function Home() {
 
                       <FormField
                         control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Phone <span className="text-white/30 normal-case tracking-normal">(optional)</span></FormLabel>
-                            <FormControl>
-                              <Input type="tel" placeholder="+1 (512) 000-0000" {...field} className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="input-phone" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
                         name="robot"
                         render={({ field }) => (
                           <FormItem>
@@ -476,6 +462,20 @@ export default function Home() {
                                 </button>
                               ))}
                             </div>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Phone <span className="text-white/30 normal-case tracking-normal">(optional)</span></FormLabel>
+                            <FormControl>
+                              <Input type="tel" placeholder="+1 (512) 000-0000" {...field} className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="input-phone" />
+                            </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
