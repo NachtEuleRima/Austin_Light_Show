@@ -26,7 +26,6 @@ const ROBOTS = [
 const rsvpSchema = z.object({
   name: z.string().min(1, "Name is required").max(100),
   email: z.string().email("Invalid email address"),
-  guests: z.coerce.number().min(1).max(10),
   phone: z.string().optional(),
   robot: z.enum(["s3xy", "cybertruck", "juniper"], { required_error: "Please select your robot" }),
   message: z.string().max(500).optional(),
@@ -48,7 +47,7 @@ export default function Home() {
     defaultValues: {
       name: "",
       email: "",
-      guests: 1,
+      phone: "",
       message: "",
     },
   });
@@ -446,31 +445,6 @@ export default function Home() {
                             <FormControl>
                               <Input type="tel" placeholder="+1 (512) 000-0000" {...field} className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="input-phone" />
                             </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="guests"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">Crew Size (Including Pilot)</FormLabel>
-                            <Select onValueChange={(val) => field.onChange(Number(val))} defaultValue={field.value.toString()}>
-                              <FormControl>
-                                <SelectTrigger className="bg-black/80 border-white/10 focus-visible:ring-primary focus-visible:border-primary h-14 rounded-xl px-4 text-lg" data-testid="select-guests">
-                                  <SelectValue placeholder="Select size" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent className="bg-[#111] border-white/10 text-white rounded-xl">
-                                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                                  <SelectItem key={num} value={num.toString()} className="focus:bg-white/10 focus:text-white cursor-pointer py-3">
-                                    {num} {num === 1 ? "Unit" : "Units"}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
                             <FormMessage />
                           </FormItem>
                         )}
