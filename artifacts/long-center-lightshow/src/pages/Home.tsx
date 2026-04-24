@@ -134,7 +134,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">Worldwide Fantasy</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-fuchsia-500 to-accent text-glow-magenta mt-2">Lightshow</span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-fuchsia-300 mt-3 tracking-[0.15em]">Mothership Edition</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 mt-3 tracking-[0.15em]">Mothership Edition</span>
           </h1>
 
         </div>
