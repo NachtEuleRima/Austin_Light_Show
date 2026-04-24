@@ -8,6 +8,7 @@ import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio,
 import longCenterBg from "../assets/long-center-bg.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
+import teslaHeroCard from "../assets/tesla-hero-card.png";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -184,14 +185,12 @@ export default function Home() {
             </div>
             
             <div className="relative h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(138,43,226,0.2)_0%,transparent_70%)]" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] animate-[spin_20s_linear_infinite] opacity-30">
-                <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent absolute top-1/2 -translate-y-1/2" />
-                <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Car className="w-48 h-48 text-primary opacity-80 filter drop-shadow-[0_0_20px_rgba(0,255,255,0.5)] group-hover:scale-110 transition-transform duration-700" />
-              </div>
+              <img
+                src={teslaHeroCard}
+                alt="Tesla Model X Plaid with falcon wings open"
+                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                 <p className="font-mono text-sm text-primary tracking-widest uppercase">System Sync // 100%</p>
                 <div className="w-full h-1 bg-white/10 mt-2 rounded-full overflow-hidden">
