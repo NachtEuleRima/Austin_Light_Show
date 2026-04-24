@@ -436,7 +436,7 @@ export default function Home() {
                       if (isMobile) { window.location.href = `twitter://user?screen_name=${username}`; }
                       else { window.open(`https://x.com/${username}`, "_blank", "noopener,noreferrer"); }
                     }}
-                    className="group flex items-center gap-4 p-5 rounded-2xl border border-white/5 hover:border-primary/50 hover:shadow-[0_0_24px_rgba(0,255,255,0.12)] transition-all duration-300"
+                    className="group flex items-center gap-4 p-5 rounded-2xl border border-primary/30 shadow-[0_0_18px_rgba(0,255,255,0.15)] hover:border-primary/60 hover:shadow-[0_0_32px_rgba(0,255,255,0.35)] transition-all duration-300"
                     style={{ background: "#0d1117" }}
                   >
                     <div className="w-14 h-14 rounded-full border-2 border-white/10 group-hover:border-primary/50 transition-colors overflow-hidden relative flex items-center justify-center bg-white/5 shrink-0">
