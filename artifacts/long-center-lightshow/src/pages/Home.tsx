@@ -173,7 +173,7 @@ export default function Home() {
                 <div className="p-6 border border-white/5 bg-white/[0.01] rounded-xl hover:bg-white/[0.03] transition-all">
                   <Volume2 className="w-8 h-8 text-primary mb-4" />
                   <h4 className="text-lg font-bold mb-2">Immersive Audio</h4>
-                  <p className="text-sm text-muted-foreground">Custom mixed track broadcasted across the venue's PA system and directly into vehicles.</p>
+                  <p className="text-sm text-muted-foreground">Custom mixed track broadcasted directly through each Tesla's speakers in perfect sync.</p>
                 </div>
                 <div className="p-6 border border-white/5 bg-white/[0.01] rounded-xl hover:bg-white/[0.03] transition-all">
                   <Zap className="w-8 h-8 text-secondary mb-4" />
