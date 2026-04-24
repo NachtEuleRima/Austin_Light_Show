@@ -126,9 +126,9 @@ export default function Home() {
 
         {/* Main content — upper area */}
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-28vh]">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-float shadow-[0_0_15px_rgba(0,255,255,0.2)] backdrop-blur-sm">
-            <Zap className="w-4 h-4" />
-            <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold">AUSTIN x TESLA // APR 24</span>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-primary/70 bg-primary/15 text-primary mb-8 animate-float shadow-[0_0_24px_rgba(0,255,255,0.45)] backdrop-blur-md">
+            <Zap className="w-5 h-5 text-primary drop-shadow-[0_0_6px_rgba(0,255,255,0.9)]" />
+            <span className="text-sm font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // APR 24</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
