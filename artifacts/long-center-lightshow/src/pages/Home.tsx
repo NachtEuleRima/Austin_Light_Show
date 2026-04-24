@@ -403,7 +403,7 @@ export default function Home() {
               </p>
 
               <div className="space-y-8">
-                <div className="flex items-start gap-5 pl-4 border-l-2 border-transparent hover:border-primary hover:shadow-[inset_2px_0_8px_rgba(0,255,255,0.15)] transition-all duration-300 rounded-sm cursor-default">
+                <div className="flex items-start gap-5">
                   <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center shrink-0 bg-primary/10 shadow-[0_0_15px_rgba(0,255,255,0.2)]">
                     <span className="font-mono text-primary font-bold">01</span>
                   </div>
@@ -412,7 +412,7 @@ export default function Home() {
                     <p className="text-muted-foreground text-sm">Fill out the form to lock in your frequency and claim your spot at the Long Center.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-5 pl-4 border-l-2 border-transparent hover:border-secondary hover:shadow-[inset_2px_0_8px_rgba(255,0,255,0.15)] transition-all duration-300 rounded-sm cursor-default">
+                <div className="flex items-start gap-5">
                   <div className="w-12 h-12 rounded-full border border-secondary/50 flex items-center justify-center shrink-0 bg-secondary/10 shadow-[0_0_15px_rgba(255,0,255,0.2)]">
                     <span className="font-mono text-secondary font-bold">02</span>
                   </div>
