@@ -18,9 +18,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
 const ROBOTS = [
-  { value: "s3xy",       label: "S · 3 · X · Y",       sub: "The Classic Formation" },
-  { value: "cybertruck", label: "Cybertruck 📐",  sub: "Pure Angles. Pure Steel." },
-  { value: "juniper",    label: "Juniper",      sub: "Solo Spotlight" },
+  { value: "s3xy",       label: "S · 3 · X · Y",       sub: "Frost Blue · White · Red · Blue" },
+  { value: "cybertruck", label: "Cybertruck 📐",  sub: "Silver" },
+  { value: "juniper",    label: "Juniper",      sub: "Silver" },
 ] as const;
 
 const rsvpSchema = z.object({
