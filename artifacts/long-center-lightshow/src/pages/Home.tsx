@@ -6,6 +6,7 @@ import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/ap
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import longCenterBg from "../assets/long-center-bg.png";
+import cybercabImg from "../assets/cybercab.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -197,29 +198,15 @@ export default function Home() {
                 <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <svg viewBox="0 0 240 105" className="w-80 h-40 opacity-90 filter drop-shadow-[0_0_24px_rgba(0,255,255,0.6)] group-hover:scale-110 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
-                  {/* Main body — low wedge coupe, wide haunches */}
-                  <path fill="#00FFFF" opacity="0.85"
-                    d="M12,72 L16,58 Q22,44 50,34 Q72,24 105,22 Q138,21 165,30 Q188,38 210,52 L220,60 L222,72 Q200,75 175,76 Q140,77 120,77 Q90,77 60,76 Q32,75 12,72 Z"/>
-                  {/* Fastback roofline / glass canopy */}
-                  <path fill="rgba(0,255,255,0.18)" stroke="#00FFFF" strokeWidth="0.8"
-                    d="M52,34 Q78,18 108,17 Q138,16 162,28 Q150,34 120,36 Q90,37 52,34 Z"/>
-                  {/* Butterfly door — open wing silhouette */}
-                  <path fill="rgba(0,255,255,0.12)" stroke="#00FFFF" strokeWidth="0.8"
-                    d="M105,22 Q115,8 130,2 Q138,14 130,28 Q118,34 105,36 Z"/>
-                  {/* Thin sharp headlight */}
-                  <rect x="214" y="58" width="10" height="2.5" rx="1.2" fill="#00FFFF" opacity="1"/>
-                  {/* Thin tail light */}
-                  <rect x="10" y="58" width="8" height="2.5" rx="1.2" fill="#FF00FF" opacity="1"/>
-                  {/* Front wheel — large smooth disc */}
-                  <circle cx="172" cy="77" r="18" fill="#080808" stroke="#00FFFF" strokeWidth="2"/>
-                  <circle cx="172" cy="77" r="13" fill="#111" stroke="#00FFFF" strokeWidth="0.5" opacity="0.4"/>
-                  <circle cx="172" cy="77" r="4" fill="#00FFFF" opacity="0.5"/>
-                  {/* Rear wheel — large smooth disc */}
-                  <circle cx="58" cy="77" r="18" fill="#080808" stroke="#00FFFF" strokeWidth="2"/>
-                  <circle cx="58" cy="77" r="13" fill="#111" stroke="#00FFFF" strokeWidth="0.5" opacity="0.4"/>
-                  <circle cx="58" cy="77" r="4" fill="#00FFFF" opacity="0.5"/>
-                </svg>
+                <img
+                  src={cybercabImg}
+                  alt="Tesla Cybercab"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                  style={{
+                    filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.7) brightness(1.05)",
+                    mixBlendMode: "lighten",
+                  }}
+                />
               </div>
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                 <p className="font-mono text-sm text-primary tracking-widest uppercase">System Sync // 100%</p>
