@@ -5,8 +5,7 @@ import * as z from "zod";
 import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
-import longCenterBg from "@assets/IMG_3617_1776996118350.jpeg";
-import lightshowVideo from "@assets/trim_504DAD6E-A51A-43E7-A0A9-64DB8D31BACD_1776996629691.mov";
+import longCenterBg from "../assets/long-center-bg.png";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -80,18 +79,12 @@ export default function Home() {
 
         {/* Circuit background — full bleed */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={longCenterBg}
-            className="w-full h-full object-cover object-bottom"
-            style={{ filter: 'brightness(0.6) saturate(1.1)' }}
-          >
-            <source src={lightshowVideo} type="video/mp4" />
-            <source src={lightshowVideo} type="video/quicktime" />
-          </video>
+          <img
+            src={longCenterBg}
+            alt="Tesla lightshow at Long Center Austin"
+            className="w-full h-full object-cover object-center"
+            style={{ filter: 'brightness(0.5) saturate(1.3) contrast(1.05)' }}
+          />
           {/* Dark gradient top + bottom vignette */}
           <div className="absolute inset-0" style={{
             background: 'linear-gradient(to bottom, rgba(0,4,14,0.7) 0%, rgba(0,4,12,0.05) 40%, rgba(0,0,0,0.65) 100%)'
