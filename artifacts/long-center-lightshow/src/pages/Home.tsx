@@ -393,6 +393,27 @@ export default function Home() {
             <p className="text-muted-foreground text-lg font-light max-w-xl">
               Register your robot to join the largest synchronized worldwide lightshow in history.
             </p>
+
+            <div className="space-y-8 mt-10">
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center shrink-0 bg-primary/10 shadow-[0_0_15px_rgba(0,255,255,0.2)]">
+                  <span className="font-mono text-primary font-bold">01</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-1">Tune In</h4>
+                  <p className="text-muted-foreground text-sm">Fill out the form to lock in your frequency and claim your spot at the Long Center.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-full border border-secondary/50 flex items-center justify-center shrink-0 bg-secondary/10 shadow-[0_0_15px_rgba(255,0,255,0.2)]">
+                  <span className="font-mono text-secondary font-bold">02</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl mb-1">Lock Your Signal</h4>
+                  <p className="text-muted-foreground text-sm">Your confirmation and venue details will be transmitted directly to your inbox.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* 2-col: Tech Support left, Form right */}
