@@ -404,7 +404,7 @@ export default function Home() {
                       }}
                       className="mt-8 border-white/20 text-white hover:bg-white/10 w-full h-14 uppercase tracking-widest text-sm font-bold"
                     >
-                      Register Another Unit
+                      Register Another Robot
                     </Button>
                   </div>
                 ) : (
