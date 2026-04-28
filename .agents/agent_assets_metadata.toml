@@ -239,3 +239,9 @@ id = "DBwoXE_ZXFoHfcUSM2XN1"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v9.png"
 type = "image"
 title = "Halogram with Wider Bottom Halo"
+
+[[outputs]]
+id = "HA6d2YELoUQfmLrOAFQeW"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v10.png"
+type = "image"
+title = "Halogram with Light Flash to Face"
