@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* 3. EVENT DETAILS SECTION */}
-      <section className="py-24 relative z-20 border-y border-white/5 bg-black/50 backdrop-blur-xl">
+      <section className="pt-24 pb-12 relative z-20 border-y border-white/5 bg-black/50 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent transition-colors group">
