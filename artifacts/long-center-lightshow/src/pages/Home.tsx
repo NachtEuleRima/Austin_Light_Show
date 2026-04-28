@@ -156,7 +156,7 @@ export default function Home() {
           <img
             src={texasFlagImg}
             alt="Texas Flag"
-            className="w-16 h-12 object-cover rounded shadow-[0_0_14px_rgba(0,255,255,0.4)] border border-white/10"
+            className="w-16 h-12 object-contain"
           />
         </div>
 
@@ -165,7 +165,7 @@ export default function Home() {
           <img
             src={americanFlagImg}
             alt="American Flag"
-            className="w-16 h-12 object-cover rounded shadow-[0_0_14px_rgba(255,80,80,0.5)] border border-white/10"
+            className="w-16 h-12 object-contain"
           />
         </div>
 
