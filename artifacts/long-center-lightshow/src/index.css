@@ -207,3 +207,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary)); 
 }
+
+/* Cybercab mobile breathe — in-place scale, keeps translateY constant */
+@keyframes cybercab-breathe-mobile {
+  0%, 100% { transform: translateY(-2.5rem) scale(1); }
+  50% { transform: translateY(-2.5rem) scale(1.08); }
+}
