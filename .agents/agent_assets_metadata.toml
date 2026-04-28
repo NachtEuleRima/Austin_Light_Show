@@ -227,3 +227,9 @@ id = "YmrrYlpHRL2e5CuCx-rAN"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v7.png"
 type = "image"
 title = "Halogram with Watermark"
+
+[[outputs]]
+id = "hhOjAyhY0L_jJLo9m1wM0"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v8.png"
+type = "image"
+title = "Halogram with Subtle Halo"
