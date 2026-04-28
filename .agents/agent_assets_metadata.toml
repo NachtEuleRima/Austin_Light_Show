@@ -156,6 +156,12 @@ uri = "file://attached_assets/generated_images/halogram_holo_heart_pfp.png"
 type = "image"
 title = "halogram holo heart pfp"
 
+[[generated]]
+id = "06xj_hBfQ8I0rgYaeXygW"
+uri = "file://attached_assets/generated_images/halogram_holo_heart_dashpixels_pfp.png"
+type = "image"
+title = "halogram heart dashpixels pfp"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -245,3 +251,9 @@ id = "dp2_aX_wz6jEEeka-sdRs"
 uri = "file://attached_assets/generated_images/halogram_holo_heart_pfp.png"
 type = "image"
 title = "Hologram Robot Heart Hands PFP"
+
+[[outputs]]
+id = "XdIRrqoR_fskQqBpP4NYp"
+uri = "file://attached_assets/generated_images/halogram_holo_heart_dashpixels_pfp.png"
+type = "image"
+title = "Hologram Robot Heart PFP (Dash Pixels)"
