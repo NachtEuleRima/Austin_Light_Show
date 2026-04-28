@@ -281,3 +281,9 @@ id = "jM8T_bn-ZDItUiqNWn0q1"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v16.png"
 type = "image"
 title = "Halogram with Natural Eyes"
+
+[[outputs]]
+id = "YiAoshVTkxyBp92EBOAsO"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v17.png"
+type = "image"
+title = "Halogram with Blended Eyes"
