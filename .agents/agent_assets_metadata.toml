@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "kaw8a4lWesqC_KKMbmgHA"
@@ -66,3 +65,15 @@ id = "eoIfcZ2TmH2AOnRPumdVP"
 uri = "file://artifacts/long-center-lightshow/src/assets/tesla-hero-card.png"
 type = "image"
 title = "cinematic red model x falcon wings open portrait"
+
+[[generated]]
+id = "UwZ3xQRirLAXBjtV2TrFt"
+uri = "file://attached_assets/generated_images/halogram_logo.png"
+type = "image"
+title = "halogram hologram logo"
+
+[[outputs]]
+id = "pNyDqcA7rA-i-O05h6cG1"
+uri = "file://attached_assets/generated_images/halogram_logo.png"
+type = "image"
+title = "Halogram Logo"
