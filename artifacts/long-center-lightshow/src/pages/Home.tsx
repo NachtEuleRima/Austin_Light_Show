@@ -443,8 +443,8 @@ export default function Home() {
               </div>
           </div>
 
-          {/* Tech Support — mobile order 3 (after form), desktop col 1 row 2 */}
-          <div className="order-3 md:order-none md:col-start-1">
+          {/* Tech Support — mobile order 3 (after form), desktop col 1 row 2, aligned to bottom */}
+          <div className="order-3 md:order-none md:col-start-1 md:self-end md:w-full">
               <div className="border-t border-white/10 pt-8 flex flex-col items-center text-center">
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
                   <span style={{ fontSize: "1.5rem", color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
