@@ -132,6 +132,12 @@ uri = "file://attached_assets/generated_images/halogram_robot_ai_pfp.png"
 type = "image"
 title = "halogram robot ai pfp"
 
+[[generated]]
+id = "RmBiqAxme8DYy0VyWq5Am"
+uri = "file://attached_assets/generated_images/halogram_robot_holo_pfp.png"
+type = "image"
+title = "halogram robot holo pfp"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -197,3 +203,9 @@ id = "uJyon1thilAmfYRi-wpv3"
 uri = "file://attached_assets/generated_images/halogram_robot_ai_pfp.png"
 type = "image"
 title = "Halogram Robot PFP with AI badge"
+
+[[outputs]]
+id = "9RBF-Tnb5DPAwQbszqxm3"
+uri = "file://attached_assets/generated_images/halogram_robot_holo_pfp.png"
+type = "image"
+title = "Robot Hologram PFP"
