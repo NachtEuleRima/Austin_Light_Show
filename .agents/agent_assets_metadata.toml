@@ -90,6 +90,12 @@ uri = "file://attached_assets/generated_images/halogram_face_pfp_v2.png"
 type = "image"
 title = "halogram face pfp v2"
 
+[[generated]]
+id = "p1r4KLlQS68IYmHcFovbc"
+uri = "file://attached_assets/generated_images/halogram_ai_pfp.png"
+type = "image"
+title = "halogram ai pfp"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -113,3 +119,9 @@ id = "MCiu4-KeA4giNNABuBqw9"
 uri = "file://attached_assets/generated_images/halogram_face_pfp_v2.png"
 type = "image"
 title = "Halogram Face PFP v2"
+
+[[outputs]]
+id = "-8YHVYLuBzvAFA11Kxm47"
+uri = "file://attached_assets/generated_images/halogram_ai_pfp.png"
+type = "image"
+title = "Halogram AI PFP"
