@@ -269,3 +269,9 @@ id = "6e_qsLBuP8C6t001mU6ti"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v14.png"
 type = "image"
 title = "Halogram with Subtle Ray Strokes"
+
+[[outputs]]
+id = "deZnKcDzYBBcesDtdVAVJ"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v15.png"
+type = "image"
+title = "Halogram with Softer Eyes"
