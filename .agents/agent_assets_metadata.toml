@@ -72,8 +72,20 @@ uri = "file://attached_assets/generated_images/halogram_logo.png"
 type = "image"
 title = "halogram hologram logo"
 
+[[generated]]
+id = "o1REozr65ItikcUPi8apT"
+uri = "file://attached_assets/generated_images/halogram_pfp.png"
+type = "image"
+title = "halogram pfp"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
 type = "image"
 title = "Halogram Logo"
+
+[[outputs]]
+id = "SbC_BmvxytixcDolmNW5e"
+uri = "file://attached_assets/generated_images/halogram_pfp.png"
+type = "image"
+title = "Halogram PFP"
