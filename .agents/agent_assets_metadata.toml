@@ -317,3 +317,9 @@ id = "PPy_J8JBQMON_NfGpgkYx"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v19.png"
 type = "image"
 title = "Halogram with Stronger Wireframe Body"
+
+[[outputs]]
+id = "8mSLqa0i3kjoHqD2IIfQ1"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v20.png"
+type = "image"
+title = "Halogram with Wireframe in Background"
