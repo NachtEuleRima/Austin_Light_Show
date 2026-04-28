@@ -120,6 +120,12 @@ uri = "file://attached_assets/generated_images/halogram_thanks_pfp.png"
 type = "image"
 title = "halogram thanks pfp"
 
+[[generated]]
+id = "T0HKOdNfhpod7dntpmcgQ"
+uri = "file://attached_assets/generated_images/halogram_robot_thanks_pfp.png"
+type = "image"
+title = "halogram robot thanks pfp"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -173,3 +179,9 @@ id = "peNqf95APDTMSoxZkq5hQ"
 uri = "file://attached_assets/generated_images/halogram_thanks_pfp.png"
 type = "image"
 title = "Halogram Thank-You PFP"
+
+[[outputs]]
+id = "D1wYnL4KfEmdhmoabP7C6"
+uri = "file://attached_assets/generated_images/halogram_robot_thanks_pfp.png"
+type = "image"
+title = "Halogram Robot Thank-You PFP"
