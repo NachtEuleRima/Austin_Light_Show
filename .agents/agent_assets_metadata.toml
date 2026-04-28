@@ -305,3 +305,9 @@ id = "0h03frsPZAd2qOhUszAQm"
 uri = "file://attached_assets/generated_images/halogram_full_body_v2.png"
 type = "image"
 title = "Halogram Full Body with Subtle Background"
+
+[[outputs]]
+id = "MDqWbd0vCGpWospS2PAh6"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v18.png"
+type = "image"
+title = "Halogram with Wireframe Body Behind Arms"
