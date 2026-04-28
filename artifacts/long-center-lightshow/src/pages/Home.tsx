@@ -383,7 +383,7 @@ export default function Home() {
       </section>
 
       {/* 5. RSVP SECTION */}
-      <section id="rsvp" className="py-32 relative z-20 bg-black/80">
+      <section id="rsvp" className="pt-12 pb-12 relative z-20 bg-black/80">
         <style>{`
           @keyframes neonFlickerCyan {
             0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
