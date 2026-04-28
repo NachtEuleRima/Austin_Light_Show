@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* 2. THE SPECTACLE SECTION */}
-      <section className="pt-32 pb-12 relative z-20 overflow-hidden">
+      <section className="pt-12 pb-12 relative z-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* 3. EVENT DETAILS SECTION */}
-      <section className="pt-24 pb-12 relative z-20 border-y border-white/5 bg-black/50 backdrop-blur-xl">
+      <section className="pt-12 pb-12 relative z-20 border-y border-white/5 bg-black/50 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent transition-colors group">
@@ -288,7 +288,7 @@ export default function Home() {
       </section>
 
       {/* 4. THE FLEET */}
-      <section className="pt-32 pb-12 relative z-20 bg-background overflow-hidden">
+      <section className="pt-12 pb-12 relative z-20 bg-background overflow-hidden">
         {/* Dynamic background rings */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-transparent border-[1px] border-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-transparent border-[1px] border-primary/10 rounded-full -translate-y-1/2 translate-x-1/2" />
