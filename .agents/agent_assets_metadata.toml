@@ -144,6 +144,12 @@ uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v6.png"
 type = "image"
 title = "halogram robot hands forming heart v6"
 
+[[generated]]
+id = "6605K0JP5N4hmzrIOa-5C"
+uri = "file://attached_assets/generated_images/halogram_full_body_base.png"
+type = "image"
+title = "halogram full body base"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -287,3 +293,9 @@ id = "YiAoshVTkxyBp92EBOAsO"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v17.png"
 type = "image"
 title = "Halogram with Blended Eyes"
+
+[[outputs]]
+id = "j_tSF4ntwZtxZEP58UxEG"
+uri = "file://attached_assets/generated_images/halogram_full_body_v1.png"
+type = "image"
+title = "Halogram with Full Body Behind Hands"
