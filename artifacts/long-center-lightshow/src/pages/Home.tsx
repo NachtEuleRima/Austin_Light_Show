@@ -248,7 +248,7 @@ export default function Home() {
       <section className="py-24 relative z-20 border-y border-white/5 bg-black/50 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent hover:border-primary/30 transition-colors group">
+            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent transition-colors group">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <MapPin className="w-8 h-8 text-primary" />
               </div>
@@ -256,7 +256,7 @@ export default function Home() {
               <p className="text-muted-foreground text-sm font-light">Long Center for the Performing Arts<br/>Austin, Texas</p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent hover:border-secondary/30 transition-colors group">
+            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent transition-colors group">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Calendar className="w-8 h-8 text-secondary" />
               </div>
@@ -264,7 +264,7 @@ export default function Home() {
               <p className="text-muted-foreground text-sm font-light">April 24th, 2026<br/>One Night Only</p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent hover:border-accent/30 transition-colors group">
+            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent transition-colors group">
               <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Clock className="w-8 h-8 text-accent" />
               </div>
@@ -272,7 +272,7 @@ export default function Home() {
               <p className="text-muted-foreground text-sm font-light">Assemble: 8:00 PM<br/>Show Start: 8:30 PM</p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-primary/10 to-transparent hover:border-primary/50 transition-colors group relative overflow-hidden">
+            <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-primary/10 to-transparent transition-colors group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-50" />
               <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform">
                 <Users className="w-8 h-8 text-white" />
