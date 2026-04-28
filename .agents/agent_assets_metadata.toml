@@ -263,3 +263,9 @@ id = "2aYTzIPR0zH_TB184_kKa"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v13.png"
 type = "image"
 title = "Halogram with Spreading Ray Strokes"
+
+[[outputs]]
+id = "6e_qsLBuP8C6t001mU6ti"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v14.png"
+type = "image"
+title = "Halogram with Subtle Ray Strokes"
