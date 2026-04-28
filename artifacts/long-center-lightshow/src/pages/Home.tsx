@@ -7,8 +7,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import longCenterBg from "../assets/long-center-bg.png";
 import cybercabImg from "../assets/cybercab.png";
-import americanFlagImg from "../assets/american-flag-nobg.png";
-import texasFlagImg from "../assets/texas-flag-nobg.png";
+import americanFlagImg from "../assets/american-flag.png";
+import texasFlagImg from "../assets/texas-flag.png";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -156,8 +156,7 @@ export default function Home() {
           <img
             src={texasFlagImg}
             alt="Texas Flag"
-            className="w-16 h-12 object-contain"
-            style={{ filter: "drop-shadow(0 0 8px rgba(0,255,255,0.7)) drop-shadow(0 0 16px rgba(0,255,255,0.4))" }}
+            className="w-16 h-12 object-cover rounded shadow-[0_0_14px_rgba(0,255,255,0.4)] border border-white/10"
           />
         </div>
 
@@ -166,8 +165,7 @@ export default function Home() {
           <img
             src={americanFlagImg}
             alt="American Flag"
-            className="w-24 h-16 object-contain"
-            style={{ filter: "drop-shadow(0 0 8px rgba(255,80,80,0.7)) drop-shadow(0 0 16px rgba(255,80,80,0.4))" }}
+            className="w-16 h-12 object-cover rounded shadow-[0_0_14px_rgba(255,80,80,0.5)] border border-white/10"
           />
         </div>
 
