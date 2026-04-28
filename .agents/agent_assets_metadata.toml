@@ -233,3 +233,9 @@ id = "hhOjAyhY0L_jJLo9m1wM0"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v8.png"
 type = "image"
 title = "Halogram with Subtle Halo"
+
+[[outputs]]
+id = "DBwoXE_ZXFoHfcUSM2XN1"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v9.png"
+type = "image"
+title = "Halogram with Wider Bottom Halo"
