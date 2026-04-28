@@ -251,3 +251,9 @@ id = "OdTBEMGvtpDuR8fJLdb4s"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v11.png"
 type = "image"
 title = "Halogram with Slightly Wider Light Rays"
+
+[[outputs]]
+id = "ilqFvDF4BGI7pOZ4MY5Zw"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v12.png"
+type = "image"
+title = "Halogram with Spreading Light Cone"
