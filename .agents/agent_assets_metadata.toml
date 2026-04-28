@@ -299,3 +299,9 @@ id = "j_tSF4ntwZtxZEP58UxEG"
 uri = "file://attached_assets/generated_images/halogram_full_body_v1.png"
 type = "image"
 title = "Halogram with Full Body Behind Hands"
+
+[[outputs]]
+id = "0h03frsPZAd2qOhUszAQm"
+uri = "file://attached_assets/generated_images/halogram_full_body_v2.png"
+type = "image"
+title = "Halogram Full Body with Subtle Background"
