@@ -7,8 +7,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import longCenterBg from "../assets/long-center-bg.png";
 import cybercabImg from "../assets/cybercab.png";
-import americanFlagImg from "../assets/american-flag.png";
-import texasFlagImg from "../assets/texas-flag.png";
+import americanFlagImg from "../assets/american-flag-nobg.png";
+import texasFlagImg from "../assets/texas-flag-nobg.png";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
