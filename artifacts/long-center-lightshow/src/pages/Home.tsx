@@ -227,7 +227,7 @@ export default function Home() {
                 <img
                   src={cybercabImg}
                   alt="Tesla Cybercab"
-                  className="w-2/3 h-2/3 object-contain mx-auto -translate-y-10 group-hover:scale-105 transition-transform duration-700"
+                  className="w-2/3 h-2/3 object-contain mx-auto md:-translate-y-10 group-hover:scale-105 transition-transform duration-700 max-md:animate-[cybercab-breathe-mobile_3s_ease-in-out_infinite]"
                   style={{
                     filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.8) brightness(0.95) contrast(1.1)",
                   }}
