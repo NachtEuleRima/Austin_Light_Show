@@ -108,6 +108,12 @@ uri = "file://attached_assets/generated_images/halogram_wireframe_hair_pfp.png"
 type = "image"
 title = "halogram wireframe hair pfp"
 
+[[generated]]
+id = "3NOazKIExMNqe0yDjEzuC"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp.png"
+type = "image"
+title = "halogram robot heart pfp"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -149,3 +155,9 @@ id = "arfkIP-4nBaQy5nbQdUSb"
 uri = "file://attached_assets/generated_images/halogram_wireframe_hair_pfp.png"
 type = "image"
 title = "Halogram Hologram PFP (with hair)"
+
+[[outputs]]
+id = "4JN-eGKoxLuzcB7Q7LiDD"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp.png"
+type = "image"
+title = "Halogram with Robot Hands & Heart"
