@@ -108,6 +108,12 @@ uri = "file://attached_assets/generated_images/halogram_wireframe_hair_pfp.png"
 type = "image"
 title = "halogram wireframe hair pfp"
 
+[[generated]]
+id = "TvFpwtpMdNjsnQwpJE7I3"
+uri = "file://attached_assets/generated_images/halogram_classic_pfp.png"
+type = "image"
+title = "halogram classic pfp"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -149,3 +155,9 @@ id = "arfkIP-4nBaQy5nbQdUSb"
 uri = "file://attached_assets/generated_images/halogram_wireframe_hair_pfp.png"
 type = "image"
 title = "Halogram Hologram PFP (with hair)"
+
+[[outputs]]
+id = "J7Kr9jVQWdJN8N4jRVd8H"
+uri = "file://attached_assets/generated_images/halogram_classic_pfp.png"
+type = "image"
+title = "Halogram Classic Hologram PFP"
