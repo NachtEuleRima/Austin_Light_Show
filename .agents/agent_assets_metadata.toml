@@ -132,6 +132,12 @@ uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v4.png"
 type = "image"
 title = "halogram robot heart pfp v4 wide halo"
 
+[[generated]]
+id = "qnYKNqi8YhFOndOLxsFxj"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v5.png"
+type = "image"
+title = "halogram robot heart pfp v5 faint halo"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -197,3 +203,9 @@ id = "FqnM3ipa1zg0IiRgTtl60"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v4.png"
 type = "image"
 title = "Halogram with Wider Halo"
+
+[[outputs]]
+id = "5Xe2QncgFIdxws7OTcD9S"
+uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v5.png"
+type = "image"
+title = "Halogram with Faint Halo"
