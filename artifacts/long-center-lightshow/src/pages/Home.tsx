@@ -157,6 +157,7 @@ export default function Home() {
             src={texasFlagImg}
             alt="Texas Flag"
             className="w-16 h-12 object-contain"
+            style={{ filter: "drop-shadow(0 0 8px rgba(0,255,255,0.7)) drop-shadow(0 0 16px rgba(0,255,255,0.4))" }}
           />
         </div>
 
@@ -166,6 +167,7 @@ export default function Home() {
             src={americanFlagImg}
             alt="American Flag"
             className="w-16 h-12 object-contain"
+            style={{ filter: "drop-shadow(0 0 8px rgba(255,80,80,0.7)) drop-shadow(0 0 16px rgba(255,80,80,0.4))" }}
           />
         </div>
 
