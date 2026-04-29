@@ -185,7 +185,7 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Tesla bots are performing at the Long Center — and they need an audience. Expect a variety of dance forms, every move synced to their own lights — first Sunday of every month. Bring your bot, fill the seats, and turn the Long Center into a living, breathing canvas of light.
+                We taught the robots how to dance — now they want an audience. A monthly lightshow takeover at Austin's Long Center, first Sunday of every month: headlights, taillights, turn signals and falcon wing doors moving in perfect harmony. Bring your robot, queue up the setlist, and turn the Long Center into a living, breathing canvas of light.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
@@ -450,7 +450,7 @@ export default function Home() {
                 <div className="w-full flex flex-col gap-4">
                 {[
                   { username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website inquiries" },
-                  { username: "Heike_Jost", display: "Hi🔑 Heike Jost 🇺🇸🇩🇪", role: "Event questions" },
+                  { username: "Heike_Jost", display: "Hi🔑 Heike Jost 🇺🇸🇩🇪", role: "Event inquiries" },
                 ].map(({ username, display, role }) => (
                   <a
                     key={username}
