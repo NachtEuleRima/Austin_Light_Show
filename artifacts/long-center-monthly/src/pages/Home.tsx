@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -50,12 +50,36 @@ export default function Home() {
   
   const [isSuccess, setIsSuccess] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [spinPhase, setSpinPhase] = useState<'idle' | 'await-up' | 'spinning'>('idle');
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleCybercabTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+  const handleCybercabTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStart.current.x;
+    const dy = t.clientY - touchStart.current.y;
+    touchStart.current = null;
+    const ax = Math.abs(dx), ay = Math.abs(dy);
+    if (spinPhase === 'idle' && ax > 30 && ax > ay && dx > 0) {
+      setSpinPhase('await-up');
+    } else if (spinPhase === 'await-up' && ay > 30 && ay > ax && dy < 0) {
+      setSpinPhase('spinning');
+    }
+  };
+  const handleCybercabClick = () => {
+    if (spinPhase === 'idle') setSpinPhase('await-up');
+    else if (spinPhase === 'await-up') setSpinPhase('spinning');
+  };
 
   const form = useForm<RsvpFormValues>({
     resolver: zodResolver(rsvpSchema),
@@ -217,22 +241,57 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="relative h-[220px] md:h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group">
+            <div
+              className="relative h-[220px] md:h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group select-none"
+              style={{ perspective: "1200px", touchAction: spinPhase === 'idle' || spinPhase === 'await-up' ? 'pan-y' : 'auto' }}
+              onTouchStart={handleCybercabTouchStart}
+              onTouchEnd={handleCybercabTouchEnd}
+              onClick={handleCybercabClick}
+            >
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(138,43,226,0.2)_0%,transparent_70%)]" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] animate-[spin_20s_linear_infinite] opacity-30">
                 <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent absolute top-1/2 -translate-y-1/2" />
                 <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
               </div>
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
                 <img
                   src={cybercabImg}
                   alt="Tesla Cybercab"
-                  className="w-2/3 h-2/3 object-contain mx-auto -translate-y-4 md:-translate-y-10 group-hover:scale-105 transition-transform duration-700 max-md:animate-[cybercab-breathe-mobile_3s_ease-in-out_infinite]"
+                  onAnimationEnd={(e) => {
+                    if ((e.animationName || '').includes('cybercab-tumble')) setSpinPhase('idle');
+                  }}
+                  className={`w-2/3 h-2/3 object-contain mx-auto -translate-y-4 md:-translate-y-10 ${
+                    spinPhase === 'spinning'
+                      ? 'animate-[cybercab-tumble_2.4s_cubic-bezier(0.65,0,0.35,1)_forwards]'
+                      : 'group-hover:scale-105 transition-transform duration-700 max-md:animate-[cybercab-breathe-mobile_3s_ease-in-out_infinite]'
+                  }`}
                   style={{
                     filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.8) brightness(0.95) contrast(1.1)",
                   }}
                 />
               </div>
+
+              {/* Right swipe prompt */}
+              {spinPhase === 'idle' && (
+                <div className="pointer-events-none absolute right-4 md:right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1 z-10">
+                  <ChevronRight
+                    className="w-10 h-10 md:w-14 md:h-14 text-cyan-300 animate-[arrow-flash_1.2s_ease-in-out_infinite]"
+                    style={{ filter: "drop-shadow(0 0 8px rgba(34,211,238,0.9)) drop-shadow(0 0 18px rgba(34,211,238,0.5))" }}
+                  />
+                  <span className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-cyan-300/80">swipe</span>
+                </div>
+              )}
+
+              {/* Up swipe prompt */}
+              {spinPhase === 'await-up' && (
+                <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-16 md:bottom-24 flex flex-col items-center gap-1 z-10">
+                  <ChevronUp
+                    className="w-10 h-10 md:w-14 md:h-14 text-fuchsia-400 animate-[arrow-flash_0.9s_ease-in-out_infinite]"
+                    style={{ filter: "drop-shadow(0 0 8px rgba(232,121,249,0.9)) drop-shadow(0 0 18px rgba(232,121,249,0.5))" }}
+                  />
+                  <span className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-fuchsia-300/80">swipe up</span>
+                </div>
+              )}
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                 <p className="font-mono text-sm text-primary tracking-widest uppercase">System Sync // 100%</p>
                 <div className="w-full h-1 bg-white/10 mt-2 rounded-full overflow-hidden">
