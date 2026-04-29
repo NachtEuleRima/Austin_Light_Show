@@ -110,6 +110,169 @@ export function useHealthCheck<
 }
 
 /**
+ * Submit an RSVP for the Long Center Monthly Residency event
+ * @summary Create a Monthly Long Center RSVP
+ */
+export const getCreateMonthlyRsvpUrl = () => {
+  return `/api/rsvps-monthly`;
+};
+
+export const createMonthlyRsvp = async (
+  createRsvpBody: CreateRsvpBody,
+  options?: RequestInit,
+): Promise<Rsvp> => {
+  return customFetch<Rsvp>(getCreateMonthlyRsvpUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(createRsvpBody),
+  });
+};
+
+export const getCreateMonthlyRsvpMutationOptions = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createMonthlyRsvp>>,
+    TError,
+    { data: BodyType<CreateRsvpBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof createMonthlyRsvp>>,
+  TError,
+  { data: BodyType<CreateRsvpBody> },
+  TContext
+> => {
+  const mutationKey = ["createMonthlyRsvp"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof createMonthlyRsvp>>,
+    { data: BodyType<CreateRsvpBody> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return createMonthlyRsvp(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type CreateMonthlyRsvpMutationResult = NonNullable<
+  Awaited<ReturnType<typeof createMonthlyRsvp>>
+>;
+export type CreateMonthlyRsvpMutationBody = BodyType<CreateRsvpBody>;
+export type CreateMonthlyRsvpMutationError = ErrorType<ErrorResponse>;
+
+/**
+ * @summary Create a Monthly Long Center RSVP
+ */
+export const useCreateMonthlyRsvp = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createMonthlyRsvp>>,
+    TError,
+    { data: BodyType<CreateRsvpBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof createMonthlyRsvp>>,
+  TError,
+  { data: BodyType<CreateRsvpBody> },
+  TContext
+> => {
+  return useMutation(getCreateMonthlyRsvpMutationOptions(options));
+};
+
+/**
+ * Get total count and list of monthly Long Center RSVPs
+ * @summary List Monthly Long Center RSVPs
+ */
+export const getListMonthlyRsvpsUrl = () => {
+  return `/api/rsvps-monthly`;
+};
+
+export const listMonthlyRsvps = async (
+  options?: RequestInit,
+): Promise<RsvpList> => {
+  return customFetch<RsvpList>(getListMonthlyRsvpsUrl(), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getListMonthlyRsvpsQueryKey = () => {
+  return [`/api/rsvps-monthly`] as const;
+};
+
+export const getListMonthlyRsvpsQueryOptions = <
+  TData = Awaited<ReturnType<typeof listMonthlyRsvps>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof listMonthlyRsvps>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey = queryOptions?.queryKey ?? getListMonthlyRsvpsQueryKey();
+
+  const queryFn: QueryFunction<
+    Awaited<ReturnType<typeof listMonthlyRsvps>>
+  > = ({ signal }) => listMonthlyRsvps({ signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof listMonthlyRsvps>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type ListMonthlyRsvpsQueryResult = NonNullable<
+  Awaited<ReturnType<typeof listMonthlyRsvps>>
+>;
+export type ListMonthlyRsvpsQueryError = ErrorType<unknown>;
+
+/**
+ * @summary List Monthly Long Center RSVPs
+ */
+
+export function useListMonthlyRsvps<
+  TData = Awaited<ReturnType<typeof listMonthlyRsvps>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof listMonthlyRsvps>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getListMonthlyRsvpsQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
  * Submit an RSVP for the Tesla Lightshow at COTA event
  * @summary Create an RSVP
  */

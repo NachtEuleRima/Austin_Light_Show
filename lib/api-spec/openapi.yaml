@@ -12,6 +12,8 @@ tags:
     description: Health operations
   - name: rsvp
     description: RSVP operations
+  - name: rsvp-monthly
+    description: Monthly Long Center RSVP operations
 paths:
   /healthz:
     get:
@@ -26,6 +28,43 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /rsvps-monthly:
+    post:
+      operationId: createMonthlyRsvp
+      tags: [rsvp-monthly]
+      summary: Create a Monthly Long Center RSVP
+      description: Submit an RSVP for the Long Center Monthly Residency event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateRsvpBody"
+      responses:
+        "201":
+          description: RSVP created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Rsvp"
+        "409":
+          description: Email already registered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    get:
+      operationId: listMonthlyRsvps
+      tags: [rsvp-monthly]
+      summary: List Monthly Long Center RSVPs
+      description: Get total count and list of monthly Long Center RSVPs
+      responses:
+        "200":
+          description: RSVP list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RsvpList"
   /rsvps:
     post:
       operationId: createRsvp

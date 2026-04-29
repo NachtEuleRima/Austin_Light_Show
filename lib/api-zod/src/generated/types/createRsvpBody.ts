@@ -13,8 +13,11 @@ export interface CreateRsvpBody {
    */
   name: string;
   email: string;
-  phone?: string;
-  robot: "s3xy" | "cybertruck" | "juniper";
+  /**
+   * @minimum 1
+   * @maximum 10
+   */
+  guests: number;
   /** @maxLength 500 */
   message?: string;
 }

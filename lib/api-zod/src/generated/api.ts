@@ -16,6 +16,41 @@ export const HealthCheckResponse = zod.object({
 });
 
 /**
+ * Submit an RSVP for the Long Center Monthly Residency event
+ * @summary Create a Monthly Long Center RSVP
+ */
+export const createMonthlyRsvpBodyNameMax = 100;
+
+export const createMonthlyRsvpBodyGuestsMax = 10;
+
+export const createMonthlyRsvpBodyMessageMax = 500;
+
+export const CreateMonthlyRsvpBody = zod.object({
+  name: zod.string().min(1).max(createMonthlyRsvpBodyNameMax),
+  email: zod.string().email(),
+  guests: zod.number().min(1).max(createMonthlyRsvpBodyGuestsMax),
+  message: zod.string().max(createMonthlyRsvpBodyMessageMax).optional(),
+});
+
+/**
+ * Get total count and list of monthly Long Center RSVPs
+ * @summary List Monthly Long Center RSVPs
+ */
+export const ListMonthlyRsvpsResponse = zod.object({
+  total: zod.number(),
+  rsvps: zod.array(
+    zod.object({
+      id: zod.number(),
+      name: zod.string(),
+      email: zod.string(),
+      guests: zod.number(),
+      message: zod.string().nullish(),
+      createdAt: zod.coerce.date(),
+    }),
+  ),
+});
+
+/**
  * Submit an RSVP for the Tesla Lightshow at COTA event
  * @summary Create an RSVP
  */
@@ -28,8 +63,7 @@ export const createRsvpBodyMessageMax = 500;
 export const CreateRsvpBody = zod.object({
   name: zod.string().min(1).max(createRsvpBodyNameMax),
   email: zod.string().email(),
-  phone: zod.string().optional(),
-  robot: zod.enum(["s3xy", "cybertruck", "juniper"]),
+  guests: zod.number().min(1).max(createRsvpBodyGuestsMax),
   message: zod.string().max(createRsvpBodyMessageMax).optional(),
 });
 
