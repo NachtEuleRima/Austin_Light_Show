@@ -69,7 +69,7 @@ export default function Admin() {
     setClearing(true);
     try {
       const base = import.meta.env.BASE_URL ?? "/";
-      await fetch(`${base}api/rsvps/all`, {
+      await fetch(`${base}api/fantasy/all`, {
         method: "DELETE",
         headers: { "x-admin-password": ADMIN_PASSWORD },
       });
