@@ -97,7 +97,7 @@ export default function Home() {
           <img
             src={longCenterBg}
             alt="Tesla lightshow at Long Center Austin"
-            className="w-full h-full object-cover object-[51%_center] md:object-center"
+            className="w-full h-full object-cover object-[50%_center] md:object-center"
             style={{ filter: 'brightness(0.78) saturate(1.4) contrast(1.05)' }}
           />
           {/* Dark gradient top + bottom vignette */}
