@@ -275,14 +275,19 @@ export default function Home() {
                   />
                 )}
                 {cabPhase === 'revealed' && (
-                  <img
-                    src={cybercabSideImg}
-                    alt="Tesla Robotaxi spotted in Austin"
-                    className="w-[92%] h-[92%] object-contain mx-auto rounded-2xl animate-[cab-reveal_0.9s_ease-out_forwards]"
-                    style={{
-                      filter: "drop-shadow(0 0 24px rgba(255,200,80,0.4)) drop-shadow(0 0 60px rgba(255,160,40,0.25))",
-                    }}
-                  />
+                  <div className="w-[92%] h-[92%] overflow-hidden rounded-2xl animate-[cab-reveal_0.9s_ease-out_forwards]">
+                    <img
+                      src={cybercabSideImg}
+                      alt="Tesla Robotaxi spotted in Austin"
+                      className="w-full h-full object-cover"
+                      style={{
+                        objectPosition: "30% center",
+                        transform: "scale(1.18)",
+                        transformOrigin: "left center",
+                        filter: "drop-shadow(0 0 24px rgba(255,200,80,0.4)) drop-shadow(0 0 60px rgba(255,160,40,0.25))",
+                      }}
+                    />
+                  </div>
                 )}
               </div>
 
