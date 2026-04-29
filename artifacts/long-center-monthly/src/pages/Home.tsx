@@ -128,13 +128,13 @@ export default function Home() {
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-28vh]">
           <div className="inline-flex items-center gap-3 max-md:gap-2 px-6 py-3 max-md:px-4 max-md:py-2 rounded-full border border-primary/70 bg-primary/15 text-primary mb-8 animate-float shadow-[0_0_24px_rgba(0,255,255,0.45)] backdrop-blur-md">
             <Zap className="w-5 h-5 max-md:w-4 max-md:h-4 text-primary drop-shadow-[0_0_6px_rgba(0,255,255,0.9)]" />
-            <span className="text-sm max-md:text-xs font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // MAY 3 · MONTHLY</span>
+            <span className="text-sm max-md:text-xs font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // MAY 3</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">Sunday</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">Austin</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-fuchsia-500 to-accent text-glow-magenta mt-2">Lightshow</span>
-            <span className="block text-lg md:text-3xl lg:text-4xl text-white mt-3 tracking-[0.15em]">Long Center Residency</span>
+            <span className="block text-lg md:text-3xl lg:text-4xl text-white mt-3 tracking-[0.15em]">Mothership Edition</span>
           </h1>
 
         </div>
