@@ -150,6 +150,12 @@ uri = "file://attached_assets/generated_images/halogram_full_body_base.png"
 type = "image"
 title = "halogram full body base"
 
+[[generated]]
+id = "QvEbILQl3vcI1KGpH1akB"
+uri = "file://attached_assets/generated_images/halogram_heart_space_logo_v1.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "pNyDqcA7rA-i-O05h6cG1"
 uri = "file://attached_assets/generated_images/halogram_logo.png"
@@ -323,3 +329,9 @@ id = "8mSLqa0i3kjoHqD2IIfQ1"
 uri = "file://attached_assets/generated_images/halogram_robot_heart_pfp_v20.png"
 type = "image"
 title = "Halogram with Wireframe in Background"
+
+[[outputs]]
+id = "2CZ1hC1esQ3k8XYvFgpO3"
+uri = "file://attached_assets/generated_images/halogram_heart_space_logo_v1.png"
+type = "image"
+title = "Halogram Heart in Space — Logo"
