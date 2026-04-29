@@ -7,14 +7,14 @@ const ADMIN_PASSWORD = "cyberowlcanaccess";
 
 const router: IRouter = Router();
 
-router.get("/rsvps-monthly", async (req, res): Promise<void> => {
+router.get("/rsvp", async (req, res): Promise<void> => {
   const rsvps = await db.select().from(rsvpsMonthlyTable).orderBy(rsvpsMonthlyTable.createdAt);
   const [{ value: total }] = await db.select({ value: count() }).from(rsvpsMonthlyTable);
   req.log.info({ total }, "Listed monthly RSVPs");
   res.json({ total: Number(total), rsvps });
 });
 
-router.post("/rsvps-monthly", async (req, res): Promise<void> => {
+router.post("/rsvp", async (req, res): Promise<void> => {
   const parsed = CreateRsvpBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.message });
@@ -48,7 +48,7 @@ router.post("/rsvps-monthly", async (req, res): Promise<void> => {
   res.status(201).json(rsvp);
 });
 
-router.delete("/rsvps-monthly/all", async (req, res): Promise<void> => {
+router.delete("/rsvp/all", async (req, res): Promise<void> => {
   if (req.headers["x-admin-password"] !== ADMIN_PASSWORD) {
     res.status(401).json({ error: "Unauthorized" });
     return;

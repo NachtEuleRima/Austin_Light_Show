@@ -28,7 +28,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
-  /rsvps-monthly:
+  /rsvp:
     post:
       operationId: createMonthlyRsvp
       tags: [rsvp-monthly]

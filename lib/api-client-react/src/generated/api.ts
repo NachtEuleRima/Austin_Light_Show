@@ -114,7 +114,7 @@ export function useHealthCheck<
  * @summary Create a Monthly Long Center RSVP
  */
 export const getCreateMonthlyRsvpUrl = () => {
-  return `/api/rsvps-monthly`;
+  return `/api/rsvp`;
 };
 
 export const createMonthlyRsvp = async (
@@ -201,7 +201,7 @@ export const useCreateMonthlyRsvp = <
  * @summary List Monthly Long Center RSVPs
  */
 export const getListMonthlyRsvpsUrl = () => {
-  return `/api/rsvps-monthly`;
+  return `/api/rsvp`;
 };
 
 export const listMonthlyRsvps = async (
@@ -214,7 +214,7 @@ export const listMonthlyRsvps = async (
 };
 
 export const getListMonthlyRsvpsQueryKey = () => {
-  return [`/api/rsvps-monthly`] as const;
+  return [`/api/rsvp`] as const;
 };
 
 export const getListMonthlyRsvpsQueryOptions = <
