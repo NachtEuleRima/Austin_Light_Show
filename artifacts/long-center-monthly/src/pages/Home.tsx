@@ -128,13 +128,13 @@ export default function Home() {
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[-28vh]">
           <div className="inline-flex items-center gap-3 max-md:gap-2 px-6 py-3 max-md:px-4 max-md:py-2 rounded-full border border-primary/70 bg-primary/15 text-primary mb-8 animate-float shadow-[0_0_24px_rgba(0,255,255,0.45)] backdrop-blur-md">
             <Zap className="w-5 h-5 max-md:w-4 max-md:h-4 text-primary drop-shadow-[0_0_6px_rgba(0,255,255,0.9)]" />
-            <span className="text-sm max-md:text-xs font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // APR 24</span>
+            <span className="text-sm max-md:text-xs font-mono tracking-[0.3em] uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.7)]">AUSTIN x TESLA // MAY 3 · MONTHLY</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none mb-6 drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">Worldwide Fantasy</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-blue-500 text-glow-cyan">Sunday</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary via-fuchsia-500 to-accent text-glow-magenta mt-2">Lightshow</span>
-            <span className="block text-lg md:text-3xl lg:text-4xl text-white mt-3 tracking-[0.15em]">Mothership Edition</span>
+            <span className="block text-lg md:text-3xl lg:text-4xl text-white mt-3 tracking-[0.15em]">Long Center Residency</span>
           </h1>
 
         </div>
@@ -185,7 +185,7 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Tesla robots synchronized in a worldwide fantasy lightshow lighting up Austin's Long Center for one unforgettable night, choreographed by our legendary lightshow master&nbsp;
+                A monthly residency at Austin's Long Center — Tesla robots synchronized into a living lightshow on the first Sunday of every month, choreographed by our legendary lightshow master&nbsp;
                 <a
                   href="https://xlightshows.io"
                   target="_blank"
@@ -200,7 +200,7 @@ export default function Home() {
                 >
                   Simon Pollock
                 </a>
-                &nbsp;✨ headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony, transforming the Long Center into a living, breathing canvas of light.
+                &nbsp;✨ headlights, taillights, turn signals, and falcon wing doors moving in perfect harmony — a fresh setlist every month, same iconic stage.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
@@ -260,8 +260,8 @@ export default function Home() {
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Calendar className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">The Date</h3>
-              <p className="text-muted-foreground text-sm font-light">April 24th, 2026<br/>One Night Only</p>
+              <h3 className="text-xl font-bold mb-2">Next Show</h3>
+              <p className="text-muted-foreground text-sm font-light">Sunday, May 3rd, 2026<br/>First Sunday of every month</p>
             </div>
             
             <div className="flex flex-col items-center text-center p-8 border border-white/5 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent transition-colors group">
@@ -418,7 +418,7 @@ export default function Home() {
                 Join The <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Frequency</span>
               </h2>
               <p className="text-muted-foreground mb-10 text-lg font-light">
-                Register your robot to join the largest synchronized worldwide lightshow in history.
+                Register your robot to join Austin's monthly lightshow residency at the Long Center — first Sunday, every month.
               </p>
 
               <div className="space-y-8">
@@ -655,7 +655,7 @@ export default function Home() {
             <div className="w-1 h-4 bg-accent" />
           </div>
           <p className="text-white/40 font-mono text-sm tracking-[0.3em] uppercase">
-            SYSTEM_READY // AUSTIN_TX // LONG_CENTER_LIGHTSHOW_2026
+            SYSTEM_READY // AUSTIN_TX // LONG_CENTER_RESIDENCY · FIRST_SUNDAY_MONTHLY
           </p>
           <p className="text-white/20 text-xs mt-2 font-light">
             Not affiliated with Tesla, Inc. or Long Center for the Performing Arts.
