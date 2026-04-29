@@ -462,10 +462,7 @@ export default function Home() {
                   <span style={{ fontSize: "1.5rem", color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
                 </div>
                 <p className="text-white/40 text-sm mb-5">Have a question? Reach out below.</p>
-                {[
-                  { username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website inquiries" },
-                  { username: "Heike_Jost", display: "Hi🔑 Heike Jost 🇺🇸🇩🇪", role: "Event inquiries" },
-                ].map(({ username, display, role }) => (
+                {[{ username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website and event inquiries" }].map(({ username, display, role }) => (
                   <a
                     key={username}
                     href="#"
