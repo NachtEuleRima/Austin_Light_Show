@@ -464,8 +464,8 @@ export default function Home() {
                 <p className="text-white/40 text-sm mb-5">Have a question? Reach out below.</p>
                 <div className="w-full flex flex-col gap-4">
                 {[
-                  { username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website inquiries" },
-                  { username: "Heike_Jost", display: "Hi🔑 Heike Jost 🇺🇸🇩🇪", role: "Event inquiries" },
+                  { username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Technical Inquiries" },
+                  { username: "Heike_Jost", display: "Hi🔑 Heike Jost 🇺🇸🇩🇪", role: "Event Inquiries" },
                 ].map(({ username, display, role }) => (
                   <a
                     key={username}
