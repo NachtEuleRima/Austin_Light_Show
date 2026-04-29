@@ -68,7 +68,7 @@ export default function Home() {
   });
 
   const onSubmit = (data: RsvpFormValues) => {
-    createRsvp.mutate({ data }, {
+    createRsvp.mutate({ data: { ...data, guests: 1 } }, {
       onSuccess: () => {
         setIsSuccess(true);
         queryClient.invalidateQueries({ queryKey: getListFantasyRsvpsQueryKey() });
