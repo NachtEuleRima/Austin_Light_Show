@@ -19,3 +19,4 @@
 
 export * from "./rsvps";
 export * from "./rsvps-monthly";
+export * from "./rsvps-fantasy";

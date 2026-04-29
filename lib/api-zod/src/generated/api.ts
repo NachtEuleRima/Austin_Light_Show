@@ -16,6 +16,41 @@ export const HealthCheckResponse = zod.object({
 });
 
 /**
+ * Submit an RSVP for the Worldwide Fantasy Long Center event
+ * @summary Create a Worldwide Fantasy Long Center RSVP
+ */
+export const createFantasyRsvpBodyNameMax = 100;
+
+export const createFantasyRsvpBodyGuestsMax = 10;
+
+export const createFantasyRsvpBodyMessageMax = 500;
+
+export const CreateFantasyRsvpBody = zod.object({
+  name: zod.string().min(1).max(createFantasyRsvpBodyNameMax),
+  email: zod.string().email(),
+  guests: zod.number().min(1).max(createFantasyRsvpBodyGuestsMax),
+  message: zod.string().max(createFantasyRsvpBodyMessageMax).optional(),
+});
+
+/**
+ * Get total count and list of fantasy Long Center RSVPs
+ * @summary List Worldwide Fantasy Long Center RSVPs
+ */
+export const ListFantasyRsvpsResponse = zod.object({
+  total: zod.number(),
+  rsvps: zod.array(
+    zod.object({
+      id: zod.number(),
+      name: zod.string(),
+      email: zod.string(),
+      guests: zod.number(),
+      message: zod.string().nullish(),
+      createdAt: zod.coerce.date(),
+    }),
+  ),
+});
+
+/**
  * Submit an RSVP for the Long Center Monthly Residency event
  * @summary Create a Monthly Long Center RSVP
  */

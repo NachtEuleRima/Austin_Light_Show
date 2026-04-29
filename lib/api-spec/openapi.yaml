@@ -14,6 +14,8 @@ tags:
     description: RSVP operations
   - name: rsvp-monthly
     description: Monthly Long Center RSVP operations
+  - name: rsvp-fantasy
+    description: Worldwide Fantasy Long Center RSVP operations
 paths:
   /healthz:
     get:
@@ -28,6 +30,43 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /fantasy:
+    post:
+      operationId: createFantasyRsvp
+      tags: [rsvp-fantasy]
+      summary: Create a Worldwide Fantasy Long Center RSVP
+      description: Submit an RSVP for the Worldwide Fantasy Long Center event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateRsvpBody"
+      responses:
+        "201":
+          description: RSVP created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Rsvp"
+        "409":
+          description: Email already registered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    get:
+      operationId: listFantasyRsvps
+      tags: [rsvp-fantasy]
+      summary: List Worldwide Fantasy Long Center RSVPs
+      description: Get total count and list of fantasy Long Center RSVPs
+      responses:
+        "200":
+          description: RSVP list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RsvpList"
   /rsvp:
     post:
       operationId: createMonthlyRsvp

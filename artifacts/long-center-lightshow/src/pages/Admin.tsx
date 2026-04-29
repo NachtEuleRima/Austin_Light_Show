@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useListRsvps } from "@workspace/api-client-react";
+import { useListFantasyRsvps } from "@workspace/api-client-react";
 import { Lock, Eye, EyeOff, ShieldAlert, Download, Trash2 } from "lucide-react";
 
 const ADMIN_PASSWORD = "cyberowlcanaccess";
@@ -17,7 +17,7 @@ export default function Admin() {
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
 
-  const { data, isLoading, refetch } = useListRsvps({ query: { enabled: authed } });
+  const { data, isLoading, refetch } = useListFantasyRsvps({ query: { enabled: authed } });
 
   useEffect(() => {
     if (authed) sessionStorage.setItem("admin_auth", "true");

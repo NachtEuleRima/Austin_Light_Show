@@ -110,6 +110,169 @@ export function useHealthCheck<
 }
 
 /**
+ * Submit an RSVP for the Worldwide Fantasy Long Center event
+ * @summary Create a Worldwide Fantasy Long Center RSVP
+ */
+export const getCreateFantasyRsvpUrl = () => {
+  return `/api/fantasy`;
+};
+
+export const createFantasyRsvp = async (
+  createRsvpBody: CreateRsvpBody,
+  options?: RequestInit,
+): Promise<Rsvp> => {
+  return customFetch<Rsvp>(getCreateFantasyRsvpUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(createRsvpBody),
+  });
+};
+
+export const getCreateFantasyRsvpMutationOptions = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createFantasyRsvp>>,
+    TError,
+    { data: BodyType<CreateRsvpBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof createFantasyRsvp>>,
+  TError,
+  { data: BodyType<CreateRsvpBody> },
+  TContext
+> => {
+  const mutationKey = ["createFantasyRsvp"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof createFantasyRsvp>>,
+    { data: BodyType<CreateRsvpBody> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return createFantasyRsvp(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type CreateFantasyRsvpMutationResult = NonNullable<
+  Awaited<ReturnType<typeof createFantasyRsvp>>
+>;
+export type CreateFantasyRsvpMutationBody = BodyType<CreateRsvpBody>;
+export type CreateFantasyRsvpMutationError = ErrorType<ErrorResponse>;
+
+/**
+ * @summary Create a Worldwide Fantasy Long Center RSVP
+ */
+export const useCreateFantasyRsvp = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createFantasyRsvp>>,
+    TError,
+    { data: BodyType<CreateRsvpBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof createFantasyRsvp>>,
+  TError,
+  { data: BodyType<CreateRsvpBody> },
+  TContext
+> => {
+  return useMutation(getCreateFantasyRsvpMutationOptions(options));
+};
+
+/**
+ * Get total count and list of fantasy Long Center RSVPs
+ * @summary List Worldwide Fantasy Long Center RSVPs
+ */
+export const getListFantasyRsvpsUrl = () => {
+  return `/api/fantasy`;
+};
+
+export const listFantasyRsvps = async (
+  options?: RequestInit,
+): Promise<RsvpList> => {
+  return customFetch<RsvpList>(getListFantasyRsvpsUrl(), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getListFantasyRsvpsQueryKey = () => {
+  return [`/api/fantasy`] as const;
+};
+
+export const getListFantasyRsvpsQueryOptions = <
+  TData = Awaited<ReturnType<typeof listFantasyRsvps>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof listFantasyRsvps>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey = queryOptions?.queryKey ?? getListFantasyRsvpsQueryKey();
+
+  const queryFn: QueryFunction<
+    Awaited<ReturnType<typeof listFantasyRsvps>>
+  > = ({ signal }) => listFantasyRsvps({ signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof listFantasyRsvps>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type ListFantasyRsvpsQueryResult = NonNullable<
+  Awaited<ReturnType<typeof listFantasyRsvps>>
+>;
+export type ListFantasyRsvpsQueryError = ErrorType<unknown>;
+
+/**
+ * @summary List Worldwide Fantasy Long Center RSVPs
+ */
+
+export function useListFantasyRsvps<
+  TData = Awaited<ReturnType<typeof listFantasyRsvps>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof listFantasyRsvps>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getListFantasyRsvpsQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
  * Submit an RSVP for the Long Center Monthly Residency event
  * @summary Create a Monthly Long Center RSVP
  */

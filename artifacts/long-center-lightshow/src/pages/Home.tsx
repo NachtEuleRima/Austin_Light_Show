@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useCreateRsvp, useListRsvps, getListRsvpsQueryKey } from "@workspace/api-client-react";
+import { useCreateFantasyRsvp, useListFantasyRsvps, getListFantasyRsvpsQueryKey } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import longCenterBg from "../assets/long-center-bg.png";
@@ -45,8 +45,8 @@ type RsvpFormValues = z.infer<typeof rsvpSchema>;
 export default function Home() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
-  const createRsvp = useCreateRsvp();
-  const { data: rsvpsData } = useListRsvps();
+  const createRsvp = useCreateFantasyRsvp();
+  const { data: rsvpsData } = useListFantasyRsvps();
   
   const [isSuccess, setIsSuccess] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -71,7 +71,7 @@ export default function Home() {
     createRsvp.mutate({ data }, {
       onSuccess: () => {
         setIsSuccess(true);
-        queryClient.invalidateQueries({ queryKey: getListRsvpsQueryKey() });
+        queryClient.invalidateQueries({ queryKey: getListFantasyRsvpsQueryKey() });
         toast({
           title: "Access Granted",
           description: "Your RSVP has been confirmed. See you at the grid.",
