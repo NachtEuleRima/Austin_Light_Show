@@ -51,7 +51,7 @@ export default function Home() {
   
   const [isSuccess, setIsSuccess] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [cabPhase, setCabPhase] = useState<'idle' | 'driving' | 'revealed'>('idle');
+  const [cabPhase, setCabPhase] = useState<'idle' | 'closing-door' | 'driving' | 'revealed'>('idle');
   const cabTouchStart = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
@@ -61,6 +61,10 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (cabPhase === 'closing-door') {
+      const t = setTimeout(() => setCabPhase('driving'), 1300);
+      return () => clearTimeout(t);
+    }
     if (cabPhase === 'revealed') {
       const t = setTimeout(() => setCabPhase('idle'), 4500);
       return () => clearTimeout(t);
@@ -68,7 +72,7 @@ export default function Home() {
   }, [cabPhase]);
 
   const driveAway = () => {
-    if (cabPhase === 'idle') setCabPhase('driving');
+    if (cabPhase === 'idle') setCabPhase('closing-door');
   };
   const handleCabTouchStart = (e: React.TouchEvent) => {
     const t = e.touches[0];
@@ -81,7 +85,7 @@ export default function Home() {
     const dy = t.clientY - cabTouchStart.current.y;
     cabTouchStart.current = null;
     if (cabPhase === 'idle' && dx < -30 && Math.abs(dx) > Math.abs(dy)) {
-      setCabPhase('driving');
+      setCabPhase('closing-door');
     }
   };
 
@@ -273,6 +277,51 @@ export default function Home() {
                       filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.8) brightness(0.95) contrast(1.1)",
                     }}
                   />
+                )}
+
+                {/* Falcon-wing door closing effect */}
+                {cabPhase === 'closing-door' && (
+                  <div className="absolute inset-0 pointer-events-none z-20 flex items-center justify-center" style={{ perspective: "900px" }}>
+                    {/* Door panel folding shut */}
+                    <div
+                      className="relative w-24 h-40 md:w-36 md:h-60 -translate-y-2 md:-translate-y-6 animate-[door-close_1.3s_cubic-bezier(0.6,0,0.4,1)_forwards]"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(0,255,255,0.18) 0%, rgba(255,80,200,0.12) 50%, rgba(255,180,40,0.18) 100%)",
+                        border: "2px solid rgba(0,255,255,0.9)",
+                        boxShadow: "0 0 30px rgba(0,255,255,0.9), inset 0 0 24px rgba(0,255,255,0.45)",
+                        clipPath: "polygon(0 8%, 100% 0, 100% 92%, 0 100%)",
+                        transformOrigin: "right center",
+                        transformStyle: "preserve-3d",
+                      }}
+                    >
+                      {/* inner LED strip */}
+                      <div
+                        className="absolute inset-y-2 left-1 w-[3px] rounded-full"
+                        style={{
+                          background: "linear-gradient(to bottom, #22d3ee, #e879f9, #fbbf24)",
+                          boxShadow: "0 0 12px #22d3ee, 0 0 24px rgba(232,121,249,0.7)",
+                        }}
+                      />
+                    </div>
+                    {/* Spark / energy burst on slam */}
+                    <div className="absolute inset-0 flex items-center justify-center animate-[door-slam-burst_1.3s_ease-out_forwards]">
+                      <div
+                        className="w-32 h-32 md:w-56 md:h-56 rounded-full"
+                        style={{
+                          background: "radial-gradient(circle, rgba(0,255,255,0.55) 0%, rgba(255,80,200,0.25) 35%, transparent 70%)",
+                          filter: "blur(2px)",
+                        }}
+                      />
+                    </div>
+                    {/* Scan line */}
+                    <div
+                      className="absolute left-0 right-0 h-[2px] animate-[door-scan_1.3s_ease-in-out_forwards]"
+                      style={{
+                        background: "linear-gradient(to right, transparent, #22d3ee, #e879f9, #22d3ee, transparent)",
+                        boxShadow: "0 0 12px #22d3ee",
+                      }}
+                    />
+                  </div>
                 )}
                 {cabPhase === 'revealed' && (
                   <div className="w-[92%] h-[92%] overflow-hidden rounded-2xl animate-[cab-reveal_0.9s_ease-out_forwards]">
