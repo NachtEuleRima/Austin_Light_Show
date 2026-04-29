@@ -185,7 +185,7 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Tesla bots are performing at the Long Center — and they need an audience. A monthly lightshow takeover, first Sunday of every month: headlights, taillights, turn signals and falcon wing doors moving in perfect harmony. Bring your robot, fill the seats, and turn the Long Center into a living, breathing canvas of light.
+                Tesla bots are performing at the Long Center — and they need an audience. Expect a variety of dance forms, every move synced to their own lights — first Sunday of every month. Bring your bot, fill the seats, and turn the Long Center into a living, breathing canvas of light.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
@@ -447,6 +447,7 @@ export default function Home() {
                   <span style={{ fontSize: "1.5rem", color: "#ea8e2a", animation: "neonFlickerGold 3s infinite" }}>⚡</span>
                 </div>
                 <p className="text-white/40 text-sm mb-5">Have a question? Reach out below.</p>
+                <div className="w-full flex flex-col gap-4">
                 {[
                   { username: "RimaSukhadia", display: "📐_Cyber_Owl_🦉", role: "Website inquiries" },
                   { username: "Heike_Jost", display: "Hi🔑 Heike Jost 🇺🇸🇩🇪", role: "Event questions" },
@@ -460,7 +461,7 @@ export default function Home() {
                       if (isMobile) { window.location.href = `twitter://user?screen_name=${username}`; }
                       else { window.open(`https://x.com/${username}`, "_blank", "noopener,noreferrer"); }
                     }}
-                    className="group flex items-center gap-4 p-5 rounded-2xl border border-primary/30 shadow-[0_0_18px_rgba(0,255,255,0.15)] hover:border-primary/60 hover:shadow-[0_0_32px_rgba(0,255,255,0.35)] transition-all duration-300"
+                    className="group w-full flex items-center gap-4 p-5 rounded-2xl border border-primary/30 shadow-[0_0_18px_rgba(0,255,255,0.15)] hover:border-primary/60 hover:shadow-[0_0_32px_rgba(0,255,255,0.35)] transition-all duration-300"
                     style={{ background: "#0d1117" }}
                   >
                     <div className="w-14 h-14 rounded-full border-2 border-primary/50 shadow-[0_0_12px_rgba(0,255,255,0.4)] overflow-hidden relative flex items-center justify-center bg-white/5 shrink-0">
@@ -478,6 +479,7 @@ export default function Home() {
                     <span className="text-sm text-primary/60 group-hover:text-primary font-mono font-bold tracking-wider transition-colors ml-auto shrink-0">→ X</span>
                   </a>
                 ))}
+                </div>
               </div>
           </div>
 
