@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -7,7 +7,6 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Calendar, Clock, MapPin, Users, ChevronRight, ChevronLeft, ChevronUp, ChevronDown, Zap, Volume2, Car, Radio, ShieldAlert } from "lucide-react";
 import longCenterBg from "../assets/long-center-bg.png";
 import cybercabImg from "../assets/cybercab.png";
-import cybercabSideImg from "../assets/cybercab-side.jpeg";
 import americanFlagImg from "../assets/american-flag.png";
 import texasFlagImg from "../assets/texas-flag.png";
 
@@ -51,39 +50,12 @@ export default function Home() {
   
   const [isSuccess, setIsSuccess] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [cabPhase, setCabPhase] = useState<'idle' | 'driving' | 'revealed'>('idle');
-  const cabTouchStart = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    if (cabPhase === 'revealed') {
-      const t = setTimeout(() => setCabPhase('idle'), 4500);
-      return () => clearTimeout(t);
-    }
-  }, [cabPhase]);
-
-  const driveAway = () => {
-    if (cabPhase === 'idle') setCabPhase('driving');
-  };
-  const handleCabTouchStart = (e: React.TouchEvent) => {
-    const t = e.touches[0];
-    cabTouchStart.current = { x: t.clientX, y: t.clientY };
-  };
-  const handleCabTouchEnd = (e: React.TouchEvent) => {
-    if (!cabTouchStart.current) return;
-    const t = e.changedTouches[0];
-    const dx = t.clientX - cabTouchStart.current.x;
-    const dy = t.clientY - cabTouchStart.current.y;
-    cabTouchStart.current = null;
-    if (cabPhase === 'idle' && dx < -30 && Math.abs(dx) > Math.abs(dy)) {
-      setCabPhase('driving');
-    }
-  };
 
   const form = useForm<RsvpFormValues>({
     resolver: zodResolver(rsvpSchema),
@@ -245,70 +217,22 @@ export default function Home() {
               </div>
             </div>
             
-            <div
-              className="relative h-[220px] md:h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group select-none cursor-pointer"
-              onTouchStart={handleCabTouchStart}
-              onTouchEnd={handleCabTouchEnd}
-              onClick={driveAway}
-            >
+            <div className="relative h-[220px] md:h-[600px] rounded-3xl border border-white/10 bg-black overflow-hidden group">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(138,43,226,0.2)_0%,transparent_70%)]" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] animate-[spin_20s_linear_infinite] opacity-30">
                 <div className="w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent absolute top-1/2 -translate-y-1/2" />
                 <div className="w-1 h-full bg-gradient-to-b from-transparent via-secondary to-transparent absolute left-1/2 -translate-x-1/2" />
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                {cabPhase !== 'revealed' && (
-                  <img
-                    src={cybercabImg}
-                    alt="Tesla Cybercab"
-                    onAnimationEnd={(e) => {
-                      if ((e.animationName || '').includes('cab-drive-away')) setCabPhase('revealed');
-                    }}
-                    className={`w-2/3 h-2/3 object-contain mx-auto -translate-y-4 md:-translate-y-10 ${
-                      cabPhase === 'driving'
-                        ? 'animate-[cab-drive-away_1.6s_cubic-bezier(0.55,0,0.7,0.2)_forwards]'
-                        : 'group-hover:scale-105 transition-transform duration-700 max-md:animate-[cybercab-breathe-mobile_3s_ease-in-out_infinite]'
-                    }`}
-                    style={{
-                      filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.8) brightness(0.95) contrast(1.1)",
-                    }}
-                  />
-                )}
-
-                {cabPhase === 'revealed' && (
-                  <div className="w-[92%] h-[92%] overflow-hidden rounded-2xl animate-[cab-reveal_0.9s_ease-out_forwards]">
-                    <img
-                      src={cybercabSideImg}
-                      alt="Tesla Robotaxi spotted in Austin"
-                      className="w-full h-full object-cover"
-                      style={{
-                        objectPosition: "30% center",
-                        transform: "scale(1.18)",
-                        transformOrigin: "left center",
-                        filter: "drop-shadow(0 0 24px rgba(255,200,80,0.4)) drop-shadow(0 0 60px rgba(255,160,40,0.25))",
-                      }}
-                    />
-                  </div>
-                )}
+                <img
+                  src={cybercabImg}
+                  alt="Tesla Cybercab"
+                  className="w-2/3 h-2/3 object-contain mx-auto -translate-y-4 md:-translate-y-10 group-hover:scale-105 transition-transform duration-700 max-md:animate-[cybercab-breathe-mobile_3s_ease-in-out_infinite]"
+                  style={{
+                    filter: "drop-shadow(0 0 18px rgba(0,255,255,0.5)) drop-shadow(0 0 40px rgba(0,255,255,0.2)) saturate(0.8) brightness(0.95) contrast(1.1)",
+                  }}
+                />
               </div>
-
-              {/* Swipe-left prompt (idle only) */}
-              {cabPhase === 'idle' && (
-                <div className="pointer-events-none absolute left-4 md:left-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1 z-10">
-                  <ChevronLeft
-                    className="w-10 h-10 md:w-14 md:h-14 text-cyan-300 animate-[arrow-flash-left_1.2s_ease-in-out_infinite]"
-                    style={{ filter: "drop-shadow(0 0 8px rgba(34,211,238,0.9)) drop-shadow(0 0 18px rgba(34,211,238,0.5))" }}
-                  />
-                  <span className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-cyan-300/80">swipe</span>
-                </div>
-              )}
-
-              {/* Caption during reveal */}
-              {cabPhase === 'revealed' && (
-                <div className="pointer-events-none absolute top-4 left-1/2 -translate-x-1/2 z-10 px-3 py-1 rounded-full bg-black/60 border border-amber-300/40 backdrop-blur-sm">
-                  <span className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-amber-200">spotted in austin</span>
-                </div>
-              )}
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
                 <p className="font-mono text-sm text-primary tracking-widest uppercase">System Sync // 100%</p>
                 <div className="w-full h-1 bg-white/10 mt-2 rounded-full overflow-hidden">
