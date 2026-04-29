@@ -185,7 +185,7 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Tesla robots are performing a variety of dance forms synced to their lights — bring yours. A monthly lightshow takeover at Austin's Long Center, first Sunday of every month: headlights, taillights, turn signals and falcon wing doors moving in perfect harmony. Bring your robot, queue up the setlist, and turn the Long Center into a living, breathing canvas of light.
+                Let's make these bots dance. A monthly lightshow takeover at Austin's Long Center, first Sunday of every month: headlights, taillights, turn signals and falcon wing doors moving in perfect harmony. Bring your robot, queue up the setlist, and turn the Long Center into a living, breathing canvas of light.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
