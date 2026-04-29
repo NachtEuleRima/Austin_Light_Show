@@ -185,7 +185,37 @@ export default function Home() {
                 Choreographed <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Perfection</span>
               </h2>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Let's make these bots dance. A monthly lightshow takeover at Austin's Long Center, first Sunday of every month: headlights, taillights, turn signals and falcon wing doors moving in perfect harmony. Bring your robot, queue up the setlist, and turn the Long Center into a living, breathing canvas of light.
+                Let's make these bots dance. A monthly lightshow takeover at Austin's&nbsp;
+                <a
+                  href="https://thelongcenter.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold transition-all duration-300 hover:opacity-80"
+                  style={{
+                    background: "linear-gradient(90deg, #00e5f5, #ff00ff, #ea8e2a)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    filter: "drop-shadow(0 0 8px rgba(0,229,245,0.6))",
+                  }}
+                >
+                  Long Center
+                </a>
+                , first Sunday of every month: headlights, taillights, turn signals and falcon wing doors moving in perfect harmony. Bring your robot, queue up the setlist, and turn the&nbsp;
+                <a
+                  href="https://thelongcenter.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold transition-all duration-300 hover:opacity-80"
+                  style={{
+                    background: "linear-gradient(90deg, #00e5f5, #ff00ff, #ea8e2a)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    filter: "drop-shadow(0 0 8px rgba(0,229,245,0.6))",
+                  }}
+                >
+                  Long Center
+                </a>
+                &nbsp;into a living, breathing canvas of light.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6 pt-4">
